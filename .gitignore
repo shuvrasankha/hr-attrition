@@ -1,13 +1,3 @@
 __pycache__/
 *.pyc
 venv/
-.env
-.streamlit/secrets.toml
-data/bronze/*.csv
-data/silver/*.csv
-data/gold/*.csv
-runs/*.json
-!data/bronze/.gitkeep
-!data/silver/.gitkeep
-!data/gold/.gitkeep
-!runs/.gitkeep
