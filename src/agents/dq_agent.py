@@ -1,6 +1,8 @@
-"""Data Quality Agent: profiles the Bronze dataset, detects issues, and
-PROPOSES cleaning rules. It does not apply anything itself — the
-Transformation Agent applies only rules the human has approved."""
+"""Data Quality Agent: profiles the Bronze dataset, asks the AI to propose
+cleaning rules in natural language, then parses them into structured rules.
+The human reviews and approves before the Transformation Agent applies them."""
+import json
+
 import pandas as pd
 
 from src.llm import llm_complete
@@ -35,10 +37,12 @@ def _detect_mixed_date_formats(df: pd.DataFrame, col: str) -> bool:
 def profile(df: pd.DataFrame) -> dict:
     findings = {
         "row_count": len(df),
+        "columns": list(df.columns),
         "duplicate_ids": int(df.duplicated(subset=["employee_id"]).sum()) if "employee_id" in df else 0,
         "nulls": {c: int(df[c].isna().sum()) for c in df.columns if df[c].isna().sum() > 0},
         "casing_issues": {},
         "mixed_date_formats": [],
+        "sample_rows": df.head(5).to_dict(orient="records"),
     }
     for c in ["department", "team"]:
         if c in df.columns:
@@ -51,8 +55,8 @@ def profile(df: pd.DataFrame) -> dict:
     return findings
 
 
-def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
-    findings = profile(df)
+def _build_hardcoded_rules(findings: dict) -> list:
+    """Fallback rules if the AI is unavailable."""
     rules = []
     rid = 0
 
@@ -61,10 +65,10 @@ def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
         rules.append({
             "id": f"dq-{rid}",
             "column": "employee_id",
-            "issue": f"{findings['duplicate_ids']} duplicate employee_id rows detected (repeated export).",
+            "issue": f"{findings['duplicate_ids']} duplicate employee_id rows detected.",
             "proposed_action": "Deduplicate: keep the last occurrence per employee_id.",
             "rule_type": "dedupe",
-            "approved": True,  # default proposal is pre-checked; user can uncheck/edit
+            "approved": True,
         })
 
     for col, count in findings["nulls"].items():
@@ -73,7 +77,7 @@ def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
             action = f"Impute missing '{col}' with the department median."
             rtype = "impute_median"
         else:
-            action = f"Flag rows with missing '{col}' as 'Unknown' rather than dropping."
+            action = f"Flag rows with missing '{col}' as 'Unknown'."
             rtype = "fill_unknown"
         rules.append({
             "id": f"dq-{rid}",
@@ -86,11 +90,10 @@ def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
 
     for col, variants in findings["casing_issues"].items():
         rid += 1
-        example = variants[0]
         rules.append({
             "id": f"dq-{rid}",
             "column": col,
-            "issue": f"Inconsistent casing/spacing in '{col}', e.g. {example}.",
+            "issue": f"Inconsistent casing in '{col}', e.g. {variants[0]}.",
             "proposed_action": f"Standardize '{col}' to Title Case and trim whitespace.",
             "rule_type": "standardize_text",
             "approved": True,
@@ -101,27 +104,92 @@ def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
         rules.append({
             "id": f"dq-{rid}",
             "column": col,
-            "issue": f"Mixed date formats detected in '{col}' (ISO/US/EU).",
-            "proposed_action": f"Parse '{col}' to a standard ISO (YYYY-MM-DD) date.",
+            "issue": f"Mixed date formats in '{col}'.",
+            "proposed_action": f"Parse '{col}' to ISO (YYYY-MM-DD) format.",
             "rule_type": "standardize_date",
             "approved": True,
         })
 
-    summary_fallback = (
-        f"Profiled {findings['row_count']} Bronze rows and found "
-        f"{findings['duplicate_ids']} duplicate IDs, "
-        f"{len(findings['nulls'])} columns with missing values, "
-        f"{len(findings['casing_issues'])} columns with inconsistent text casing, "
-        f"and {len(findings['mixed_date_formats'])} columns with mixed date formats. "
-        f"Proposing {len(rules)} cleaning rule(s) for review."
+    return rules
+
+
+def _ask_ai_for_rules(findings: dict, hardcoded: list) -> list:
+    """Ask the AI to review the data profile and suggest cleaning rules."""
+    system = (
+        "You are a data quality engineer reviewing a raw HR dataset before cleaning. "
+        "Given the data profile below, propose cleaning rules as a JSON array. "
+        "Each rule must have these fields: id, column, issue, proposed_action, rule_type, approved. "
+        "rule_type must be one of: dedupe, impute_median, fill_unknown, standardize_text, standardize_date. "
+        "Only propose rules for real issues you see in the data. "
+        "Return ONLY the JSON array, no other text."
     )
+    prompt = (
+        f"Data profile:\n"
+        f"- Rows: {findings['row_count']}\n"
+        f"- Columns: {findings['columns']}\n"
+        f"- Duplicate employee_ids: {findings['duplicate_ids']}\n"
+        f"- Nulls: {findings['nulls']}\n"
+        f"- Casing issues: {findings['casing_issues']}\n"
+        f"- Mixed date formats: {findings['mixed_date_formats']}\n"
+        f"- Sample rows: {findings['sample_rows']}\n\n"
+        f"Propose cleaning rules as JSON. Here is a reference format:\n"
+        f"{json.dumps(hardcoded[:2], indent=2)}"
+    )
+
+    response = llm_complete(
+        system=system,
+        prompt=prompt,
+        max_tokens=800,
+        fallback="",
+    )
+
+    if not response:
+        return hardcoded
+
+    try:
+        # Extract JSON from the response (handle markdown code blocks)
+        text = response.strip()
+        if "```json" in text:
+            text = text.split("```json")[1].split("```")[0]
+        elif "```" in text:
+            text = text.split("```")[1].split("```")[0]
+
+        ai_rules = json.loads(text.strip())
+        if isinstance(ai_rules, list) and len(ai_rules) > 0:
+            # Ensure all rules have required fields
+            for r in ai_rules:
+                r.setdefault("approved", True)
+                r.setdefault("rule_type", "fill_unknown")
+            return ai_rules
+    except (json.JSONDecodeError, IndexError, KeyError):
+        pass
+
+    return hardcoded
+
+
+def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
+    findings = profile(df)
+    hardcoded = _build_hardcoded_rules(findings)
+
+    # Ask the AI for its own suggestions
+    ai_rules = _ask_ai_for_rules(findings, hardcoded)
+
+    summary_fallback = (
+        f"Profiled {findings['row_count']} Bronze rows. "
+        f"Found {findings['duplicate_ids']} duplicate IDs, "
+        f"{len(findings['nulls'])} columns with missing values, "
+        f"{len(findings['casing_issues'])} casing issues, "
+        f"{len(findings['mixed_date_formats'])} date format issues. "
+        f"Proposing {len(ai_rules)} cleaning rule(s) for review."
+    )
+
     narrative = llm_complete(
-        system="You are a meticulous data quality analyst. Summarize findings in 2-3 plain-English sentences for a non-technical HR stakeholder.",
-        prompt=f"Data quality findings: {findings}\nProposed rules: {rules}",
+        system="You are a data quality analyst. Explain the proposed cleaning rules in 2-3 plain-English sentences for an HR stakeholder.",
+        prompt=f"Findings: {json.dumps(findings, default=str)}\nRules proposed: {json.dumps(ai_rules, default=str)}",
         fallback=summary_fallback,
     )
 
-    state.dq_rules = rules
+    state.dq_rules = ai_rules
     state.status = "dq_proposed"
     state.add_log(agent="DataQualityAgent", action="propose_rules", detail=narrative)
-    return rules
+    return ai_rules
