@@ -22,6 +22,10 @@ def init_session():
         st.session_state.step = 0
     if "qa_report" not in st.session_state:
         st.session_state.qa_report = None
+    if "uploaded_dfs" not in st.session_state:
+        st.session_state.uploaded_dfs = None
+    if "uploaded_names" not in st.session_state:
+        st.session_state.uploaded_names = None
 
 
 def sidebar():
@@ -272,27 +276,36 @@ def page_run():
         uploaded = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
 
         if uploaded:
-            st.markdown(f"**{len(uploaded)} file(s) selected:**")
+            st.session_state.uploaded_dfs = []
+            st.session_state.uploaded_names = []
             for f in uploaded:
-                preview = pd.read_csv(f)
-                st.write(f"- `{f.name}` — {len(preview)} rows, {len(preview.columns)} columns")
-                st.dataframe(preview.head(3), use_container_width=True)
+                df_preview = pd.read_csv(f)
+                st.session_state.uploaded_dfs.append(df_preview)
+                st.session_state.uploaded_names.append(f.name)
+                st.write(f"- `{f.name}` — {len(df_preview)} rows, {len(df_preview.columns)} columns")
+                st.dataframe(df_preview.head(3), use_container_width=True)
+
+        has_files = bool(st.session_state.get("uploaded_dfs"))
 
         c1, c2 = st.columns(2)
         with c1:
             use_sample = st.button("Use synthetic sample dataset", type="primary")
         with c2:
-            process_upload = st.button("Process uploaded files", disabled=not uploaded)
+            process_upload = st.button("Process uploaded files", disabled=not has_files)
 
-        if use_sample or process_upload:
-            if process_upload and uploaded:
-                frames = [pd.read_csv(f) for f in uploaded]
-                df = pd.concat(frames, ignore_index=True)
-                fname = ", ".join(f.name for f in uploaded)
-            else:
-                df = data_gen.generate()
-                fname = "hr_attrition_synthetic.csv"
+        if use_sample:
+            df = data_gen.generate()
+            fname = "hr_attrition_synthetic.csv"
+            orch = Orchestrator()
+            orch.ingest(df, fname)
+            st.session_state.orch = orch
+            st.session_state.step = 1
+            st.rerun()
 
+        elif process_upload and has_files:
+            frames = st.session_state.uploaded_dfs
+            df = pd.concat(frames, ignore_index=True)
+            fname = ", ".join(st.session_state.uploaded_names)
             orch = Orchestrator()
             orch.ingest(df, fname)
             st.session_state.orch = orch
