@@ -1,35 +1,35 @@
 """
-Thin wrapper around the Anthropic API used by agents to turn structured
-findings into human-readable rule proposals / narratives.
+Thin wrapper around the HuggingFace Inference API used by agents to turn
+structured findings into human-readable rule proposals / narratives.
 
-If ANTHROPIC_API_KEY is not set, falls back to deterministic templated text
+If HUGGINGFACE_TOKEN is not set, falls back to deterministic templated text
 so the whole pipeline still runs end-to-end without network access — useful
 for local demos and offline grading.
 """
-from src.config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL
+from src.config import HF_TOKEN, HF_MODEL
 
 _client = None
-if ANTHROPIC_API_KEY:
+if HF_TOKEN:
     try:
-        import anthropic
-        _client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        from huggingface_hub import InferenceClient
+        _client = InferenceClient(token=HF_TOKEN)
     except Exception:
         _client = None
 
 
 def llm_complete(system: str, prompt: str, max_tokens: int = 600, fallback: str = "") -> str:
-    """Call Claude if configured; otherwise return the provided fallback text."""
+    """Call HuggingFace model if configured; otherwise return the provided fallback text."""
     if _client is None:
         return fallback
     try:
-        resp = _client.messages.create(
-            model=ANTHROPIC_MODEL,
-            max_tokens=max_tokens,
-            system=system,
-            messages=[{"role": "user", "content": prompt}],
+        full_prompt = f"<|system|>\n{system}\n<|end|>\n<|user|>\n{prompt}\n<|end|>\n<|assistant|>"
+        resp = _client.text_generation(
+            full_prompt,
+            model=HF_MODEL,
+            max_new_tokens=max_tokens,
+            temperature=0.3,
         )
-        parts = [b.text for b in resp.content if getattr(b, "type", "") == "text"]
-        return "\n".join(parts).strip() or fallback
+        return resp.strip() or fallback
     except Exception:
         return fallback
 

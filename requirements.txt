@@ -1,4 +1,4 @@
 pandas>=2.0
 numpy>=1.24
 streamlit>=1.35
-anthropic>=0.34
+huggingface_hub>=0.25

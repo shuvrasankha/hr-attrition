@@ -47,10 +47,11 @@ audit trail / run history shown in the UI.
 - **Data processing:** pandas / numpy
 - **Storage:** local filesystem, one folder per medallion layer (`data/bronze`,
   `data/silver`, `data/gold`), CSV per run keyed by `run_id`.
-- **LLM:** Anthropic Claude API, used for turning structured findings into
-  plain-English rule proposals and the executive narrative. If
-  `ANTHROPIC_API_KEY` is not set, every LLM call falls back to a deterministic
-  templated summary so the pipeline still runs fully offline (see `src/llm.py`).
+- **LLM:** HuggingFace Inference API (`microsoft/Phi-3.5-mini-instruct`),
+  used for turning structured findings into plain-English rule proposals
+  and the executive narrative. If `HUGGINGFACE_TOKEN` is not set, every
+  LLM call falls back to a deterministic templated summary so the pipeline
+  still runs fully offline (see `src/llm.py`).
 - **UI:** Streamlit (`app.py`) — upload/run, two approval screens, Gold
   insights dashboard with charts, team-level drill-down, and a run-history/audit page.
 
@@ -61,7 +62,7 @@ python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 # optional — enables live LLM narratives instead of the offline fallback
-export ANTHROPIC_API_KEY=sk-ant-...
+export HUGGINGFACE_TOKEN=hf_...
 
 # UI
 streamlit run app.py
