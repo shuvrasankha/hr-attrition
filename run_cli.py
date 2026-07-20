@@ -10,9 +10,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from src import data_gen
 from src.agents.orchestrator import Orchestrator
+from src.llm import is_llm_enabled
 
 
 def main():
+    llm_status = "ON (GitHub Models — gpt-4o)" if is_llm_enabled() else "OFF (using fallback text)"
+    print(f"=== AI Status: {llm_status} ===\n")
     df = data_gen.generate()
     print(f"Generated synthetic dataset: {len(df)} rows")
 

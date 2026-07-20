@@ -27,6 +27,13 @@ def init_session():
 def sidebar():
     st.sidebar.title("Medallion Pipeline")
     st.sidebar.caption("Bronze → Silver → Gold, agent-orchestrated")
+
+    from src.llm import is_llm_enabled
+    if is_llm_enabled():
+        st.sidebar.success("AI: ON (GitHub Models — gpt-4o)")
+    else:
+        st.sidebar.warning("AI: OFF (using fallback text)")
+
     page = st.sidebar.radio("Navigate", ["Run Pipeline", "Run History"])
 
     if st.session_state.orch:
