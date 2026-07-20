@@ -276,6 +276,8 @@ def page_run():
         uploaded = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
 
         if uploaded:
+            if not isinstance(uploaded, list):
+                uploaded = [uploaded]
             st.session_state.uploaded_dfs = []
             st.session_state.uploaded_names = []
             for f in uploaded:
@@ -303,14 +305,17 @@ def page_run():
             st.rerun()
 
         elif process_upload and has_files:
-            frames = st.session_state.uploaded_dfs
-            df = pd.concat(frames, ignore_index=True)
-            fname = ", ".join(st.session_state.uploaded_names)
-            orch = Orchestrator()
-            orch.ingest(df, fname)
-            st.session_state.orch = orch
-            st.session_state.step = 1
-            st.rerun()
+            try:
+                frames = st.session_state.uploaded_dfs
+                df = pd.concat(frames, ignore_index=True)
+                fname = ", ".join(st.session_state.uploaded_names)
+                orch = Orchestrator()
+                orch.ingest(df, fname)
+                st.session_state.orch = orch
+                st.session_state.step = 1
+                st.rerun()
+            except Exception as e:
+                st.error(f"Error combining files: {e}")
 
     elif step == 1:
         _render_dq_approval(st.session_state.orch)

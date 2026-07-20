@@ -1,0 +1,13 @@
+department,team,headcount,attritions,attrition_rate,top_performers,top_performer_attritions,top_performer_attrition_rate,avg_compensation,avg_compensation_leavers_top,avg_compensation_stayers_top,comp_gap,avg_overtime_leavers_top,avg_overtime_stayers_top,overtime_gap,avg_engagement_leavers_top,likely_driver,risk_score,risk_label
+Engineering,Data Eng,98.0,15.0,15.3,17.0,7.0,41.2,105299.0,113927.0,113628.0,-299.0,13.5,5.5,8.0,3.21,elevated overtime before exit,8.2,CRITICAL
+Sales,Mid-Market,85.0,12.0,14.1,18.0,7.0,38.9,56860.0,57209.0,60895.0,3686.0,1.7,1.0,0.7,3.8,"compensation gap (~$3,686 below staying top performers)",8.1,CRITICAL
+Engineering,Product Eng,61.0,10.0,16.4,16.0,5.0,31.2,106908.0,112517.0,116181.0,3664.0,13.4,4.8,8.6,2.32,"compensation gap (~$3,664 below staying top performers); elevated overtime before exit; low engagement score prior to exit",6.8,CRITICAL
+Engineering,Platform,81.0,8.0,9.9,14.0,3.0,21.4,104218.0,125725.0,114444.0,-11281.0,14.1,4.6,9.5,3.3,elevated overtime before exit,4.4,HIGH
+Sales,SMB,75.0,11.0,14.7,22.0,4.0,18.2,56608.0,58033.0,58129.0,96.0,7.4,1.6,5.8,3.2,elevated overtime before exit,3.7,MEDIUM
+Support,Tier 2,128.0,24.0,18.8,15.0,2.0,13.3,50953.0,52090.0,55647.0,3557.0,4.0,4.4,-0.4,2.15,"compensation gap (~$3,557 below staying top performers); low engagement score prior to exit",2.8,MEDIUM
+Marketing,Growth,123.0,12.0,9.8,23.0,3.0,13.0,69946.0,76277.0,73825.0,-2452.0,3.2,4.8,-1.6,3.23,no dominant single factor identified,2.6,MEDIUM
+Finance,Accounting,131.0,17.0,13.0,26.0,3.0,11.5,79557.0,82611.0,85362.0,2751.0,6.7,3.2,3.5,2.47,"compensation gap (~$2,751 below staying top performers); elevated overtime before exit; low engagement score prior to exit",2.5,MEDIUM
+Sales,Enterprise,80.0,11.0,13.8,11.0,1.0,9.1,55828.0,45193.0,59330.0,14137.0,0.3,2.4,-2.1,2.4,"compensation gap (~$14,137 below staying top performers); low engagement score prior to exit",1.9,LOW
+Support,Tier 1,112.0,9.0,8.0,22.0,2.0,9.1,50777.0,55092.0,52964.0,-2128.0,1.2,3.2,-2.0,2.35,low engagement score prior to exit,1.9,LOW
+Marketing,Brand,117.0,11.0,9.4,29.0,2.0,6.9,69686.0,71030.0,73573.0,2543.0,0.7,3.6,-2.9,3.05,"compensation gap (~$2,543 below staying top performers)",1.4,LOW
+Finance,FP&A,109.0,11.0,10.1,16.0,0.0,0.0,79020.0,,85242.0,,,2.7,,,no dominant single factor identified,0.0,LOW
