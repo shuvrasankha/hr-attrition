@@ -3,8 +3,15 @@
 #   chmod +x setup.sh && ./setup.sh
 set -e
 
+PYTHON=$(command -v python3 || command -v python)
+if [ -z "$PYTHON" ]; then
+  echo "Error: python3 or python not found. Install Python first."
+  exit 1
+fi
+
+echo "Using: $PYTHON ($($PYTHON --version))"
 echo "Creating virtual environment..."
-python3 -m venv venv
+$PYTHON -m venv venv
 source venv/bin/activate
 
 echo "Installing dependencies..."
