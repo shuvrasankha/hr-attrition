@@ -47,9 +47,9 @@ audit trail / run history shown in the UI.
 - **Data processing:** pandas / numpy
 - **Storage:** local filesystem, one folder per medallion layer (`data/bronze`,
   `data/silver`, `data/gold`), CSV per run keyed by `run_id`.
-- **LLM:** HuggingFace Inference API (`microsoft/Phi-3.5-mini-instruct`),
+- **LLM:** GitHub Models API (`gpt-4o` via `models.inference.ai.azure.com`),
   used for turning structured findings into plain-English rule proposals
-  and the executive narrative. If `HUGGINGFACE_TOKEN` is not set, every
+  and the executive narrative. If `GITHUB_TOKEN` is not set, every
   LLM call falls back to a deterministic templated summary so the pipeline
   still runs fully offline (see `src/llm.py`).
 - **UI:** Streamlit (`app.py`) — upload/run, two approval screens, Gold
@@ -62,7 +62,9 @@ python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 # optional — enables live LLM narratives instead of the offline fallback
-export HUGGINGFACE_TOKEN=hf_...
+# create a fine-grained PAT at https://github.com/settings/tokens
+# with "Models" read permission, then paste it in .env
+echo "GITHUB_TOKEN=ghp_your_token_here" > .env
 
 # UI
 streamlit run app.py

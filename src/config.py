@@ -16,11 +16,12 @@ RUNS_DIR = ROOT_DIR / "runs"
 for d in (BRONZE_DIR, SILVER_DIR, GOLD_DIR, RUNS_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
-# LLM config — HuggingFace Inference API.
-# If HUGGINGFACE_TOKEN is not set, agents fall back to deterministic
+# LLM config — GitHub Models API (OpenAI-compatible endpoint).
+# If GITHUB_TOKEN is not set, agents fall back to deterministic
 # template-based text generation so the pipeline still runs end-to-end offline.
-HF_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
-HF_TOKEN = os.environ.get("HUGGINGFACE_TOKEN")
+GITHUB_MODELS_URL = "https://models.inference.ai.azure.com"
+GITHUB_MODEL = "gpt-4o"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
 # Business definition defaults (used as the *default* proposed rule; the user
 # can edit/override these at the approval checkpoint).
