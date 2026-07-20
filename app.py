@@ -267,15 +267,25 @@ def page_run():
 
     if step == 0:
         st.subheader("Step 1 · Ingestion Agent")
-        st.write("Upload an HR CSV, or use the built-in synthetic sample dataset to demo the full pipeline.")
-        col1, col2 = st.columns(2)
-        with col1:
-            uploaded = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
-        with col2:
-            use_sample = st.button("Use synthetic sample dataset", type="primary")
+        st.write("Upload one or more HR CSVs, or use the built-in synthetic sample dataset.")
 
-        if uploaded or use_sample:
-            if uploaded:
+        uploaded = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
+
+        if uploaded:
+            st.markdown(f"**{len(uploaded)} file(s) selected:**")
+            for f in uploaded:
+                preview = pd.read_csv(f)
+                st.write(f"- `{f.name}` — {len(preview)} rows, {len(preview.columns)} columns")
+                st.dataframe(preview.head(3), use_container_width=True)
+
+        c1, c2 = st.columns(2)
+        with c1:
+            use_sample = st.button("Use synthetic sample dataset", type="primary")
+        with c2:
+            process_upload = st.button("Process uploaded files", disabled=not uploaded)
+
+        if use_sample or process_upload:
+            if process_upload and uploaded:
                 frames = [pd.read_csv(f) for f in uploaded]
                 df = pd.concat(frames, ignore_index=True)
                 fname = ", ".join(f.name for f in uploaded)
