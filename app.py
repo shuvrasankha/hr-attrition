@@ -263,14 +263,15 @@ def page_run():
         st.write("Upload an HR CSV, or use the built-in synthetic sample dataset to demo the full pipeline.")
         col1, col2 = st.columns(2)
         with col1:
-            uploaded = st.file_uploader("Upload CSV", type=["csv"])
+            uploaded = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
         with col2:
             use_sample = st.button("Use synthetic sample dataset", type="primary")
 
-        if uploaded is not None or use_sample:
-            if uploaded is not None:
-                df = pd.read_csv(uploaded)
-                fname = uploaded.name
+        if uploaded or use_sample:
+            if uploaded:
+                frames = [pd.read_csv(f) for f in uploaded]
+                df = pd.concat(frames, ignore_index=True)
+                fname = ", ".join(f.name for f in uploaded)
             else:
                 df = data_gen.generate()
                 fname = "hr_attrition_synthetic.csv"
