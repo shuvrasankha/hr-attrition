@@ -2,6 +2,10 @@
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
 BRONZE_DIR = DATA_DIR / "bronze"
@@ -15,7 +19,7 @@ for d in (BRONZE_DIR, SILVER_DIR, GOLD_DIR, RUNS_DIR):
 # LLM config — HuggingFace Inference API.
 # If HUGGINGFACE_TOKEN is not set, agents fall back to deterministic
 # template-based text generation so the pipeline still runs end-to-end offline.
-HF_MODEL = "microsoft/Phi-3.5-mini-instruct"
+HF_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
 HF_TOKEN = os.environ.get("HUGGINGFACE_TOKEN")
 
 # Business definition defaults (used as the *default* proposed rule; the user

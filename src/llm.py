@@ -22,14 +22,16 @@ def llm_complete(system: str, prompt: str, max_tokens: int = 600, fallback: str 
     if _client is None:
         return fallback
     try:
-        full_prompt = f"<|system|>\n{system}\n<|end|>\n<|user|>\n{prompt}\n<|end|>\n<|assistant|>"
-        resp = _client.text_generation(
-            full_prompt,
+        resp = _client.chat_completion(
             model=HF_MODEL,
-            max_new_tokens=max_tokens,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": prompt},
+            ],
+            max_tokens=max_tokens,
             temperature=0.3,
         )
-        return resp.strip() or fallback
+        return resp.choices[0].message.content.strip() or fallback
     except Exception:
         return fallback
 
