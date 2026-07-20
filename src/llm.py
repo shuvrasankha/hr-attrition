@@ -1,30 +1,28 @@
 """
-Thin wrapper around the GitHub Models API (OpenAI-compatible endpoint)
-used by agents to turn structured findings into human-readable rule
-proposals / narratives.
+Thin wrapper around the HuggingFace Inference API used by agents to turn
+structured findings into human-readable rule proposals / narratives.
 
-If GITHUB_TOKEN is not set, falls back to deterministic templated text
-so the whole pipeline still runs end-to-end without network access — useful
-for local demos and offline grading.
+If HUGGINGFACE_TOKEN is not set, falls back to deterministic templated text
+so the whole pipeline still runs end-to-end without network access.
 """
-from src.config import GITHUB_TOKEN, GITHUB_MODEL, GITHUB_MODELS_URL
+from src.config import HF_TOKEN, HF_MODEL
 
 _client = None
-if GITHUB_TOKEN:
+if HF_TOKEN:
     try:
-        from openai import OpenAI
-        _client = OpenAI(base_url=GITHUB_MODELS_URL, api_key=GITHUB_TOKEN)
+        from huggingface_hub import InferenceClient
+        _client = InferenceClient(token=HF_TOKEN)
     except Exception:
         _client = None
 
 
 def llm_complete(system: str, prompt: str, max_tokens: int = 600, fallback: str = "") -> str:
-    """Call GitHub Models API if configured; otherwise return the provided fallback text."""
+    """Call HuggingFace model if configured; otherwise return the provided fallback text."""
     if _client is None:
         return fallback
     try:
-        resp = _client.chat.completions.create(
-            model=GITHUB_MODEL,
+        resp = _client.chat_completion(
+            model=HF_MODEL,
             messages=[
                 {"role": "system", "content": system},
                 {"role": "user", "content": prompt},
