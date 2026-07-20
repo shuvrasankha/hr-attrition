@@ -50,15 +50,16 @@ def _identify_driver(row: pd.Series) -> str:
 
 
 def _risk_score(row: pd.Series) -> float:
-    score = 0.0
     tp_rate = row["top_performer_attrition_rate"]
-    score += min(tp_rate / 10, 5.0)
+    score = min(tp_rate / 5.0, 8.0)
+    bonus = 0.0
     if row["comp_gap"] is not None and row["comp_gap"] > 2500:
-        score += 1.5
+        bonus += 0.75
     if row["overtime_gap"] is not None and row["overtime_gap"] > 3:
-        score += 1.0
+        bonus += 0.5
     if row["avg_engagement_leavers_top"] is not None and row["avg_engagement_leavers_top"] < 3.0:
-        score += 1.0
+        bonus += 0.5
+    score += min(bonus, score * 0.3)
     return round(min(score, 10.0), 1)
 
 
