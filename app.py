@@ -34,7 +34,7 @@ def sidebar():
 
     from src.llm import is_llm_enabled
     if is_llm_enabled():
-        st.sidebar.success("AI: ON (GitHub Models — gpt-4o)")
+        st.sidebar.success("AI: ON (HuggingFace — Llama-3.1)")
     else:
         st.sidebar.warning("AI: OFF (using fallback text)")
 

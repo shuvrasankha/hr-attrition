@@ -1,0 +1,164 @@
+{
+  "run_id": "a05408f6",
+  "source_filename": "hr_attrition_raw.csv (synthetic)",
+  "status": "rules_approved",
+  "bronze_rows": 1224,
+  "silver_rows": 1200,
+  "gold_rows": 0,
+  "dq_rules": [
+    {
+      "id": "dq-1",
+      "column": "employee_id",
+      "issue": "24 duplicate employee_id rows detected.",
+      "proposed_action": "Deduplicate: keep the last occurrence per employee_id.",
+      "rule_type": "dedupe",
+      "approved": true
+    },
+    {
+      "id": "dq-2",
+      "column": "performance_rating",
+      "issue": "60 missing values in 'performance_rating'.",
+      "proposed_action": "Impute missing 'performance_rating' with the department median.",
+      "rule_type": "impute_median",
+      "approved": true
+    },
+    {
+      "id": "dq-3",
+      "column": "compensation",
+      "issue": "48 missing values in 'compensation'.",
+      "proposed_action": "Fill unknown 'compensation' with 0.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-4",
+      "column": "engagement_score",
+      "issue": "72 missing values in 'engagement_score'.",
+      "proposed_action": "Fill unknown 'engagement_score' with 0.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-5",
+      "column": "department",
+      "issue": "Casing issues in 'department': ['Support', 'support'], ['sales', 'SALES', 'Sales'], ['FINANCE', 'Finance'], ['marketing', 'Marketing'], ['Engineering', 'engineering', 'Engineering '].",
+      "proposed_action": "Standardize 'department' casing to lowercase.",
+      "rule_type": "standardize_text",
+      "approved": true
+    },
+    {
+      "id": "dq-6",
+      "column": "hire_date",
+      "issue": "Mixed date formats in 'hire_date'.",
+      "proposed_action": "Standardize 'hire_date' to YYYY-MM-DD format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    },
+    {
+      "id": "dq-7",
+      "column": "exit_date",
+      "issue": "Mixed date formats in 'exit_date'.",
+      "proposed_action": "Standardize 'exit_date' to YYYY-MM-DD format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    },
+    {
+      "id": "dq-8",
+      "column": "last_promotion_date",
+      "issue": "Mixed date formats in 'last_promotion_date'.",
+      "proposed_action": "Standardize 'last_promotion_date' to YYYY-MM-DD format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    }
+  ],
+  "dq_rules_approved": true,
+  "business_rules": [
+    {
+      "id": "biz-1",
+      "name": "top_performer_definition",
+      "description": "Define 'top performer' as performance_rating >= 4.",
+      "param": {
+        "min_rating": 4
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-2",
+      "name": "tenure_calculation",
+      "description": "Compute tenure_years as (exit_date or today) minus hire_date, in years.",
+      "param": {},
+      "approved": true
+    },
+    {
+      "id": "biz-3",
+      "name": "high_overtime_threshold",
+      "description": "Flag employees with overtime_hours_per_month > 15 as 'high overtime' for risk-factor analysis.",
+      "param": {
+        "threshold_hours": 15
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-4",
+      "name": "attrition_flag_calculation",
+      "description": "Set attrition_flag to True if exit_date is not null, False otherwise.",
+      "param": {},
+      "approved": true
+    },
+    {
+      "id": "biz-5",
+      "name": "engagement_score_calculation",
+      "description": "Compute engagement_score_avg as average of engagement_score over all months.",
+      "param": {},
+      "approved": true
+    },
+    {
+      "id": "biz-6",
+      "name": "last_promotion_date_calculation",
+      "description": "Compute last_promotion_date_diff as (last_promotion_date or null) minus hire_date, in years.",
+      "param": {},
+      "approved": true
+    }
+  ],
+  "business_rules_approved": true,
+  "narrative": "",
+  "log": [
+    {
+      "agent": "IngestionAgent",
+      "action": "ingest",
+      "detail": "Ingested 'hr_attrition_raw.csv (synthetic)' -> a05408f6_bronze.csv. 1224 rows, 13 columns, schema: ['employee_id', 'department', 'team', 'job_role', 'hire_date', 'exit_date', 'attrition_flag', 'performance_rating', 'last_promotion_date', 'compensation', 'engagement_score', 'overtime_hours_per_month', 'manager_id']. Ingested at 2026-07-20T14:28:03.246824Z.",
+      "timestamp": "2026-07-20T14:28:03.246833"
+    },
+    {
+      "agent": "DataQualityAgent",
+      "action": "propose_rules",
+      "detail": "Here are the proposed cleaning rules explained in 2-3 plain-English sentences for an HR stakeholder:\n\n**Rule 1: Deduplicate employee IDs**\nWe've found 24 duplicate employee IDs in the data. To fix this, we'll keep only the last occurrence of each employee ID, so we don't lose any important information.\n\n**Rule 2: Fill missing performance ratings**\nThere are 60 missing performance ratings in the data. To fill these gaps, we'll use the median performance rating for each department, so we can still get a sense of how employees are performing.\n\n**Rule 3: Fill missing compensation values**\nThere are 48 missing compensation values in the data. To fill these gaps, we'll use a value of 0, so we can still get a sense of how employees are compensated.\n\n**Rule 4: Fill missing engagement scores**\nThere are 72 missing engagement scores in the data. To fill these gaps, we'll use a value of 0, so we can still get a sense of how engaged employees are.\n\n**Rule 5: Standardize department names**\nThere are inconsistencies in how department names are written (e.g., \"Support\" vs. \"support\"). To fix this, we'll standardize all department names to use lowercase letters, so we can easily compare and analyze the data.\n\n**Rule 6: Standardize hire dates**\nThere are different date formats used for hire dates (e.g., \"2020-01-14\" vs. \"26-05-2024\"). To fix this, we'll standardize all hire dates to use the YYYY-MM-DD format, so we can easily compare and analyze the data.\n\n**Rule 7: Standardize exit dates**\nThere are different date formats used for exit dates (e.g., \"\" vs. \"26-11-2025\"). To fix this, we'll standardize all exit dates to use the YYYY-MM-DD format, so we can easily compare and analyze the data.\n\n**Rule 8: Standardize last promotion dates**\nThere are different date formats used for last promotion dates (e.g., \"\" vs. \"26-11-2025\"). To fix this, we'll standardize all last promotion dates to use the YYYY-MM-DD format, so we can easily compare and analyze the data.",
+      "timestamp": "2026-07-20T14:28:34.251697"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_dq_rules",
+      "detail": "Applied 8 approved rule(s): ['dq-1 (dedupe on employee_id)', 'dq-2 (impute_median on performance_rating)', 'dq-3 (fill_unknown on compensation)', 'dq-4 (fill_unknown on engagement_score)', 'dq-5 (standardize_text on department)', 'dq-6 (standardize_date on hire_date)', 'dq-7 (standardize_date on exit_date)', 'dq-8 (standardize_date on last_promotion_date)']. Silver now has 1200 rows -> a05408f6_silver.csv.",
+      "timestamp": "2026-07-20T14:28:34.292093"
+    },
+    {
+      "agent": "QAAgent",
+      "action": "validate",
+      "detail": "All checks passed: 5 total, 5 passed.",
+      "timestamp": "2026-07-20T14:28:34.296184"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "propose_business_rules",
+      "detail": "Here are the proposed business definitions explained in 2-3 plain sentences each:\n\n**Top Performer Definition**\nWe define a \"top performer\" as an employee with a performance rating of 4 or higher, indicating exceptional performance and achievement.\n\n**Tenure Calculation**\nWe calculate an employee's tenure in years by subtracting their hire date from their exit date (if they've left) or the current date (if they're still employed).\n\n**High Overtime Threshold**\nWe flag employees with more than 15 hours of overtime per month as \"high overtime\" to identify potential risk factors.\n\n**Attrition Flag Calculation**\nWe set the attrition flag to True if an employee has an exit date (indicating they've left the company) and False otherwise.\n\n**Engagement Score Calculation**\nWe calculate the average engagement score for an employee by averaging their engagement score across all months.\n\n**Last Promotion Date Calculation**\nWe calculate the number of years since an employee's last promotion by subtracting their hire date from their last promotion date (if they've had a promotion) or the current date (if they haven't had a promotion).",
+      "timestamp": "2026-07-20T14:28:56.693909"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_business_rules",
+      "detail": "Applied 6 approved business rule(s). Enriched Silver saved -> a05408f6_silver_enriched.csv.",
+      "timestamp": "2026-07-20T14:28:56.782865"
+    }
+  ],
+  "created_at": "2026-07-20T14:28:03.240107"
+}
