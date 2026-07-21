@@ -115,13 +115,25 @@ def _build_hardcoded_rules(findings: dict) -> list:
 
 def _ask_ai_for_rules(findings: dict, hardcoded: list) -> list:
     """Ask the AI to review the data profile and suggest cleaning rules."""
+    example = {
+        "id": "dq-1",
+        "column": "employee_id",
+        "issue": "24 duplicate employee_id rows detected (repeated export).",
+        "proposed_action": "Deduplicate: keep the last occurrence per employee_id.",
+        "rule_type": "dedupe",
+        "approved": True
+    }
     system = (
-        "You are a data quality engineer reviewing a raw HR dataset before cleaning. "
+        "You are a data quality engineer reviewing a raw HR dataset. "
         "Given the data profile below, propose cleaning rules as a JSON array. "
-        "Each rule must have these fields: id, column, issue, proposed_action, rule_type, approved. "
-        "rule_type must be one of: dedupe, impute_median, fill_unknown, standardize_text, standardize_date. "
-        "Only propose rules for real issues you see in the data. "
-        "Return ONLY the JSON array, no other text."
+        "Each rule MUST have these exact fields: "
+        "id (string like 'dq-1', 'dq-2'), column (string), "
+        "issue (plain English description of the problem), "
+        "proposed_action (plain English description of the fix), "
+        "rule_type (one of: dedupe, impute_median, fill_unknown, standardize_text, standardize_date), "
+        "approved (boolean, always true). "
+        "Only propose rules for real issues. Do NOT duplicate rules. "
+        "Return ONLY the JSON array, nothing else."
     )
     prompt = (
         f"Data profile:\n"
@@ -132,8 +144,8 @@ def _ask_ai_for_rules(findings: dict, hardcoded: list) -> list:
         f"- Casing issues: {findings['casing_issues']}\n"
         f"- Mixed date formats: {findings['mixed_date_formats']}\n"
         f"- Sample rows: {findings['sample_rows']}\n\n"
-        f"Propose cleaning rules as JSON. Here is a reference format:\n"
-        f"{json.dumps(hardcoded[:2], indent=2)}"
+        f"Example rule format:\n{json.dumps(example, indent=2)}\n\n"
+        f"Now propose rules for this data."
     )
 
     response = llm_complete(

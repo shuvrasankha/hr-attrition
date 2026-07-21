@@ -88,13 +88,22 @@ def _ask_ai_for_rules(silver_df: pd.DataFrame, defaults: list) -> list:
     dtypes = {c: str(silver_df[c].dtype) for c in columns}
     sample = silver_df.head(3).to_dict(orient="records")
 
+    example = {
+        "id": "biz-1",
+        "name": "top_performer_definition",
+        "description": "Define 'top performer' as performance_rating >= 4.",
+        "param": {"min_rating": 4},
+        "approved": True
+    }
     system = (
         "You are a People Analytics lead designing business rules for an attrition analysis pipeline. "
         "Given the Silver dataset schema and sample data below, propose business rules as a JSON array. "
-        "Each rule must have: id, name, description, param (dict of parameters), approved (boolean). "
+        "Each rule MUST have these exact fields: "
+        "id (string like 'biz-1'), name (snake_case identifier), "
+        "description (plain English), param (dict of parameters), approved (boolean, always true). "
         "Rules should define: how to identify top performers, how to calculate tenure, "
-        "and any other enrichment columns useful for attrition analysis. "
-        "Return ONLY the JSON array, no other text."
+        "and enrichment columns useful for attrition analysis. Do NOT duplicate rules. "
+        "Return ONLY the JSON array, nothing else."
     )
     prompt = (
         f"Silver dataset:\n"
@@ -102,9 +111,8 @@ def _ask_ai_for_rules(silver_df: pd.DataFrame, defaults: list) -> list:
         f"- Columns: {columns}\n"
         f"- Column types: {dtypes}\n"
         f"- Sample rows: {sample}\n\n"
-        f"Here is a reference format:\n"
-        f"{json.dumps(defaults, indent=2)}\n\n"
-        f"Propose business rules as JSON."
+        f"Example rule format:\n{json.dumps(example, indent=2)}\n\n"
+        f"Now propose business rules for this data."
     )
 
     response = llm_complete(system=system, prompt=prompt, max_tokens=800, fallback="")
