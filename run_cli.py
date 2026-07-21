@@ -10,12 +10,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from src import data_gen
 from src.agents.orchestrator import Orchestrator
-from src.llm import is_llm_enabled
+from src.llm import is_llm_enabled  # noqa: F401
 
 
 def main():
-    llm_status = "ON (HuggingFace — Llama-3.1)" if is_llm_enabled() else "OFF (using fallback text)"
-    print(f"=== AI Status: {llm_status} ===\n")
+    print()
     df = data_gen.generate()
     print(f"Generated synthetic dataset: {len(df)} rows")
 

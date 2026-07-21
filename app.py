@@ -31,11 +31,7 @@ def sidebar():
     st.sidebar.title("Medallion Pipeline")
     st.sidebar.caption("Bronze → Silver → Gold, agent-orchestrated")
 
-    from src.llm import is_llm_enabled
-    if is_llm_enabled():
-        st.sidebar.success("AI: ON (HuggingFace — Llama-3.1)")
-    else:
-        st.sidebar.warning("AI: OFF (using fallback text)")
+    from src.llm import is_llm_enabled  # noqa: F401
 
     page = st.sidebar.radio("Navigate", ["Run Pipeline", "Run History"])
 
