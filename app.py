@@ -31,8 +31,6 @@ def sidebar():
     st.sidebar.title("Medallion Pipeline")
     st.sidebar.caption("Bronze → Silver → Gold, agent-orchestrated")
 
-    from src.llm import is_llm_enabled  # noqa: F401
-
     page = st.sidebar.radio("Navigate", ["Run Pipeline", "Run History"])
 
     if st.session_state.orch:
@@ -280,7 +278,7 @@ def page_run():
 
     if step == 0:
         st.subheader("Step 1 · Ingestion Agent")
-        st.write("Upload one or more HR CSVs, or use the built-in synthetic sample dataset.")
+        st.write("Upload one or more HR CSV files to begin the pipeline.")
 
         uploaded = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
 
@@ -298,18 +296,19 @@ def page_run():
 
         has_files = bool(st.session_state.get("uploaded_dfs"))
 
-        if st.button("Process uploaded files", type="primary", disabled=not has_files):
-            try:
-                frames = st.session_state.uploaded_dfs
-                df = pd.concat(frames, ignore_index=True)
-                fname = ", ".join(st.session_state.uploaded_names)
-                orch = Orchestrator()
-                orch.ingest(df, fname)
-                st.session_state.orch = orch
-                st.session_state.step = 1
-                st.rerun()
-            except Exception as e:
-                st.error(f"Error combining files: {e}")
+        if has_files:
+            if st.button("Process uploaded files", type="primary"):
+                try:
+                    frames = st.session_state.uploaded_dfs
+                    df = pd.concat(frames, ignore_index=True)
+                    fname = ", ".join(st.session_state.uploaded_names)
+                    orch = Orchestrator()
+                    orch.ingest(df, fname)
+                    st.session_state.orch = orch
+                    st.session_state.step = 1
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Error combining files: {e}")
 
     elif step == 1:
         _render_dq_approval(st.session_state.orch)
