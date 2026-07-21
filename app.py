@@ -7,6 +7,7 @@ import pandas as pd
 import streamlit as st
 
 from src.agents.orchestrator import Orchestrator
+from src.agents.ingestion_agent import validate_columns, REQUIRED_COLUMNS
 from src.state import PipelineState
 
 st.set_page_config(
@@ -340,9 +341,25 @@ def page_run():
                 st.success(f"**{f.name}** \u2014 {len(df_preview)} rows, {len(df_preview.columns)} columns")
                 st.dataframe(df_preview.head(5), use_container_width=True, hide_index=True)
 
-        has_files = bool(st.session_state.get("uploaded_dfs"))
+            # Column validation
+            combined = pd.concat(st.session_state.uploaded_dfs, ignore_index=True)
+            missing, extra, found = validate_columns(combined)
 
-        if has_files:
+            st.markdown("#### Column check")
+            if found:
+                st.success(f"Found: {', '.join(found)}")
+            if extra:
+                st.info(f"Extra (will be ignored): {', '.join(extra)}")
+            if missing:
+                st.error(f"Missing required columns: {', '.join(missing)}")
+                st.caption("Required columns and their purpose:")
+                for col in missing:
+                    st.write(f"- **{col}** \u2014 {REQUIRED_COLUMNS[col]}")
+
+        has_files = bool(st.session_state.get("uploaded_dfs"))
+        can_process = has_files and not missing if 'missing' in dir() else has_files
+
+        if can_process:
             st.markdown("")
             if st.button(":material/upload: Process uploaded files", type="primary", use_container_width=True):
                 try:
