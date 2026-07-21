@@ -1,0 +1,601 @@
+employee_id,department,team,job_role,hire_date,exit_date,attrition_flag,performance_rating,last_promotion_date,compensation,engagement_score,overtime_hours_per_month,manager_id,is_top_performer,tenure_years,high_overtime
+10503,Marketing,Growth,Senior Marketing Specialist,2019-08-12,,False,4.2,,75584.0,2.2,1.0,9017,True,6.88,False
+10448,Finance,FP&A,Finance Associate,2019-12-16,,False,2.3,,85153.0,4.9,0.4,9033,False,6.54,False
+10517,Marketing,Brand,Marketing Associate,2019-07-23,,False,2.7,2021-02-07,71008.0,2.2,1.0,9027,False,6.94,False
+10569,Marketing,Growth,Senior Marketing Specialist,2023-02-17,2026-04-01,True,4.9,,79201.0,3.6,0.6,9017,True,3.12,False
+10322,Support,Tier 2,Support Associate,2024-07-23,,False,2.8,,50695.0,3.3,0.7,9027,False,1.94,False
+10525,Marketing,Growth,Marketing Associate,2020-04-18,,False,2.8,,64018.0,3.1,1.5,9017,False,6.2,False
+10591,Marketing,Brand,Marketing Associate,2020-03-09,,False,2.4,,64670.0,4.2,0.5,9027,False,6.31,False
+10454,Finance,FP&A,Finance Associate,2023-04-27,,False,3.1,2026-05-20,88151.0,3.6,2.5,9033,False,3.18,False
+10171,Engineering,Platform,Senior Engineering Specialist,2022-11-16,2026-01-22,True,4.0,2026-05-04,111909.0,3.2,5.9,9014,True,3.18,False
+10563,Marketing,Growth,Senior Marketing Specialist,2022-09-01,,False,4.0,,71342.0,3.3,3.2,9017,True,3.83,False
+10170,Engineering,Product Eng,Senior Engineering Specialist,2020-06-17,,False,4.0,2023-10-21,120673.0,3.4,2.0,9009,True,6.03,False
+10297,Support,Tier 1,Support Associate,2023-09-19,,False,2.6,,53795.0,2.2,4.0,9004,False,2.78,False
+10386,Finance,Accounting,Finance Associate,2024-08-21,,False,2.1,,86898.0,3.7,12.6,9004,False,1.86,False
+10051,Sales,Enterprise,Senior Sales Specialist,2019-08-03,,False,3.7,2025-11-05,58841.0,3.3,0.0,9014,False,6.91,False
+10439,Finance,FP&A,Senior Finance Specialist,2023-09-19,,False,4.8,2026-03-13,75488.0,3.8,3.2,9033,True,2.78,False
+10537,Marketing,Brand,Senior Marketing Specialist,2024-08-29,,False,3.8,,67798.0,3.3,0.7,9027,False,1.83,False
+10283,Support,Tier 2,Support Associate,2025-03-22,,False,2.3,2025-09-27,47547.0,2.3,1.5,9027,False,1.27,False
+10222,Engineering,Product Eng,Senior Engineering Specialist,2018-03-13,,False,4.3,2020-12-05,114805.0,4.2,0.2,9009,True,8.3,False
+10029,Sales,SMB,Senior Sales Specialist,2019-04-12,,False,3.9,,53737.0,3.5,2.1,9027,False,7.22,False
+10096,Sales,Enterprise,Sales Associate,2021-06-05,,False,3.4,2022-06-24,53734.0,2.9,5.1,9014,False,5.07,False
+10395,Finance,FP&A,Senior Finance Specialist,2021-02-07,,False,4.1,,81601.0,2.8,2.3,9033,True,5.39,False
+10168,Engineering,Product Eng,Senior Engineering Specialist,2025-03-11,,False,3.8,,92225.0,2.5,3.9,9009,False,1.3,False
+10066,Sales,Mid-Market,Sales Associate,2018-06-16,2021-06-25,True,3.5,,57261.0,2.0,0.3,9021,False,3.03,False
+10493,Marketing,Growth,Senior Marketing Specialist,2019-06-01,2024-06-17,True,4.2,,72876.0,2.1,2.1,9017,True,5.05,False
+10497,Marketing,Brand,Marketing Associate,2023-09-29,,False,1.8,,72865.0,3.4,0.1,9027,False,2.75,False
+10121,Engineering,Platform,Senior Engineering Specialist,2023-01-25,,False,3.9,,125603.0,5.0,0.8,9014,False,3.43,False
+10216,Engineering,Product Eng,Senior Engineering Specialist,2020-05-27,2024-03-05,True,4.2,,118535.0,4.2,22.1,9009,True,3.77,True
+10268,Support,Tier 2,Senior Support Specialist,2022-05-03,,False,4.9,,45155.0,3.3,17.6,9027,True,4.16,True
+10325,Support,Tier 2,Senior Support Specialist,2018-09-23,2024-01-26,True,4.2,,50459.0,2.6,0.4,9027,True,5.34,False
+10230,Engineering,Product Eng,Engineering Associate,2024-06-08,2025-01-28,True,2.9,,108593.0,2.9,1.4,9009,False,0.64,False
+10139,Engineering,Platform,Engineering Associate,2019-04-01,,False,3.0,,106413.0,3.7,10.6,9014,False,7.25,False
+10302,Support,Tier 1,Support Associate,2018-12-15,2023-06-19,True,3.1,2023-11-25,52320.0,3.3,0.9,9004,False,4.51,False
+10276,Support,Tier 2,Support Associate,2021-11-02,,False,3.1,2023-11-06,53403.0,4.8,0.9,9027,False,4.66,False
+10479,Finance,FP&A,Finance Associate,2021-03-19,,False,2.6,2025-03-03,88166.0,2.6,9.0,9033,False,5.28,False
+10437,Finance,FP&A,Finance Associate,2024-06-15,,False,3.5,2025-01-29,79956.0,4.3,0.4,9033,False,2.04,False
+10587,Marketing,Growth,Senior Marketing Specialist,2019-07-19,,False,3.9,2024-02-16,65381.0,3.4,0.8,9017,False,6.95,False
+10482,Marketing,Brand,Marketing Associate,2022-02-10,,False,2.9,,77137.0,4.9,0.8,9027,False,4.38,False
+10560,Marketing,Brand,Marketing Associate,2018-04-10,,False,2.7,,64173.0,2.8,0.1,9027,False,8.22,False
+10239,Engineering,Data Eng,Engineering Associate,2018-06-13,,False,3.3,2020-11-18,107186.0,3.8,3.9,9021,False,8.05,False
+10545,Marketing,Growth,Marketing Associate,2020-05-26,,False,2.9,,62391.0,3.7,2.3,9017,False,6.09,False
+10378,Finance,FP&A,Finance Associate,2018-11-12,,False,3.1,2020-08-07,80723.0,3.3,0.7,9033,False,7.63,False
+10333,Support,Tier 2,Support Associate,2024-07-23,,False,3.4,,48421.0,3.8,2.5,9027,False,1.94,False
+10221,Engineering,Product Eng,Senior Engineering Specialist,2022-04-06,,False,5.0,,117767.0,3.2,5.7,9009,True,4.23,False
+10495,Marketing,Growth,Marketing Associate,2025-09-06,,False,2.8,2026-04-02,68789.0,3.2,2.5,9017,False,0.81,False
+10561,Marketing,Growth,Senior Marketing Specialist,2022-04-21,,False,3.7,2022-12-23,66918.0,3.5,25.2,9017,False,4.19,True
+10006,Sales,Enterprise,Sales Associate,2022-01-09,,False,3.5,,56463.0,2.5,5.6,9014,False,4.47,False
+10356,Support,Tier 2,Support Associate,2021-08-11,,False,3.4,2026-01-20,52648.0,3.0,0.3,9027,False,4.88,False
+10588,Marketing,Growth,Marketing Associate,2019-04-16,2019-12-06,True,3.0,2023-06-30,72603.0,2.6,0.9,9017,False,0.64,False
+10392,Finance,FP&A,Finance Associate,2022-12-20,,False,1.8,2024-09-28,77115.0,4.7,1.7,9033,False,3.53,False
+10531,Marketing,Growth,Senior Marketing Specialist,2020-01-07,,False,4.1,,74124.0,2.8,1.9,9017,True,6.48,False
+10509,Marketing,Brand,Senior Marketing Specialist,2018-02-10,,False,4.1,2025-08-13,73193.0,3.2,0.4,9027,True,8.38,False
+10158,Engineering,Data Eng,Engineering Associate,2020-01-13,,False,3.3,,109490.0,3.3,2.4,9021,False,6.46,False
+10450,Finance,Accounting,Senior Finance Specialist,2022-08-08,,False,4.7,,94706.0,2.5,3.0,9004,True,3.89,False
+10024,Sales,Enterprise,Senior Sales Specialist,2022-06-16,,False,3.2,2025-10-14,68548.0,3.4,25.6,9014,False,4.04,True
+10453,Finance,FP&A,Finance Associate,2024-01-03,,False,2.0,2024-07-05,74907.0,2.0,0.0,9033,False,2.49,False
+10516,Marketing,Growth,Senior Marketing Specialist,2024-09-15,,False,4.9,,83906.0,2.9,3.0,9017,True,1.79,False
+10106,Sales,SMB,Sales Associate,2022-05-16,,False,2.1,2026-06-05,51354.0,3.9,1.3,9027,False,4.12,False
+10442,Finance,Accounting,Finance Associate,2021-05-11,,False,2.5,2022-08-20,84570.0,3.3,0.5,9004,False,5.14,False
+10130,Engineering,Data Eng,Engineering Associate,2022-02-12,,False,3.6,,104505.0,2.9,6.5,9021,False,4.38,False
+10377,Finance,Accounting,Senior Finance Specialist,2021-03-23,,False,4.0,,82585.0,3.8,14.7,9004,True,5.27,False
+10213,Engineering,Data Eng,Senior Engineering Specialist,2023-05-29,2023-10-13,True,4.3,,94446.0,3.6,7.5,9021,True,0.38,False
+10098,Sales,SMB,Sales Associate,2025-06-08,,False,2.7,,46350.0,3.8,0.9,9027,False,1.06,False
+10300,Support,Tier 2,Support Associate,2019-09-26,,False,2.4,2024-12-30,46102.0,4.5,11.6,9027,False,6.76,False
+10226,Engineering,Data Eng,Engineering Associate,2018-12-10,,False,3.3,,105127.0,4.3,1.1,9021,False,7.55,False
+10157,Engineering,Product Eng,Engineering Associate,2021-06-06,,False,2.8,2024-07-23,109231.0,4.0,12.1,9009,False,5.07,False
+10282,Support,Tier 1,Support Associate,2022-01-15,,False,2.8,,56218.0,2.5,10.4,9004,False,4.45,False
+10033,Sales,SMB,Sales Associate,2020-05-22,2024-10-21,True,3.2,,52767.0,1.6,2.3,9027,False,4.42,False
+10081,Sales,Mid-Market,Senior Sales Specialist,2018-01-15,,False,5.0,,54117.0,2.8,11.5,9021,True,8.45,False
+10116,Sales,Mid-Market,Sales Associate,2022-05-21,,False,3.1,2025-05-23,65276.0,3.5,0.9,9021,False,4.11,False
+10399,Finance,FP&A,Finance Associate,2024-04-23,2026-05-09,True,1.7,2024-11-08,84820.0,3.5,0.5,9033,False,2.04,False
+10077,Sales,SMB,Sales Associate,2021-10-22,,False,3.3,,60726.0,4.9,9.2,9027,False,4.69,False
+10176,Engineering,Data Eng,Engineering Associate,2018-02-09,,False,2.2,2024-11-25,85611.0,2.3,0.6,9021,False,8.39,False
+10394,Finance,FP&A,Finance Associate,2025-01-06,,False,3.5,2025-12-31,82994.0,4.7,0.5,9033,False,1.48,False
+10421,Finance,Accounting,Finance Associate,2020-12-17,,False,2.0,,71948.0,2.8,0.2,9004,False,5.53,False
+10428,Finance,Accounting,Finance Associate,2021-04-17,,False,3.4,2025-05-08,75282.0,2.8,2.3,9004,False,5.2,False
+10047,Sales,Enterprise,Sales Associate,2022-05-19,2023-08-04,True,2.6,2026-02-12,58638.0,3.2,1.7,9014,False,1.21,False
+10595,Marketing,Brand,Marketing Associate,2018-12-03,,False,2.9,,69455.0,3.8,4.5,9027,False,7.57,False
+10548,Marketing,Brand,Marketing Associate,2019-07-06,,False,2.3,,60525.0,4.4,25.9,9027,False,6.98,True
+10446,Finance,Accounting,Finance Associate,2022-02-06,,False,2.6,,89334.0,3.4,1.4,9004,False,4.39,False
+10527,Marketing,Growth,Marketing Associate,2023-02-12,2024-09-09,True,2.8,2025-03-09,61051.0,4.5,2.9,9017,False,1.57,False
+10436,Finance,Accounting,Senior Finance Specialist,2023-01-10,,False,4.3,2025-09-22,78062.0,2.8,1.7,9004,True,3.47,False
+10424,Finance,Accounting,Finance Associate,2021-07-23,,False,3.3,2026-02-20,85253.0,2.6,0.3,9004,False,4.94,False
+10186,Engineering,Product Eng,Engineering Associate,2020-05-06,,False,2.2,2023-05-24,104551.0,4.0,9.1,9009,False,6.15,False
+10229,Engineering,Platform,Senior Engineering Specialist,2018-09-17,,False,3.7,,128900.0,4.1,0.7,9014,False,7.78,False
+10196,Engineering,Product Eng,Senior Engineering Specialist,2019-05-03,2020-07-03,True,3.8,,104561.0,3.4,1.2,9009,False,1.17,False
+10475,Finance,Accounting,Senior Finance Specialist,2022-01-21,,False,4.0,,87957.0,2.6,4.9,9004,True,4.44,False
+10178,Engineering,Platform,Senior Engineering Specialist,2023-04-13,,False,4.6,,110660.0,3.1,2.6,9014,True,3.21,False
+10209,Engineering,Data Eng,Engineering Associate,2022-03-07,,False,3.2,2024-10-06,112167.0,3.3,1.9,9021,False,4.31,False
+10433,Finance,FP&A,Finance Associate,2019-03-20,2019-10-19,True,3.0,,71310.0,4.4,0.8,9033,False,0.58,False
+10124,Engineering,Product Eng,Engineering Associate,2021-06-13,,False,2.9,,110229.0,2.7,4.4,9009,False,5.05,False
+10074,Sales,SMB,Sales Associate,2019-03-19,2025-04-10,True,3.6,,60967.0,4.3,0.1,9027,False,6.06,False
+10018,Sales,Mid-Market,Senior Sales Specialist,2018-04-25,,False,4.0,,63925.0,4.9,8.4,9021,True,8.18,False
+10336,Support,Tier 2,Senior Support Specialist,2020-09-17,,False,4.6,,50114.0,2.3,3.4,9027,True,5.78,False
+10263,Support,Tier 1,Senior Support Specialist,2023-09-02,,False,4.5,2024-08-27,55624.0,1.8,1.7,9004,True,2.83,False
+10461,Finance,FP&A,Senior Finance Specialist,2024-12-04,,False,4.6,,81809.0,4.6,6.3,9033,True,1.57,False
+10072,Sales,Enterprise,Sales Associate,2024-01-31,,False,3.3,,57896.0,3.7,7.5,9014,False,2.41,False
+10401,Finance,Accounting,Senior Finance Specialist,2018-08-26,,False,4.9,2021-02-25,75997.0,3.8,5.5,9004,True,7.84,False
+10515,Marketing,Growth,Marketing Associate,2019-09-13,,False,3.5,,68005.0,3.3,0.2,9017,False,6.8,False
+10167,Engineering,Platform,Engineering Associate,2019-01-20,,False,2.0,,111410.0,2.0,4.9,9014,False,7.44,False
+10086,Sales,Enterprise,Sales Associate,2021-01-14,,False,3.2,,59399.0,3.3,4.1,9014,False,5.46,False
+10113,Sales,Mid-Market,Senior Sales Specialist,2023-11-19,,False,4.8,2025-03-22,60439.0,2.3,1.6,9021,True,2.61,False
+10237,Engineering,Product Eng,Senior Engineering Specialist,2020-03-15,,False,3.7,,102491.0,4.0,0.0,9009,False,6.29,False
+10353,Support,Tier 1,Senior Support Specialist,2022-11-04,,False,3.9,,56326.0,2.9,0.6,9004,False,3.65,False
+10309,Support,Tier 2,Senior Support Specialist,2025-04-14,,False,3.8,2025-11-06,59891.0,4.1,5.2,9027,False,1.21,False
+10002,Sales,SMB,Sales Associate,2020-09-05,2024-11-20,True,3.3,,58144.9,2.3,1.0,9027,False,4.21,False
+10271,Support,Tier 2,Support Associate,2023-04-15,,False,2.4,2024-08-16,51366.0,3.9,0.3,9027,False,3.21,False
+10035,Sales,SMB,Senior Sales Specialist,2021-09-22,,False,4.7,2024-02-15,62035.0,3.2,2.8,9027,True,4.77,False
+10144,Engineering,Product Eng,Senior Engineering Specialist,2022-10-08,2023-10-09,True,4.1,2023-05-29,111723.0,5.0,43.7,9009,True,1.0,True
+10163,Engineering,Platform,Engineering Associate,2020-08-07,,False,3.7,,123307.0,4.9,15.8,9014,False,5.89,True
+10317,Support,Tier 2,Support Associate,2019-12-21,,False,2.0,,47033.0,3.9,29.4,9027,False,6.52,True
+10227,Engineering,Platform,Engineering Associate,2021-08-24,,False,2.8,,105522.0,4.2,20.4,9014,False,4.85,True
+10579,Marketing,Growth,Marketing Associate,2018-06-29,,False,2.4,2022-07-11,66848.0,3.7,1.0,9017,False,8.0,False
+10200,Engineering,Platform,Senior Engineering Specialist,2020-11-28,,False,4.8,,115041.0,4.4,1.5,9014,True,5.59,False
+10469,Finance,FP&A,Finance Associate,2021-05-02,,False,2.0,,71482.0,4.2,1.0,9033,False,5.16,False
+10225,Engineering,Product Eng,Engineering Associate,2021-10-11,,False,3.2,2024-05-06,100878.0,3.7,0.7,9009,False,4.72,False
+10441,Finance,FP&A,Finance Associate,2024-05-04,,False,1.9,2026-02-08,78835.0,4.8,4.4,9033,False,2.15,False
+10154,Engineering,Data Eng,Engineering Associate,2022-12-09,,False,2.2,2026-12-04,112251.0,3.9,24.0,9021,False,3.56,True
+10559,Marketing,Brand,Marketing Associate,2019-11-17,,False,1.4,2026-06-18,65828.0,2.1,0.3,9027,False,6.62,False
+10529,Marketing,Growth,Marketing Associate,2023-01-07,,False,2.8,2024-04-17,65507.0,4.7,2.0,9017,False,3.48,False
+10104,Sales,Enterprise,Senior Sales Specialist,2023-11-21,2024-10-26,True,4.4,,67347.5,3.2,0.7,9014,True,0.93,False
+10583,Marketing,Growth,Marketing Associate,2021-11-01,2022-06-30,True,2.5,2026-01-17,63726.0,3.1,0.5,9017,False,0.66,False
+10369,Finance,Accounting,Senior Finance Specialist,2021-12-22,,False,4.7,,75568.0,3.1,0.9,9004,True,4.52,False
+10060,Sales,SMB,Senior Sales Specialist,2024-04-14,,False,4.2,,66896.0,3.9,4.1,9027,True,2.21,False
+10204,Engineering,Data Eng,Engineering Associate,2020-03-13,,False,3.6,2021-05-02,119070.0,3.0,0.9,9021,False,6.3,False
+10032,Sales,Mid-Market,Senior Sales Specialist,2022-07-06,2023-10-20,True,3.7,,63021.0,3.8,1.7,9021,False,1.29,False
+10224,Engineering,Data Eng,Engineering Associate,2018-04-07,,False,2.4,,106771.0,3.9,0.3,9021,False,8.23,False
+10362,Finance,Accounting,Finance Associate,2019-06-06,,False,2.7,,87003.0,3.6,7.0,9004,False,7.07,False
+10123,Engineering,Platform,Engineering Associate,2024-06-08,,False,2.4,,110196.0,4.7,3.7,9014,False,2.06,False
+10022,Sales,Mid-Market,Sales Associate,2021-08-11,,False,3.2,2024-01-11,55348.0,3.2,6.6,9021,False,4.88,False
+10087,Sales,Mid-Market,Sales Associate,2022-12-18,,False,2.5,,50713.0,2.5,0.8,9021,False,3.53,False
+10348,Support,Tier 1,Senior Support Specialist,2021-08-12,,False,3.9,,54099.0,1.4,5.6,9004,False,4.88,False
+10568,Marketing,Growth,Marketing Associate,2018-01-02,,False,3.7,,60475.0,3.3,1.0,9017,False,8.49,False
+10586,Marketing,Brand,Marketing Associate,2023-07-04,,False,3.3,,82026.0,3.5,0.4,9027,False,2.99,False
+10342,Support,Tier 1,Support Associate,2021-07-08,,False,3.2,,57487.0,4.6,1.0,9004,False,4.98,False
+10565,Marketing,Brand,Senior Marketing Specialist,2019-03-30,,False,3.9,,76297.0,4.7,1.3,9027,False,7.25,False
+10065,Sales,Mid-Market,Sales Associate,2022-01-06,,False,1.7,,55556.0,3.2,6.2,9021,False,4.48,False
+10149,Engineering,Product Eng,Engineering Associate,2019-05-23,,False,2.8,,97955.0,2.9,2.4,9009,False,7.1,False
+10341,Support,Tier 2,Support Associate,2023-05-11,2026-05-27,True,2.1,2025-10-30,47064.0,3.4,2.6,9027,False,3.04,False
+10396,Finance,FP&A,Senior Finance Specialist,2022-10-27,,False,4.6,,86394.0,3.0,2.9,9033,True,3.67,False
+10522,Marketing,Growth,Marketing Associate,2018-11-21,,False,2.7,,80190.0,5.0,0.4,9017,False,7.61,False
+10410,Finance,Accounting,Finance Associate,2018-04-13,2023-09-28,True,3.1,,79506.0,3.6,20.4,9004,False,5.46,True
+10057,Sales,SMB,Sales Associate,2022-06-18,,False,2.2,2025-05-09,61883.0,2.4,9.1,9027,False,4.03,False
+10486,Marketing,Brand,Senior Marketing Specialist,2019-11-14,,False,4.5,,78150.0,3.7,0.4,9027,True,6.63,False
+10199,Engineering,Product Eng,Engineering Associate,2024-03-18,,False,2.9,2025-04-07,95792.0,3.2,1.5,9009,False,2.28,False
+10332,Support,Tier 2,Senior Support Specialist,2022-08-26,,False,3.9,2025-09-09,55040.0,1.8,0.5,9027,False,3.84,False
+10091,Sales,SMB,Senior Sales Specialist,2024-02-11,,False,4.5,2026-01-03,56994.0,2.2,1.5,9027,True,2.38,False
+10419,Finance,FP&A,Finance Associate,2019-07-25,,False,3.5,,67974.0,3.4,8.2,9033,False,6.93,False
+10420,Finance,FP&A,Finance Associate,2018-09-24,,False,2.0,,78068.0,4.0,4.2,9033,False,7.76,False
+10371,Finance,Accounting,Finance Associate,2024-06-01,,False,1.3,2025-11-08,73512.0,4.3,0.6,9004,False,2.08,False
+10023,Sales,Enterprise,Sales Associate,2020-11-04,,False,3.4,2024-09-24,58648.0,4.2,0.2,9014,False,5.65,False
+10059,Sales,Enterprise,Sales Associate,2020-09-03,,False,2.1,,56942.0,3.5,0.7,9014,False,5.82,False
+10267,Support,Tier 1,Support Associate,2018-05-13,,False,3.3,2022-11-11,50815.0,3.1,5.2,9004,False,8.13,False
+10555,Marketing,Growth,Marketing Associate,2023-10-25,,False,3.6,,80853.0,3.0,2.5,9017,False,2.68,False
+10432,Finance,FP&A,Finance Associate,2023-04-01,,False,1.0,,71424.0,3.1,1.4,9033,False,3.25,False
+10093,Sales,SMB,Sales Associate,2022-04-11,,False,2.8,2023-09-28,56636.0,3.4,2.4,9027,False,4.22,False
+10099,Sales,SMB,Sales Associate,2020-08-13,,False,3.0,2022-05-29,58968.0,4.1,1.4,9027,False,5.88,False
+10328,Support,Tier 2,Support Associate,2019-08-08,,False,3.2,,52206.0,3.7,4.0,9027,False,6.89,False
+10455,Finance,Accounting,Finance Associate,2020-05-30,,False,1.0,,81463.0,1.5,3.5,9004,False,6.08,False
+10308,Support,Tier 1,Support Associate,2021-08-01,,False,2.1,,46555.0,2.9,0.9,9004,False,4.91,False
+10491,Marketing,Growth,Marketing Associate,2023-04-08,2024-03-06,True,3.6,2024-08-11,70314.0,5.0,0.6,9017,False,0.91,False
+10007,Sales,Mid-Market,Sales Associate,2021-04-29,,False,3.2,,59054.0,4.5,11.8,9021,False,5.17,False
+10465,Finance,Accounting,Finance Associate,2018-07-24,,False,2.3,,66797.0,2.9,2.1,9004,False,7.93,False
+10054,Sales,SMB,Sales Associate,2022-10-28,,False,3.7,,61369.0,4.4,4.9,9027,False,3.67,False
+10449,Finance,Accounting,Finance Associate,2022-02-25,,False,1.4,2022-02-09,71674.0,3.0,2.6,9004,False,4.34,False
+10151,Engineering,Data Eng,Senior Engineering Specialist,2020-11-21,,False,4.4,,101867.0,1.5,2.5,9021,True,5.6,False
+10108,Sales,Enterprise,Sales Associate,2021-12-17,,False,3.1,,55743.0,5.0,0.6,9014,False,4.53,False
+10326,Support,Tier 1,Support Associate,2021-05-30,,False,2.3,2026-05-16,49686.0,2.8,2.2,9004,False,5.08,False
+10318,Support,Tier 1,Support Associate,2020-08-16,,False,3.7,2025-02-06,58325.3,3.4,10.4,9004,False,5.87,False
+10460,Finance,FP&A,Finance Associate,2019-01-15,,False,1.8,2025-05-24,79291.0,4.4,4.3,9033,False,7.46,False
+10550,Marketing,Brand,Marketing Associate,2021-11-03,,False,3.5,2023-05-07,70570.0,4.0,1.7,9027,False,4.65,False
+10034,Sales,SMB,Senior Sales Specialist,2023-12-22,,False,4.3,2024-12-09,54348.8,4.6,11.2,9027,True,2.52,False
+10088,Sales,SMB,Sales Associate,2025-02-17,,False,3.0,2025-11-30,58662.0,4.4,2.5,9027,False,1.36,False
+10599,Marketing,Growth,Marketing Associate,2022-07-01,,False,3.7,,69170.0,3.7,1.2,9017,False,4.0,False
+10409,Finance,FP&A,Senior Finance Specialist,2023-06-04,,False,4.3,2024-05-25,67567.0,4.6,1.6,9033,True,3.07,False
+10180,Engineering,Product Eng,Engineering Associate,2023-04-26,,False,2.1,,96472.0,2.4,1.7,9009,False,3.18,False
+10349,Support,Tier 2,Senior Support Specialist,2023-10-12,,False,4.2,2024-11-27,60764.0,1.9,0.7,9027,True,2.72,False
+10236,Engineering,Platform,Senior Engineering Specialist,2019-04-16,,False,5.0,,125360.4,4.1,2.4,9014,True,7.21,False
+10198,Engineering,Data Eng,Engineering Associate,2019-06-30,,False,2.8,2025-12-25,131745.0,2.8,3.8,9021,False,7.0,False
+10165,Engineering,Data Eng,Engineering Associate,2018-06-18,2019-10-13,True,2.2,2021-09-29,104980.0,3.1,3.9,9021,False,1.32,False
+10112,Sales,Enterprise,Sales Associate,2019-06-03,,False,3.7,2024-05-05,56348.0,5.0,2.5,9014,False,7.07,False
+10558,Marketing,Brand,Marketing Associate,2024-03-24,,False,3.1,2025-02-01,70223.0,4.9,2.4,9027,False,2.27,False
+10150,Engineering,Data Eng,Engineering Associate,2023-05-17,,False,1.4,,94655.0,4.6,5.9,9021,False,3.12,False
+10270,Support,Tier 2,Support Associate,2021-10-04,,False,3.2,,44688.0,2.5,5.4,9027,False,4.74,False
+10542,Marketing,Brand,Marketing Associate,2022-03-23,2024-01-28,True,2.4,,75358.0,3.5,0.9,9027,False,1.85,False
+10367,Finance,FP&A,Senior Finance Specialist,2023-09-18,,False,3.9,,90276.0,3.5,12.8,9033,False,2.78,False
+10365,Finance,FP&A,Finance Associate,2022-02-27,,False,2.6,2023-02-15,81310.0,4.5,0.9,9033,False,4.34,False
+10210,Engineering,Platform,Senior Engineering Specialist,2019-06-04,,False,4.0,2022-01-31,102921.0,2.5,5.2,9014,True,7.07,False
+10289,Support,Tier 2,Senior Support Specialist,2025-05-03,,False,4.6,2026-01-03,50694.0,4.0,2.8,9027,True,1.16,False
+10429,Finance,Accounting,Finance Associate,2019-08-23,,False,2.4,,80565.0,2.6,1.9,9004,False,6.85,False
+10373,Finance,FP&A,Finance Associate,2019-10-11,,False,2.2,,83809.0,4.1,5.4,9033,False,6.72,False
+10343,Support,Tier 2,Senior Support Specialist,2023-05-10,,False,4.0,2024-04-05,60694.0,3.1,1.3,9027,True,3.14,False
+10110,Sales,Enterprise,Sales Associate,2019-01-31,,False,3.3,,54575.0,3.5,5.8,9014,False,7.41,False
+10464,Finance,FP&A,Finance Associate,2022-10-23,,False,3.5,2025-06-28,94302.0,4.2,2.0,9033,False,3.69,False
+10242,Support,Tier 2,Support Associate,2022-01-28,2022-10-29,True,2.1,,44581.0,1.9,3.1,9027,False,0.75,False
+10485,Marketing,Growth,Marketing Associate,2023-05-11,,False,2.9,2024-02-13,69453.0,1.7,10.2,9017,False,3.14,False
+10557,Marketing,Brand,Marketing Associate,2024-04-07,,False,2.9,,71334.0,4.0,5.8,9027,False,2.23,False
+10472,Finance,FP&A,Senior Finance Specialist,2018-01-18,,False,4.2,,88171.0,2.7,0.0,9033,True,8.45,False
+10311,Support,Tier 2,Support Associate,2025-03-21,,False,2.5,,46226.0,3.4,0.1,9027,False,1.28,False
+10304,Support,Tier 2,Support Associate,2019-12-12,,False,3.5,,52344.0,3.6,3.5,9027,False,6.55,False
+10492,Marketing,Brand,Marketing Associate,2018-11-20,,False,1.5,,63149.0,4.1,2.1,9027,False,7.61,False
+10257,Support,Tier 1,Support Associate,2021-06-26,,False,3.6,2023-03-19,55714.0,3.8,1.1,9004,False,5.01,False
+10191,Engineering,Data Eng,Engineering Associate,2019-10-03,2023-10-19,True,3.1,,118030.0,3.5,1.9,9021,False,4.04,False
+10162,Engineering,Product Eng,Engineering Associate,2022-09-26,,False,3.2,,101111.0,3.1,33.5,9009,False,3.76,True
+10468,Finance,Accounting,Finance Associate,2018-12-16,,False,2.5,,67269.0,2.5,0.8,9004,False,7.54,False
+10223,Engineering,Product Eng,Engineering Associate,2018-09-27,,False,3.1,,99727.0,3.3,5.0,9009,False,7.76,False
+10350,Support,Tier 1,Support Associate,2019-04-26,,False,2.8,,46064.0,4.6,4.7,9004,False,7.18,False
+10073,Sales,Enterprise,Sales Associate,2024-02-12,,False,3.4,2025-03-11,53667.0,4.7,3.0,9014,False,2.38,False
+10512,Marketing,Growth,Senior Marketing Specialist,2020-12-25,,False,4.7,,68199.0,4.2,5.1,9017,True,5.51,False
+10402,Finance,FP&A,Senior Finance Specialist,2019-12-15,,False,3.8,,77122.0,4.2,1.6,9033,False,6.54,False
+10175,Engineering,Data Eng,Senior Engineering Specialist,2019-08-18,,False,4.1,,120191.0,4.2,11.7,9021,True,6.87,False
+10264,Support,Tier 2,Support Associate,2019-08-23,,False,2.7,2023-06-05,52053.0,2.4,24.2,9027,False,6.85,True
+10451,Finance,Accounting,Senior Finance Specialist,2021-12-17,,False,5.0,,80132.0,3.7,3.5,9004,True,4.53,False
+10312,Support,Tier 2,Support Associate,2020-01-07,,False,2.9,,53749.0,2.0,0.1,9027,False,6.48,False
+10160,Engineering,Data Eng,Senior Engineering Specialist,2023-07-16,2026-10-03,True,4.5,2024-09-30,123181.0,3.4,1.4,9021,True,3.22,False
+10197,Engineering,Data Eng,Engineering Associate,2020-09-06,2024-05-05,True,2.1,,102312.0,5.0,2.5,9021,False,3.66,False
+10251,Support,Tier 2,Support Associate,2022-05-08,,False,2.4,,48872.0,2.0,0.7,9027,False,4.15,False
+10078,Sales,SMB,Senior Sales Specialist,2020-04-15,,False,5.0,,60420.0,3.3,0.4,9027,True,6.21,False
+10434,Finance,Accounting,Finance Associate,2019-08-24,,False,2.1,,73718.0,2.0,1.8,9004,False,6.85,False
+10208,Engineering,Data Eng,Senior Engineering Specialist,2021-09-05,,False,4.0,2026-05-22,91215.0,3.0,25.0,9021,True,4.82,True
+10005,Sales,SMB,Sales Associate,2023-07-24,,False,2.9,,53803.0,4.1,4.0,9027,False,2.93,False
+10135,Engineering,Data Eng,Engineering Associate,2024-05-31,,False,2.8,,107853.0,2.9,1.3,9021,False,2.08,False
+10269,Support,Tier 1,Support Associate,2024-10-13,,False,3.5,,50973.0,3.4,1.2,9004,False,1.71,False
+10538,Marketing,Brand,Marketing Associate,2021-06-29,,False,2.1,,62048.0,4.7,3.5,9027,False,5.0,False
+10417,Finance,FP&A,Finance Associate,2018-10-04,,False,3.6,,77612.0,3.5,0.1,9033,False,7.74,False
+10363,Finance,Accounting,Finance Associate,2023-05-16,,False,1.0,,72358.0,3.2,10.7,9004,False,3.12,False
+10476,Finance,FP&A,Finance Associate,2019-08-03,,False,3.0,2021-07-01,91611.0,5.0,4.4,9033,False,6.91,False
+10575,Marketing,Brand,Senior Marketing Specialist,2018-09-09,,False,4.1,2022-04-21,77252.0,4.3,0.1,9027,True,7.81,False
+10567,Marketing,Brand,Senior Marketing Specialist,2023-08-11,,False,4.1,,78337.0,3.0,2.3,9027,True,2.89,False
+10462,Finance,Accounting,Finance Associate,2023-10-28,,False,1.0,,66276.0,1.1,0.2,9004,False,2.67,False
+10215,Engineering,Product Eng,Senior Engineering Specialist,2023-07-17,,False,4.2,2025-08-07,100314.0,2.7,3.9,9009,True,2.95,False
+10372,Finance,FP&A,Senior Finance Specialist,2020-09-16,2025-05-06,True,4.4,2022-02-15,79462.0,3.7,1.5,9033,True,4.64,False
+10009,Sales,Mid-Market,Sales Associate,2018-05-22,,False,3.1,,51816.0,2.4,6.0,9021,False,8.11,False
+10203,Engineering,Data Eng,Engineering Associate,2020-03-23,,False,3.5,2022-04-12,101327.0,2.9,6.9,9021,False,6.27,False
+10172,Engineering,Data Eng,Engineering Associate,2019-01-03,2025-06-06,True,3.6,2025-11-19,98568.0,4.1,2.3,9021,False,6.42,False
+10291,Support,Tier 2,Support Associate,2019-07-09,,False,3.5,2022-12-14,51840.0,3.5,1.5,9027,False,6.98,False
+10231,Engineering,Platform,Engineering Associate,2021-02-03,,False,3.2,2022-03-19,114664.0,5.0,2.3,9014,False,5.4,False
+10294,Support,Tier 2,Support Associate,2018-07-31,,False,3.0,2021-09-25,55124.0,3.7,3.6,9027,False,7.92,False
+10458,Finance,Accounting,Finance Associate,2020-12-18,,False,3.2,,82873.0,1.7,2.0,9004,False,5.53,False
+10260,Support,Tier 1,Support Associate,2018-06-02,,False,2.5,,44022.0,3.5,48.2,9004,False,8.08,True
+10346,Support,Tier 1,Support Associate,2024-01-12,,False,3.5,,54523.0,3.4,5.8,9004,False,2.46,False
+10021,Sales,SMB,Sales Associate,2023-12-01,,False,2.9,,59228.0,3.3,6.0,9027,False,2.58,False
+10148,Engineering,Platform,Engineering Associate,2023-05-19,,False,3.2,2024-06-21,86817.0,3.4,5.4,9014,False,3.12,False
+10481,Marketing,Brand,Marketing Associate,2018-06-14,,False,2.7,,66812.0,4.4,0.5,9027,False,8.04,False
+10329,Support,Tier 2,Senior Support Specialist,2022-02-16,,False,4.1,2023-06-07,55749.0,5.0,5.7,9027,True,4.37,False
+10594,Marketing,Growth,Senior Marketing Specialist,2020-07-14,2023-05-28,True,4.8,2023-06-04,71155.0,3.2,4.5,9017,True,2.87,False
+10117,Sales,Mid-Market,Sales Associate,2023-01-11,,False,2.8,,56659.0,4.8,0.1,9021,False,3.47,False
+10494,Marketing,Brand,Senior Marketing Specialist,2021-09-24,,False,4.0,2022-06-30,67434.0,3.7,1.7,9027,True,4.76,False
+10467,Finance,Accounting,Finance Associate,2018-10-23,,False,3.2,2022-03-03,69883.0,4.5,2.5,9004,False,7.69,False
+10505,Marketing,Brand,Senior Marketing Specialist,2025-03-16,,False,4.0,,66610.0,2.2,0.0,9027,True,1.29,False
+10526,Marketing,Brand,Marketing Associate,2019-08-11,,False,2.4,,65122.0,4.3,0.6,9027,False,6.89,False
+10169,Engineering,Platform,Senior Engineering Specialist,2024-06-19,,False,4.3,,102412.0,2.8,0.8,9014,True,2.03,False
+10303,Support,Tier 1,Support Associate,2024-08-01,,False,2.1,,50807.9,2.6,7.0,9004,False,1.91,False
+10320,Support,Tier 2,Support Associate,2022-11-25,,False,3.1,,56314.0,3.2,1.7,9027,False,3.59,False
+10355,Support,Tier 1,Senior Support Specialist,2020-01-03,,False,4.5,,51560.0,2.6,5.8,9004,True,6.49,False
+10549,Marketing,Brand,Marketing Associate,2020-06-11,,False,3.2,,68548.0,3.4,1.0,9027,False,6.05,False
+10536,Marketing,Growth,Marketing Associate,2018-04-12,,False,3.0,2020-04-25,71142.0,3.3,0.3,9017,False,8.22,False
+10499,Marketing,Brand,Marketing Associate,2022-09-16,,False,2.3,,69953.0,3.2,1.8,9027,False,3.79,False
+10031,Sales,SMB,Sales Associate,2019-03-04,,False,3.5,,51192.0,2.9,8.8,9027,False,7.32,False
+10075,Sales,Mid-Market,Sales Associate,2025-04-13,,False,2.9,,55394.9,4.5,10.0,9021,False,1.21,False
+10285,Support,Tier 2,Support Associate,2024-10-14,,False,3.5,2025-10-02,58347.0,2.9,3.0,9027,False,1.71,False
+10284,Support,Tier 1,Support Associate,2018-03-08,,False,2.6,2024-07-21,52816.0,5.0,6.5,9004,False,8.31,False
+10184,Engineering,Platform,Engineering Associate,2025-02-13,,False,2.2,2025-09-10,102242.0,3.9,10.8,9014,False,1.37,False
+10207,Engineering,Platform,Senior Engineering Specialist,2020-07-11,,False,3.7,,92531.0,3.9,50.3,9014,False,5.97,True
+10423,Finance,FP&A,Senior Finance Specialist,2021-04-04,,False,4.0,,65920.0,1.5,2.8,9033,True,5.24,False
+10201,Engineering,Data Eng,Engineering Associate,2022-01-16,,False,3.2,2024-06-29,93857.0,3.4,0.7,9021,False,4.45,False
+10484,Marketing,Brand,Marketing Associate,2019-05-20,,False,1.8,,61986.0,3.7,1.2,9027,False,7.11,False
+10118,Sales,Enterprise,Sales Associate,2020-03-30,,False,3.3,2024-08-10,61995.0,4.5,0.0,9014,False,6.25,False
+10248,Support,Tier 2,Support Associate,2018-08-11,,False,2.7,,53644.0,2.8,1.2,9027,False,7.89,False
+10597,Marketing,Brand,Senior Marketing Specialist,2021-01-24,,False,4.1,,83280.0,2.5,10.6,9027,True,5.43,False
+10584,Marketing,Growth,Marketing Associate,2021-04-05,,False,3.6,,76931.0,4.3,3.5,9017,False,5.23,False
+10530,Marketing,Growth,Marketing Associate,2019-10-27,,False,2.2,,69624.0,2.6,0.1,9017,False,6.67,False
+10358,Support,Tier 2,Support Associate,2025-06-07,,False,3.5,,53035.0,3.7,16.0,9027,False,1.06,True
+10552,Marketing,Brand,Marketing Associate,2020-10-13,2023-05-10,True,3.5,2022-01-14,71161.0,2.4,0.0,9027,False,2.57,False
+10179,Engineering,Data Eng,Senior Engineering Specialist,2019-07-26,,False,4.2,,111459.0,1.0,2.0,9021,True,6.93,False
+10071,Sales,Mid-Market,Sales Associate,2018-03-28,,False,3.3,2021-08-25,49677.0,4.5,15.4,9021,False,8.26,True
+10166,Engineering,Platform,Engineering Associate,2018-11-17,,False,3.2,,68548.0,3.4,2.8,9014,False,7.62,False
+10132,Engineering,Platform,Senior Engineering Specialist,2022-07-12,,False,3.7,,102208.0,4.1,2.6,9014,False,3.97,False
+10600,Marketing,Brand,Marketing Associate,2024-06-05,,False,3.3,2025-07-05,77843.0,1.9,2.1,9027,False,2.07,False
+10290,Support,Tier 2,Senior Support Specialist,2019-01-23,,False,4.8,,57870.0,3.6,1.1,9027,True,7.43,False
+10488,Marketing,Brand,Marketing Associate,2021-03-15,,False,3.2,,69503.0,3.7,2.5,9027,False,5.29,False
+10501,Marketing,Brand,Marketing Associate,2022-05-14,,False,3.1,2026-05-17,73805.0,3.5,0.2,9027,False,4.13,False
+10235,Engineering,Data Eng,Engineering Associate,2024-08-06,,False,3.6,,109001.0,5.0,1.1,9021,False,1.9,False
+10155,Engineering,Platform,Engineering Associate,2022-08-14,,False,1.7,,129447.0,3.5,18.5,9014,False,3.88,True
+10376,Finance,FP&A,Finance Associate,2021-06-14,,False,3.3,,77407.0,3.7,4.7,9033,False,5.04,False
+10080,Sales,Mid-Market,Sales Associate,2021-06-04,,False,2.9,,51198.0,4.0,2.9,9021,False,5.07,False
+10126,Engineering,Data Eng,Engineering Associate,2024-12-13,2025-11-17,True,2.6,,100088.0,2.4,2.2,9021,False,0.93,False
+10577,Marketing,Growth,Senior Marketing Specialist,2018-02-12,2022-11-08,True,4.1,,68011.0,2.1,4.9,9017,True,4.74,False
+10125,Engineering,Platform,Senior Engineering Specialist,2020-10-21,,False,4.2,,103218.0,2.7,3.4,9014,True,5.69,False
+10534,Marketing,Brand,Marketing Associate,2023-12-20,2024-09-13,True,1.5,2025-07-06,57228.0,3.8,1.1,9027,False,0.73,False
+10266,Support,Tier 1,Support Associate,2018-12-25,,False,3.2,2022-09-06,48680.0,3.0,2.2,9004,False,7.51,False
+10571,Marketing,Brand,Marketing Associate,2019-05-29,,False,3.0,2022-12-22,74636.0,2.7,6.6,9027,False,7.09,False
+10008,Sales,SMB,Sales Associate,2023-11-09,,False,2.2,2025-10-31,57337.0,2.7,4.5,9027,False,2.64,False
+10490,Marketing,Growth,Marketing Associate,2024-10-01,,False,3.4,,72972.0,2.4,3.0,9017,False,1.74,False
+10281,Support,Tier 1,Support Associate,2020-07-26,,False,3.6,2021-12-23,52490.0,4.7,1.2,9004,False,5.93,False
+10459,Finance,Accounting,Finance Associate,2022-12-16,,False,2.8,,87541.0,3.4,2.7,9004,False,3.54,False
+10519,Marketing,Growth,Marketing Associate,2018-02-05,,False,2.9,,61742.0,2.2,6.0,9017,False,8.4,False
+10387,Finance,FP&A,Finance Associate,2024-05-21,,False,3.7,,83871.0,1.2,2.4,9033,False,2.11,False
+10478,Finance,Accounting,Finance Associate,2022-11-24,,False,2.5,,76986.0,4.4,1.8,9004,False,3.6,False
+10288,Support,Tier 1,Support Associate,2025-02-08,,False,1.6,,56630.2,5.0,1.0,9004,False,1.39,False
+10480,Finance,FP&A,Senior Finance Specialist,2022-05-16,,False,4.4,,90057.0,3.5,10.6,9033,True,4.12,False
+10500,Marketing,Growth,Marketing Associate,2023-10-09,,False,3.3,,70477.0,2.7,2.3,9017,False,2.72,False
+10246,Support,Tier 2,Senior Support Specialist,2020-11-12,,False,4.2,2023-12-04,49098.0,3.8,3.0,9027,True,5.63,False
+10249,Support,Tier 1,Senior Support Specialist,2021-06-09,,False,4.4,2026-05-05,56682.0,2.2,1.4,9004,True,5.06,False
+10206,Engineering,Product Eng,Engineering Associate,2019-07-26,,False,1.9,,90765.0,5.0,10.8,9009,False,6.93,False
+10299,Support,Tier 2,Support Associate,2023-02-04,,False,1.1,2025-06-20,46901.0,5.0,3.1,9027,False,3.4,False
+10286,Support,Tier 1,Support Associate,2025-05-20,,False,2.5,,46670.0,3.7,0.2,9004,False,1.11,False
+10052,Sales,Enterprise,Sales Associate,2019-04-08,,False,3.4,,62199.0,3.8,9.1,9014,False,7.23,False
+10143,Engineering,Product Eng,Engineering Associate,2021-01-25,,False,3.4,,116374.0,4.2,5.2,9009,False,5.43,False
+10313,Support,Tier 2,Support Associate,2024-04-08,,False,2.3,,44996.0,4.9,2.2,9027,False,2.23,False
+10324,Support,Tier 1,Support Associate,2019-07-02,,False,3.6,2024-01-13,54204.0,5.0,0.0,9004,False,7.0,False
+10347,Support,Tier 1,Support Associate,2025-04-02,,False,2.4,,49468.0,3.8,0.6,9004,False,1.24,False
+10195,Engineering,Data Eng,Engineering Associate,2023-08-27,,False,3.5,,105862.0,3.5,0.1,9021,False,2.84,False
+10415,Finance,FP&A,Finance Associate,2023-05-09,,False,2.5,,80822.0,5.0,0.7,9033,False,3.14,False
+10275,Support,Tier 1,Support Associate,2025-04-14,,False,1.5,,42161.0,3.2,0.3,9004,False,1.21,False
+10140,Engineering,Data Eng,Engineering Associate,2023-05-26,,False,2.1,,95309.0,4.0,0.1,9021,False,3.1,False
+10389,Finance,FP&A,Senior Finance Specialist,2024-01-08,,False,4.0,,82692.0,3.7,0.4,9033,True,2.48,False
+10020,Sales,SMB,Sales Associate,2020-10-19,,False,3.0,2022-12-02,57194.0,1.4,2.1,9027,False,5.69,False
+10466,Finance,FP&A,Senior Finance Specialist,2024-07-01,2026-10-06,True,3.7,,75528.0,4.6,1.0,9033,False,2.26,False
+10430,Finance,FP&A,Senior Finance Specialist,2024-10-14,,False,3.9,2025-12-18,74155.0,4.1,0.5,9033,False,1.71,False
+10090,Sales,Mid-Market,Sales Associate,2018-07-23,,False,3.0,,51190.0,3.3,2.5,9021,False,7.94,False
+10259,Support,Tier 1,Support Associate,2018-10-07,,False,3.3,,53342.0,1.5,0.6,9004,False,7.73,False
+10578,Marketing,Growth,Marketing Associate,2023-02-09,,False,3.5,2025-04-02,71718.0,5.0,1.3,9017,False,3.39,False
+10504,Marketing,Brand,Marketing Associate,2023-06-06,2025-11-20,True,3.5,2025-04-08,67850.0,3.8,0.5,9027,False,2.46,False
+10502,Marketing,Brand,Senior Marketing Specialist,2018-05-27,,False,4.2,,69079.0,2.8,1.0,9027,True,8.09,False
+10190,Engineering,Data Eng,Senior Engineering Specialist,2018-11-02,,False,4.6,2024-12-16,106072.0,4.6,0.5,9021,True,7.66,False
+10109,Sales,Mid-Market,Sales Associate,2018-10-15,,False,2.0,,53363.0,3.7,2.1,9021,False,7.71,False
+10408,Finance,FP&A,Finance Associate,2025-05-16,,False,3.6,2026-01-18,76183.0,2.6,10.4,9033,False,1.12,False
+10153,Engineering,Platform,Engineering Associate,2025-05-16,,False,3.0,,117348.0,3.2,10.7,9014,False,1.12,False
+10067,Sales,Enterprise,Sales Associate,2024-12-01,,False,3.2,,68548.0,3.4,0.7,9014,False,1.58,False
+10069,Sales,Enterprise,Sales Associate,2019-05-04,,False,1.0,,57962.0,4.2,0.4,9014,False,7.16,False
+10187,Engineering,Product Eng,Senior Engineering Specialist,2025-05-13,,False,3.9,,110831.0,3.1,0.7,9009,False,1.13,False
+10273,Support,Tier 2,Support Associate,2019-12-04,,False,1.9,2022-02-21,52064.0,3.3,0.2,9027,False,6.57,False
+10083,Sales,Mid-Market,Sales Associate,2018-03-27,,False,3.2,,53219.0,2.8,0.6,9021,False,8.26,False
+10101,Sales,Enterprise,Sales Associate,2018-07-09,2024-01-26,True,3.2,2023-04-23,54258.0,3.6,3.9,9014,False,5.55,False
+10581,Marketing,Growth,Marketing Associate,2018-11-13,,False,2.4,,61633.0,4.4,1.2,9017,False,7.63,False
+10103,Sales,Mid-Market,Sales Associate,2022-04-04,2026-01-28,True,1.6,,54880.0,3.3,1.8,9021,False,3.82,False
+10582,Marketing,Growth,Marketing Associate,2020-09-24,,False,2.1,2026-06-24,72852.0,2.6,0.1,9017,False,5.76,False
+10357,Support,Tier 1,Support Associate,2023-04-18,,False,3.5,,51923.0,3.3,0.1,9004,False,3.2,False
+10354,Support,Tier 1,Senior Support Specialist,2020-05-29,2025-05-21,True,3.8,,56643.0,4.3,2.5,9004,False,4.98,False
+10258,Support,Tier 1,Support Associate,2018-08-11,,False,2.3,,50409.0,4.5,18.8,9004,False,7.89,True
+10287,Support,Tier 2,Support Associate,2020-12-11,,False,3.2,2024-03-03,44943.0,4.2,0.3,9027,False,5.55,False
+10344,Support,Tier 2,Senior Support Specialist,2021-06-20,,False,3.8,2022-07-23,47828.0,4.2,2.0,9027,False,5.03,False
+10596,Marketing,Brand,Marketing Associate,2021-09-09,,False,2.8,,76044.0,3.4,4.2,9027,False,4.8,False
+10361,Finance,Accounting,Finance Associate,2022-06-28,,False,2.4,,68700.0,4.0,0.7,9004,False,4.01,False
+10293,Support,Tier 2,Senior Support Specialist,2022-06-17,,False,4.4,,55073.0,3.8,10.5,9027,True,4.04,False
+10234,Engineering,Product Eng,Engineering Associate,2018-06-02,,False,3.7,,110862.0,3.1,1.4,9009,False,8.08,False
+10092,Sales,Mid-Market,Sales Associate,2020-06-29,,False,1.0,2024-09-09,48531.0,4.7,1.6,9021,False,6.0,False
+10252,Support,Tier 2,Support Associate,2021-05-24,,False,3.0,,54304.0,4.3,0.1,9027,False,5.1,False
+10122,Engineering,Platform,Senior Engineering Specialist,2024-06-29,,False,3.8,,106313.0,3.8,1.1,9014,False,2.0,False
+10508,Marketing,Brand,Marketing Associate,2023-01-26,,False,3.5,,67917.0,4.9,0.6,9027,False,3.43,False
+10233,Engineering,Data Eng,Engineering Associate,2021-07-16,,False,3.2,,102825.0,3.4,2.6,9021,False,4.96,False
+10115,Sales,SMB,Sales Associate,2019-01-21,,False,3.5,,47530.0,2.3,3.5,9027,False,7.44,False
+10036,Sales,Mid-Market,Sales Associate,2023-06-26,,False,3.1,2024-02-01,50524.0,4.0,4.6,9021,False,3.01,False
+10003,Sales,SMB,Senior Sales Specialist,2020-07-26,,False,4.0,2021-08-03,47719.0,2.4,1.4,9027,True,5.93,False
+10049,Sales,SMB,Senior Sales Specialist,2024-03-07,,False,3.8,2024-09-13,56539.0,3.9,2.2,9027,False,2.31,False
+10411,Finance,Accounting,Finance Associate,2019-03-29,,False,3.6,2024-02-04,81012.0,1.8,2.3,9004,False,7.26,False
+10418,Finance,Accounting,Senior Finance Specialist,2022-10-12,,False,3.8,,71659.0,4.0,5.2,9004,False,3.72,False
+10576,Marketing,Growth,Marketing Associate,2022-06-08,,False,2.2,,61678.0,3.9,20.2,9017,False,4.06,True
+10193,Engineering,Product Eng,Engineering Associate,2025-06-06,,False,2.7,,84211.0,4.7,38.9,9009,False,1.07,True
+10498,Marketing,Growth,Marketing Associate,2025-02-17,,False,1.2,2025-12-01,67295.0,1.9,6.7,9017,False,1.36,False
+10164,Engineering,Data Eng,Engineering Associate,2023-10-25,,False,3.2,2024-08-16,102257.0,4.8,11.9,9021,False,2.68,False
+10489,Marketing,Growth,Marketing Associate,2019-10-03,,False,3.4,,74022.0,4.6,3.7,9017,False,6.74,False
+10185,Engineering,Data Eng,Engineering Associate,2025-01-07,,False,3.6,,99330.0,1.0,8.3,9021,False,1.48,False
+10070,Sales,SMB,Senior Sales Specialist,2020-10-13,,False,5.0,,63443.0,2.8,2.7,9027,True,5.71,False
+10145,Engineering,Platform,Senior Engineering Specialist,2022-06-23,,False,4.1,2025-05-13,116926.0,4.2,1.2,9014,True,4.02,False
+10440,Finance,FP&A,Senior Finance Specialist,2021-01-30,,False,4.0,,74515.0,2.3,0.7,9033,True,5.41,False
+10315,Support,Tier 1,Support Associate,2021-08-07,,False,2.6,2022-04-04,47743.0,3.3,6.9,9004,False,4.9,False
+10037,Sales,Enterprise,Senior Sales Specialist,2019-05-28,,False,3.9,,55398.0,3.8,0.5,9014,False,7.09,False
+10414,Finance,Accounting,Finance Associate,2024-06-16,,False,3.2,,69259.0,2.6,1.9,9004,False,2.04,False
+10128,Engineering,Data Eng,Engineering Associate,2022-11-05,,False,2.6,,106686.0,5.0,24.9,9021,False,3.65,True
+10261,Support,Tier 1,Support Associate,2023-04-05,,False,3.0,,47847.0,2.2,0.3,9004,False,3.24,False
+10553,Marketing,Brand,Marketing Associate,2020-06-19,,False,2.9,2021-10-18,70666.0,2.0,2.7,9027,False,6.03,False
+10211,Engineering,Platform,Engineering Associate,2020-05-19,,False,3.7,,91599.0,2.5,0.6,9014,False,6.11,False
+10457,Finance,Accounting,Finance Associate,2020-05-13,,False,3.2,,75607.0,2.9,0.8,9004,False,6.13,False
+10540,Marketing,Growth,Marketing Associate,2022-10-03,,False,1.6,2025-11-16,64807.0,4.6,2.1,9017,False,3.74,False
+10383,Finance,Accounting,Senior Finance Specialist,2021-02-16,,False,5.0,,90934.0,3.6,2.8,9004,True,5.37,False
+10335,Support,Tier 2,Support Associate,2019-12-01,,False,3.2,2025-07-25,68548.0,3.4,2.8,9027,False,6.58,False
+10134,Engineering,Data Eng,Senior Engineering Specialist,2019-07-05,,False,3.9,,108734.0,4.0,3.3,9021,False,6.99,False
+10321,Support,Tier 1,Support Associate,2019-10-11,,False,2.6,,43741.0,3.8,2.7,9004,False,6.72,False
+10053,Sales,Mid-Market,Senior Sales Specialist,2020-04-21,,False,4.9,2023-07-27,66527.0,4.9,0.8,9021,True,6.19,False
+10562,Marketing,Brand,Marketing Associate,2020-02-15,,False,3.4,,84569.0,2.7,0.9,9027,False,6.37,False
+10483,Marketing,Brand,Marketing Associate,2022-05-23,2023-06-16,True,2.7,,67838.0,2.6,3.4,9027,False,1.07,False
+10253,Support,Tier 1,Senior Support Specialist,2022-07-28,,False,4.0,,51105.0,3.8,1.4,9004,True,3.92,False
+10327,Support,Tier 2,Senior Support Specialist,2019-06-03,,False,4.0,,53455.0,3.4,4.9,9027,True,7.07,False
+10095,Sales,Enterprise,Sales Associate,2019-07-20,,False,3.6,2024-07-14,52067.0,3.8,5.9,9014,False,6.95,False
+10085,Sales,Mid-Market,Senior Sales Specialist,2021-05-28,,False,4.4,,56638.0,4.0,1.8,9021,True,5.09,False
+10041,Sales,Enterprise,Sales Associate,2020-09-15,,False,3.4,,60008.0,5.0,1.2,9014,False,5.79,False
+10217,Engineering,Data Eng,Engineering Associate,2018-06-24,,False,1.9,2020-11-29,97907.0,3.2,0.1,9021,False,8.02,False
+10016,Sales,Enterprise,Sales Associate,2022-12-10,,False,2.5,2026-05-19,55659.0,4.3,3.2,9014,False,3.55,False
+10027,Sales,Enterprise,Sales Associate,2021-08-06,2023-04-09,True,2.6,,57819.0,4.4,16.5,9014,False,1.67,True
+10256,Support,Tier 2,Senior Support Specialist,2021-07-24,,False,3.8,,51607.0,3.6,2.9,9027,False,4.93,False
+10407,Finance,Accounting,Senior Finance Specialist,2021-03-18,,False,3.9,,84176.0,3.9,0.4,9004,False,5.28,False
+10422,Finance,FP&A,Finance Associate,2021-04-07,,False,2.4,,76329.0,3.6,2.3,9033,False,5.23,False
+10241,Support,Tier 1,Support Associate,2020-08-02,,False,3.6,,51052.0,5.0,1.8,9004,False,5.91,False
+10042,Sales,SMB,Sales Associate,2024-03-03,,False,2.9,2026-06-28,57442.0,3.3,2.0,9027,False,2.32,False
+10105,Sales,Enterprise,Sales Associate,2023-09-08,,False,3.1,,55240.0,3.8,0.9,9014,False,2.81,False
+10219,Engineering,Product Eng,Engineering Associate,2018-07-01,,False,3.4,2022-11-03,120353.0,3.1,0.1,9009,False,8.0,False
+10382,Finance,Accounting,Senior Finance Specialist,2020-09-03,,False,3.9,2024-12-31,77971.0,3.7,2.7,9004,False,5.82,False
+10156,Engineering,Platform,Engineering Associate,2023-12-23,,False,2.6,,91181.0,3.5,7.2,9014,False,2.52,False
+10405,Finance,FP&A,Finance Associate,2018-11-17,,False,3.2,,68548.0,3.4,1.6,9033,False,7.62,False
+10301,Support,Tier 1,Support Associate,2024-12-06,,False,1.0,,48354.0,3.0,4.0,9004,False,1.56,False
+10388,Finance,FP&A,Finance Associate,2020-05-13,2025-01-15,True,2.1,,69264.0,4.0,5.2,9033,False,4.68,False
+10331,Support,Tier 1,Senior Support Specialist,2018-01-07,,False,4.4,,54218.0,2.8,1.8,9004,True,8.48,False
+10518,Marketing,Growth,Marketing Associate,2019-06-06,,False,2.4,,73078.5,3.1,2.1,9017,False,7.07,False
+10521,Marketing,Growth,Marketing Associate,2021-01-06,,False,2.2,,68470.0,4.2,2.6,9017,False,5.48,False
+10212,Engineering,Data Eng,Engineering Associate,2020-11-08,,False,3.6,,104917.0,3.9,0.2,9021,False,5.64,False
+10551,Marketing,Brand,Marketing Associate,2023-10-27,,False,3.1,2025-03-17,62226.0,3.7,4.6,9027,False,2.67,False
+10014,Sales,Enterprise,Sales Associate,2022-07-15,,False,3.6,,57992.0,3.4,1.8,9014,False,3.96,False
+10403,Finance,Accounting,Finance Associate,2020-06-28,,False,2.9,,68626.0,4.1,4.7,9004,False,6.0,False
+10004,Sales,Enterprise,Senior Sales Specialist,2022-04-11,,False,3.8,,64691.0,1.3,5.3,9014,False,4.22,False
+10474,Finance,Accounting,Senior Finance Specialist,2020-02-25,,False,3.2,2023-12-03,99799.7,3.4,3.5,9004,False,6.34,False
+10152,Engineering,Data Eng,Engineering Associate,2024-02-10,,False,2.9,,103226.0,4.4,2.5,9021,False,2.38,False
+10539,Marketing,Brand,Senior Marketing Specialist,2023-05-31,,False,4.4,,73988.0,3.3,4.6,9027,True,3.08,False
+10133,Engineering,Product Eng,Senior Engineering Specialist,2023-02-21,,False,4.5,,118306.0,1.8,10.2,9009,True,3.35,False
+10274,Support,Tier 1,Senior Support Specialist,2021-07-17,,False,4.1,,55661.0,1.9,14.4,9004,True,4.95,False
+10366,Finance,FP&A,Finance Associate,2023-05-16,,False,3.3,,79040.0,3.7,1.1,9033,False,3.12,False
+10028,Sales,Enterprise,Sales Associate,2018-04-02,,False,2.9,,50679.0,3.6,3.4,9014,False,8.24,False
+10058,Sales,SMB,Senior Sales Specialist,2023-08-14,,False,3.7,,62997.0,2.8,1.4,9027,False,2.88,False
+10593,Marketing,Brand,Marketing Associate,2019-09-25,,False,2.3,,79752.0,5.0,5.6,9027,False,6.76,False
+10255,Support,Tier 2,Support Associate,2022-12-25,,False,2.9,2025-07-21,52800.0,3.1,5.1,9027,False,3.51,False
+10181,Engineering,Data Eng,Senior Engineering Specialist,2022-01-05,,False,3.8,2026-06-14,105136.0,5.0,4.0,9021,False,4.48,False
+10068,Sales,SMB,Senior Sales Specialist,2022-11-09,,False,4.2,,57465.0,3.2,2.4,9027,True,3.64,False
+10360,Support,Tier 2,Senior Support Specialist,2019-07-02,,False,3.8,2025-02-28,50989.0,5.0,10.6,9027,False,7.0,False
+10055,Sales,SMB,Sales Associate,2021-10-19,,False,2.8,,58957.0,1.2,2.8,9027,False,4.7,False
+10370,Finance,Accounting,Finance Associate,2023-11-26,,False,2.2,,76826.0,2.6,7.8,9004,False,2.59,False
+10119,Sales,Enterprise,Senior Sales Specialist,2021-05-15,,False,4.0,2023-07-14,57946.0,3.4,2.6,9014,True,5.13,False
+10514,Marketing,Brand,Marketing Associate,2022-09-14,,False,1.8,,53927.0,4.3,2.4,9027,False,3.79,False
+10189,Engineering,Data Eng,Engineering Associate,2023-06-23,,False,3.0,2025-01-08,103678.0,2.3,3.0,9021,False,3.02,False
+10089,Sales,Enterprise,Sales Associate,2018-03-11,,False,2.6,,59751.0,4.7,4.7,9014,False,8.3,False
+10262,Support,Tier 1,Senior Support Specialist,2020-05-13,2025-08-08,True,4.8,2024-09-07,51331.0,1.1,11.8,9004,True,5.24,False
+10001,Sales,Enterprise,Senior Sales Specialist,2024-05-20,,False,3.2,2026-07-04,57437.0,3.4,0.0,9014,False,2.11,False
+10319,Support,Tier 1,Support Associate,2021-12-08,,False,3.5,2025-06-02,47711.0,2.7,10.8,9004,False,4.56,False
+10141,Engineering,Platform,Senior Engineering Specialist,2022-08-28,,False,4.7,,115849.0,1.9,1.6,9014,True,3.84,False
+10084,Sales,Enterprise,Senior Sales Specialist,2018-10-28,,False,4.1,2022-04-13,63963.0,3.7,0.1,9014,True,7.67,False
+10079,Sales,Mid-Market,Sales Associate,2023-09-24,,False,3.6,,54418.0,4.4,0.1,9021,False,2.77,False
+10413,Finance,Accounting,Finance Associate,2020-04-02,2024-03-14,True,2.7,,70716.0,2.2,0.1,9004,False,3.95,False
+10547,Marketing,Growth,Marketing Associate,2023-08-22,,False,3.2,,71873.0,5.0,5.0,9017,False,2.86,False
+10277,Support,Tier 2,Support Associate,2021-09-01,,False,3.2,,59313.0,3.0,0.7,9027,False,4.83,False
+10426,Finance,Accounting,Finance Associate,2019-05-20,,False,2.0,2026-02-13,64229.0,1.6,0.9,9004,False,7.11,False
+10012,Sales,Mid-Market,Sales Associate,2018-02-05,,False,2.2,,52758.0,2.5,3.0,9021,False,8.4,False
+10147,Engineering,Data Eng,Engineering Associate,2022-09-15,,False,3.0,,108071.0,2.7,0.3,9021,False,3.79,False
+10404,Finance,FP&A,Finance Associate,2024-10-15,,False,3.1,2025-11-17,79675.0,3.4,1.1,9033,False,1.71,False
+10477,Finance,Accounting,Senior Finance Specialist,2020-12-08,,False,3.9,2025-09-25,92457.0,2.0,2.6,9004,False,5.56,False
+10381,Finance,FP&A,Senior Finance Specialist,2018-09-14,,False,5.0,,92264.0,2.7,5.0,9033,True,7.79,False
+10513,Marketing,Growth,Marketing Associate,2018-02-18,,False,2.6,2024-03-19,61108.0,2.8,3.5,9017,False,8.36,False
+10435,Finance,FP&A,Senior Finance Specialist,2019-10-15,,False,4.3,,76596.0,3.5,0.6,9033,True,6.71,False
+10062,Sales,Mid-Market,Sales Associate,2021-05-12,,False,2.8,,52088.0,3.2,0.2,9021,False,5.13,False
+10183,Engineering,Product Eng,Engineering Associate,2022-08-27,,False,3.6,,115417.0,3.3,10.0,9009,False,3.84,False
+10323,Support,Tier 1,Support Associate,2018-03-26,,False,3.0,2024-04-18,55084.0,2.4,1.6,9004,False,8.26,False
+10214,Engineering,Data Eng,Engineering Associate,2020-08-12,,False,1.6,,100832.0,3.4,1.0,9021,False,5.88,False
+10400,Finance,FP&A,Finance Associate,2024-01-12,,False,2.6,2025-10-18,72678.0,3.2,4.7,9033,False,2.46,False
+10511,Marketing,Brand,Marketing Associate,2021-09-23,2021-12-30,True,2.9,,67036.0,3.4,1.8,9027,False,0.27,False
+10380,Finance,FP&A,Senior Finance Specialist,2024-04-10,,False,4.8,,91479.0,5.0,1.1,9033,True,2.22,False
+10026,Sales,Mid-Market,Sales Associate,2021-08-08,,False,1.7,,50836.0,3.4,8.7,9021,False,4.89,False
+10142,Engineering,Data Eng,Engineering Associate,2021-03-22,,False,3.4,,100352.0,4.0,3.6,9021,False,5.27,False
+10359,Support,Tier 1,Senior Support Specialist,2023-07-14,,False,3.9,,52356.0,3.4,0.7,9004,False,2.96,False
+10570,Marketing,Brand,Marketing Associate,2024-02-08,,False,3.2,,66500.0,3.4,1.0,9027,False,2.39,False
+10473,Finance,Accounting,Finance Associate,2025-04-29,,False,3.4,2026-02-18,83479.0,3.6,0.4,9004,False,1.17,False
+10487,Marketing,Growth,Senior Marketing Specialist,2020-10-20,,False,4.2,,69299.0,3.4,0.8,9017,True,5.69,False
+10107,Sales,Mid-Market,Sales Associate,2024-08-15,,False,2.3,,57170.0,2.9,2.1,9021,False,1.87,False
+10094,Sales,Mid-Market,Sales Associate,2022-12-22,,False,3.0,2024-12-07,54900.0,3.2,0.0,9021,False,3.52,False
+10298,Support,Tier 1,Support Associate,2019-11-25,,False,2.2,,48552.0,3.8,6.6,9004,False,6.6,False
+10044,Sales,Mid-Market,Sales Associate,2023-11-02,,False,3.2,,53999.0,2.4,29.6,9021,False,2.66,True
+10556,Marketing,Brand,Marketing Associate,2021-06-12,,False,2.6,,76970.0,2.4,8.8,9027,False,5.05,False
+10138,Engineering,Product Eng,Engineering Associate,2022-09-20,,False,3.0,,105239.2,3.1,3.0,9009,False,3.78,False
+10496,Marketing,Brand,Marketing Associate,2024-09-14,,False,2.8,2026-05-13,67140.0,2.8,1.4,9027,False,1.79,False
+10368,Finance,FP&A,Senior Finance Specialist,2023-02-04,,False,3.9,2023-10-28,86184.0,1.9,33.2,9033,False,3.4,True
+10543,Marketing,Brand,Marketing Associate,2022-08-25,,False,3.2,,74187.0,2.6,2.3,9027,False,3.85,False
+10544,Marketing,Brand,Marketing Associate,2020-06-25,,False,2.8,2023-08-20,73874.0,4.3,0.4,9027,False,6.01,False
+10316,Support,Tier 2,Support Associate,2020-05-06,,False,3.5,2023-10-05,46149.0,3.6,0.8,9027,False,6.15,False
+10240,Engineering,Platform,Engineering Associate,2022-12-20,,False,2.6,2025-08-28,105047.0,2.4,5.8,9014,False,3.53,False
+10245,Support,Tier 2,Senior Support Specialist,2019-09-11,,False,5.0,,57891.9,4.4,1.5,9027,True,6.8,False
+10013,Sales,Mid-Market,Sales Associate,2022-01-06,,False,2.5,2022-12-23,61814.0,5.0,0.1,9021,False,4.48,False
+10296,Support,Tier 2,Support Associate,2019-12-12,,False,2.5,,42225.0,3.1,6.0,9027,False,6.55,False
+10416,Finance,Accounting,Finance Associate,2019-05-12,,False,3.2,2025-11-26,68548.0,3.4,3.3,9004,False,7.13,False
+10061,Sales,Enterprise,Senior Sales Specialist,2018-10-21,,False,4.6,2025-01-12,60756.0,1.3,2.1,9014,True,7.69,False
+10102,Sales,Enterprise,Senior Sales Specialist,2025-03-31,,False,4.2,2025-12-10,69214.0,2.6,2.9,9014,True,1.25,False
+10218,Engineering,Data Eng,Engineering Associate,2022-04-26,,False,3.1,2026-02-04,99352.0,5.0,11.8,9021,False,4.18,False
+10438,Finance,Accounting,Finance Associate,2023-02-22,,False,2.6,,70704.0,2.3,2.7,9004,False,3.35,False
+10589,Marketing,Brand,Marketing Associate,2022-01-03,,False,2.7,,64775.0,2.5,0.2,9027,False,4.49,False
+10374,Finance,Accounting,Finance Associate,2023-09-27,,False,3.2,2024-06-03,95741.0,2.3,5.0,9004,False,2.76,False
+10452,Finance,Accounting,Finance Associate,2021-11-18,,False,2.4,2025-08-05,69306.0,3.4,1.2,9004,False,4.61,False
+10592,Marketing,Growth,Marketing Associate,2020-10-19,,False,1.0,,66390.0,4.1,1.8,9017,False,5.69,False
+10406,Finance,FP&A,Finance Associate,2020-12-30,,False,1.4,2023-09-06,73622.0,2.6,0.8,9033,False,5.5,False
+10339,Support,Tier 2,Senior Support Specialist,2020-08-18,,False,4.1,2023-12-07,55006.0,3.0,2.0,9027,True,5.86,False
+10056,Sales,Enterprise,Sales Associate,2018-09-13,,False,2.4,,46923.0,2.5,1.3,9014,False,7.79,False
+10306,Support,Tier 2,Support Associate,2019-02-21,,False,2.9,2024-03-22,52293.0,3.1,8.9,9027,False,7.35,False
+10192,Engineering,Data Eng,Engineering Associate,2022-05-20,,False,3.0,2025-03-31,101937.0,1.9,1.1,9021,False,4.11,False
+10463,Finance,FP&A,Finance Associate,2025-04-27,,False,3.5,,90845.0,4.2,2.3,9033,False,1.17,False
+10050,Sales,SMB,Sales Associate,2019-09-24,,False,2.7,2025-12-06,54364.0,2.8,9.5,9027,False,6.77,False
+10384,Finance,FP&A,Senior Finance Specialist,2023-11-25,2024-12-13,True,3.9,2025-04-14,79091.0,3.6,2.6,9033,False,1.05,False
+10076,Sales,Mid-Market,Sales Associate,2022-01-01,,False,2.7,2025-05-01,51415.0,3.0,1.5,9021,False,4.49,False
+10443,Finance,Accounting,Finance Associate,2020-03-26,,False,2.2,,72778.0,2.6,2.6,9004,False,6.26,False
+10398,Finance,FP&A,Finance Associate,2020-06-15,2025-09-22,True,3.0,2024-08-07,84367.0,1.0,2.3,9033,False,5.27,False
+10445,Finance,FP&A,Senior Finance Specialist,2020-06-17,,False,4.7,2023-06-02,87494.0,1.8,0.2,9033,True,6.03,False
+10177,Engineering,Product Eng,Engineering Associate,2024-09-17,,False,2.7,2025-10-09,102264.0,4.2,2.5,9009,False,1.78,False
+10136,Engineering,Data Eng,Engineering Associate,2025-01-24,,False,3.0,2026-07-03,109397.0,1.2,5.9,9021,False,1.43,False
+10046,Sales,SMB,Senior Sales Specialist,2019-01-02,,False,3.8,,68115.0,1.5,5.3,9027,False,7.49,False
+10279,Support,Tier 1,Senior Support Specialist,2021-06-29,,False,4.4,,54784.0,4.8,1.7,9004,True,5.0,False
+10431,Finance,Accounting,Finance Associate,2019-10-16,,False,2.2,2021-09-06,73520.0,2.5,1.2,9004,False,6.7,False
+10541,Marketing,Growth,Marketing Associate,2021-04-27,,False,1.6,,65758.0,2.1,1.8,9017,False,5.17,False
+10250,Support,Tier 1,Support Associate,2021-08-09,,False,2.8,,56336.0,4.3,17.2,9004,False,4.89,True
+10379,Finance,FP&A,Finance Associate,2024-12-27,,False,2.5,,69938.0,3.1,3.3,9033,False,1.51,False
+10506,Marketing,Brand,Marketing Associate,2019-05-20,,False,1.9,2020-04-14,65328.0,3.1,4.1,9027,False,7.11,False
+10043,Sales,Enterprise,Sales Associate,2021-04-25,,False,3.1,2024-01-16,55442.0,3.0,0.4,9014,False,5.18,False
+10364,Finance,FP&A,Senior Finance Specialist,2024-04-17,,False,3.8,,73654.0,3.8,0.6,9033,False,2.2,False
+10456,Finance,FP&A,Senior Finance Specialist,2020-10-25,,False,3.2,,68548.0,3.4,1.7,9033,False,5.68,False
+10564,Marketing,Growth,Marketing Associate,2021-12-08,,False,3.6,,84173.0,3.1,6.9,9017,False,4.56,False
+10305,Support,Tier 1,Support Associate,2018-09-23,,False,3.5,,59210.8,3.2,1.5,9004,False,7.77,False
+10546,Marketing,Brand,Marketing Associate,2022-10-08,,False,2.9,2026-02-17,77463.0,4.3,2.4,9027,False,3.73,False
+10038,Sales,Mid-Market,Senior Sales Specialist,2024-03-03,2025-01-30,True,5.0,2025-06-28,60420.0,3.3,6.5,9021,True,0.91,False
+10025,Sales,Enterprise,Sales Associate,2025-01-27,,False,3.3,2026-06-23,61739.0,4.0,2.0,9014,False,1.42,False
+10100,Sales,Mid-Market,Sales Associate,2024-07-03,,False,3.2,2026-05-22,59004.0,3.7,0.1,9021,False,1.99,False
+10039,Sales,SMB,Senior Sales Specialist,2019-03-18,,False,4.0,2019-11-12,62009.0,4.0,6.0,9027,True,7.29,False
+10048,Sales,Mid-Market,Sales Associate,2024-11-09,,False,3.2,2025-05-18,62433.0,3.1,2.3,9021,False,1.64,False
+10385,Finance,Accounting,Finance Associate,2023-08-21,2025-09-24,True,2.4,2025-07-09,76392.0,4.2,2.2,9004,False,2.09,False
+10129,Engineering,Platform,Senior Engineering Specialist,2020-03-31,,False,4.0,,105684.0,3.6,1.4,9014,True,6.25,False
+10127,Engineering,Product Eng,Senior Engineering Specialist,2018-01-10,,False,4.1,2020-01-22,116390.0,2.7,0.2,9009,True,8.47,False
+10337,Support,Tier 1,Senior Support Specialist,2018-10-03,,False,4.5,,61604.0,4.2,5.3,9004,True,7.74,False
+10232,Engineering,Platform,Engineering Associate,2023-09-29,,False,3.6,,113736.0,3.1,19.3,9014,False,2.75,True
+10310,Support,Tier 2,Support Associate,2021-02-21,,False,2.0,,52245.0,3.5,0.1,9027,False,5.35,False
+10393,Finance,FP&A,Senior Finance Specialist,2024-09-22,,False,5.0,2026-06-12,83079.0,5.0,1.5,9033,True,1.77,False
+10554,Marketing,Brand,Marketing Associate,2021-05-17,,False,3.2,,72811.0,2.3,5.3,9027,False,5.12,False
+10340,Support,Tier 1,Senior Support Specialist,2024-09-04,,False,4.1,,53367.0,3.6,22.3,9004,True,1.82,True
+10205,Engineering,Product Eng,Senior Engineering Specialist,2022-09-06,,False,3.7,2026-03-11,102922.0,1.8,0.9,9009,False,3.81,False
+10590,Marketing,Growth,Marketing Associate,2022-08-28,,False,3.4,,62198.0,3.9,0.5,9017,False,3.84,False
+10010,Sales,SMB,Sales Associate,2024-02-26,,False,2.3,,50827.0,2.6,0.3,9027,False,2.34,False
+10161,Engineering,Data Eng,Senior Engineering Specialist,2018-07-24,,False,4.8,2021-04-15,107214.0,2.0,1.3,9021,True,7.93,False
+10097,Sales,Mid-Market,Sales Associate,2018-06-04,,False,3.3,2024-09-05,55846.0,4.2,0.4,9021,False,8.07,False
+10307,Support,Tier 1,Support Associate,2019-04-11,,False,2.1,,50317.0,3.2,1.1,9004,False,7.22,False
+10598,Marketing,Brand,Senior Marketing Specialist,2021-07-25,,False,4.3,,83345.0,4.5,1.2,9027,True,4.93,False
+10244,Support,Tier 2,Senior Support Specialist,2024-09-23,,False,3.8,,52179.0,2.6,3.5,9027,False,1.77,False
+10173,Engineering,Platform,Engineering Associate,2024-10-12,,False,3.2,2026-03-31,103927.0,4.6,27.9,9014,False,1.71,True
+10114,Sales,Mid-Market,Sales Associate,2020-05-12,,False,3.1,,52504.0,4.5,0.0,9021,False,6.13,False
+10030,Sales,Enterprise,Sales Associate,2022-03-29,2025-08-14,True,3.6,,61397.0,2.5,0.6,9014,False,3.38,False
+10375,Finance,Accounting,Senior Finance Specialist,2024-03-27,,False,4.4,2025-12-10,88263.0,4.5,1.1,9004,True,2.26,False
+10137,Engineering,Platform,Engineering Associate,2020-11-01,,False,2.2,,100673.0,3.4,0.6,9014,False,5.66,False
+10524,Marketing,Growth,Senior Marketing Specialist,2019-10-24,,False,3.8,2024-11-03,79293.0,5.0,6.7,9017,False,6.68,False
+10412,Finance,Accounting,Senior Finance Specialist,2024-04-16,,False,4.0,,84440.0,2.5,2.9,9004,True,2.2,False
+10238,Engineering,Product Eng,Engineering Associate,2020-06-19,,False,3.0,2023-09-12,107502.0,4.5,2.2,9009,False,6.03,False
+10194,Engineering,Product Eng,Engineering Associate,2024-07-25,,False,2.6,2025-03-03,100634.0,4.2,8.0,9009,False,1.93,False
+10573,Marketing,Brand,Marketing Associate,2021-09-16,,False,2.9,,62213.0,2.4,5.2,9027,False,4.79,False
+10574,Marketing,Brand,Marketing Associate,2018-10-27,,False,3.3,,74373.0,4.1,0.2,9027,False,7.67,False
+10111,Sales,Mid-Market,Sales Associate,2019-01-09,,False,1.3,,47558.0,4.0,9.3,9021,False,7.47,False
+10272,Support,Tier 1,Senior Support Specialist,2019-11-15,,False,4.3,2021-04-04,60765.100000000006,2.0,2.2,9004,True,6.62,False
+10523,Marketing,Brand,Marketing Associate,2024-12-01,,False,2.1,,59294.0,5.0,8.0,9027,False,1.58,False
+10295,Support,Tier 2,Support Associate,2020-10-03,,False,3.1,,58689.0,2.1,4.3,9027,False,5.74,False
+10243,Support,Tier 2,Support Associate,2021-10-20,,False,3.6,,45842.0,4.1,11.9,9027,False,4.69,False
+10334,Support,Tier 1,Senior Support Specialist,2018-03-20,,False,4.6,2025-11-10,48838.0,5.0,2.7,9004,True,8.28,False
+10585,Marketing,Growth,Marketing Associate,2020-04-05,,False,3.0,2025-04-07,65994.0,4.1,7.4,9017,False,6.23,False
+10533,Marketing,Brand,Marketing Associate,2019-06-16,,False,3.2,2025-05-28,73626.3,3.5,1.2,9027,False,7.04,False
+10330,Support,Tier 1,Support Associate,2022-06-01,,False,3.2,,68548.0,3.4,1.8,9004,False,4.08,False
+10220,Engineering,Data Eng,Engineering Associate,2018-09-23,,False,2.9,2023-09-15,105578.0,2.8,1.0,9021,False,7.77,False
+10011,Sales,Mid-Market,Sales Associate,2023-09-14,,False,2.6,,54577.0,3.7,8.5,9021,False,2.79,False
+10247,Support,Tier 2,Senior Support Specialist,2020-05-06,,False,3.9,,55612.0,2.8,5.9,9027,False,6.15,False
+10314,Support,Tier 2,Support Associate,2022-03-06,,False,2.4,2025-12-02,43364.0,4.7,1.7,9027,False,4.32,False
+10391,Finance,FP&A,Finance Associate,2021-10-16,,False,3.3,,71631.0,3.2,2.4,9033,False,4.7,False
+10427,Finance,Accounting,Finance Associate,2018-06-16,,False,2.2,2025-10-26,69983.0,3.7,1.7,9004,False,8.04,False
+10447,Finance,FP&A,Senior Finance Specialist,2020-11-19,,False,3.2,,68548.0,3.4,2.2,9033,False,5.61,False
+10045,Sales,SMB,Sales Associate,2025-06-03,,False,3.4,2026-01-19,55590.0,3.5,1.1,9027,False,1.07,False
+10019,Sales,Mid-Market,Senior Sales Specialist,2020-11-11,,False,5.0,2026-03-22,54483.0,3.7,5.2,9021,True,5.63,False
+10120,Sales,SMB,Sales Associate,2023-11-01,,False,3.0,2026-05-13,57898.0,4.4,4.9,9027,False,2.66,False
+10566,Marketing,Brand,Marketing Associate,2019-10-12,,False,3.0,2023-07-24,66613.0,2.8,3.2,9027,False,6.72,False
+10182,Engineering,Product Eng,Engineering Associate,2020-04-11,,False,2.0,,84705.0,3.5,0.4,9009,False,6.22,False
+10040,Sales,Enterprise,Sales Associate,2020-02-09,,False,2.0,,53258.0,4.0,7.4,9014,False,6.39,False
+10390,Finance,Accounting,Finance Associate,2025-05-29,,False,3.5,,89004.0,1.9,1.7,9004,False,1.09,False
+10572,Marketing,Growth,Marketing Associate,2022-05-18,,False,3.0,2024-02-19,76771.0,2.6,0.7,9017,False,4.12,False
+10444,Finance,Accounting,Senior Finance Specialist,2018-07-01,,False,4.1,2023-12-08,86831.0,5.0,1.5,9004,True,8.0,False
+10017,Sales,SMB,Sales Associate,2022-01-01,2025-03-12,True,2.5,,59879.0,3.2,0.8,9027,False,3.19,False
+10528,Marketing,Growth,Senior Marketing Specialist,2020-02-19,,False,3.9,,75695.0,3.6,2.4,9017,False,6.36,False
+10352,Support,Tier 1,Support Associate,2021-03-17,,False,2.4,,49473.0,4.0,6.1,9004,False,5.29,False
+10292,Support,Tier 1,Senior Support Specialist,2023-10-29,,False,4.6,,55752.0,1.6,0.0,9004,True,2.67,False
+10338,Support,Tier 2,Support Associate,2019-03-09,,False,2.5,,49184.0,3.3,7.1,9027,False,7.31,False
+10082,Sales,Mid-Market,Sales Associate,2018-10-05,,False,2.5,,53188.0,5.0,0.8,9021,False,7.73,False
+10351,Support,Tier 1,Support Associate,2020-07-22,2024-04-09,True,2.0,,50548.0,2.0,2.6,9004,False,3.72,False
+10015,Sales,Mid-Market,Sales Associate,2024-02-23,,False,3.5,2026-01-27,55462.0,4.6,1.3,9021,False,2.35,False
+10532,Marketing,Brand,Senior Marketing Specialist,2018-08-12,,False,3.2,2022-05-18,80536.0,3.4,5.0,9027,False,7.88,False
+10425,Finance,FP&A,Senior Finance Specialist,2024-07-19,,False,4.2,,86423.0,4.0,1.8,9033,True,1.95,False
+10174,Engineering,Product Eng,Engineering Associate,2021-10-06,,False,2.6,2024-05-24,95425.0,3.0,1.9,9009,False,4.73,False
+10520,Marketing,Growth,Marketing Associate,2022-05-24,,False,1.8,,65873.0,2.7,0.5,9017,False,4.1,False
+10188,Engineering,Data Eng,Engineering Associate,2025-06-09,,False,2.0,,95809.0,3.5,0.3,9021,False,1.06,False
+10131,Engineering,Product Eng,Engineering Associate,2022-07-27,,False,1.4,,85963.0,2.6,1.6,9009,False,3.93,False
+10228,Engineering,Product Eng,Senior Engineering Specialist,2021-07-23,,False,4.6,2023-12-19,118936.0,1.9,3.3,9009,True,4.94,False
+10064,Sales,Enterprise,Sales Associate,2019-10-01,,False,3.4,,51544.0,2.7,1.6,9014,False,6.75,False
+10063,Sales,Mid-Market,Sales Associate,2018-12-15,,False,3.4,,57845.0,2.2,2.9,9021,False,7.54,False
+10202,Engineering,Product Eng,Engineering Associate,2018-02-25,,False,3.2,2020-05-11,68548.0,3.4,3.4,9009,False,8.34,False
+10280,Support,Tier 2,Support Associate,2020-01-20,,False,3.6,,42853.0,4.0,0.3,9027,False,6.44,False
+10146,Engineering,Platform,Senior Engineering Specialist,2023-12-30,2025-12-26,True,3.9,,124123.0,2.6,9.5,9014,False,1.99,False
+10507,Marketing,Growth,Marketing Associate,2023-02-12,,False,2.3,2023-07-11,69266.0,2.6,4.9,9017,False,3.38,False
+10535,Marketing,Brand,Marketing Associate,2024-05-04,,False,3.0,2026-03-08,64829.0,2.9,1.3,9027,False,2.15,False
+10470,Finance,FP&A,Finance Associate,2022-06-24,,False,3.2,2025-02-09,88921.0,3.1,3.4,9033,False,4.02,False
+10159,Engineering,Data Eng,Engineering Associate,2021-08-28,,False,3.0,,114447.0,3.3,3.0,9021,False,4.84,False
+10278,Support,Tier 1,Support Associate,2020-03-11,,False,2.8,2023-09-03,54616.0,2.8,18.6,9004,False,6.3,True
+10510,Marketing,Brand,Marketing Associate,2021-10-06,,False,3.2,,68548.0,3.4,4.1,9027,False,4.73,False
+10580,Marketing,Growth,Marketing Associate,2020-08-14,,False,2.9,,65128.0,2.7,2.0,9017,False,5.88,False
+10265,Support,Tier 1,Support Associate,2022-12-18,,False,3.4,2023-11-10,51122.0,3.5,0.3,9004,False,3.53,False
+10471,Finance,FP&A,Finance Associate,2024-09-14,2026-06-27,True,1.9,,79267.0,2.4,1.8,9033,False,1.78,False
+10254,Support,Tier 2,Senior Support Specialist,2022-04-03,,False,4.0,,53539.0,2.0,2.2,9027,True,4.24,False
+10397,Finance,Accounting,Senior Finance Specialist,2018-04-24,,False,3.9,2019-01-30,80175.0,4.6,0.5,9004,False,8.18,False
+10345,Support,Tier 2,Support Associate,2023-08-04,,False,3.2,,45803.0,2.7,3.9,9027,False,2.9,False

@@ -1,0 +1,307 @@
+employee_id,department,team,job_role,hire_date,exit_date,attrition_flag,performance_rating,last_promotion_date,compensation,engagement_score,overtime_hours_per_month,manager_id
+10090,Engineering,Data Eng,Engineering Associate,07/23/2018,,No,3.0,,96395.0,3.3,9.8,9021
+10059,Engineering,Enterprise,Sales Associate,09/03/2020,,No,2.1,,56942.0,3.5,0.7,9014
+10071,Engineering,Data Eng,Engineering Associate,2018-03-28,,No,3.3,08/25/2021,93546.0,4.5,15.4,9021
+10128,Engineering,Tier 1,Support Associate,03/31/2020,,No,,,,,6.2,9004
+10113,Engineering,Data Eng,Senior Engineering Specialist,2023-11-19,16-12-2024,Yes,4.8,06/21/2024,113812.0,2.3,6.3,9021
+10060,Engineering,SMB,Senior Sales Specialist,2024-04-14,,No,4.2,,66896.0,3.9,4.1,9027
+10164,Engineering,Tier 2,Support Associate,23-04-2023,,No,3.2,,49122.0,4.8,11.9,9027
+10180,Engineering,Tier 2,Support Associate,22-04-2025,,No,2.1,2026-02-08,46343.0,2.4,1.7,9027
+10263,Engineering,Brand,Senior Marketing Specialist,2024-04-26,,No,4.5,2025-08-16,76732.0,1.8,1.7,9027
+10096,Engineering,Platform,Engineering Associate,2021-06-05,,No,3.4,2022-06-24,101186.0,2.9,5.1,9014
+10214,Engineering,FP&A,Finance Associate,18-02-2019,,No,,10/20/2025,,,1.0,9033
+10169,Engineering,Tier 1,Senior Support Specialist,04-04-2022,,No,4.3,02-12-2022,49197.0,2.8,0.8,9004
+10273,Engineering,Growth,Marketing Associate,02/08/2025,,No,1.9,,71821.0,3.3,0.2,9017
+10287,Engineering,Growth,Marketing Associate,12/15/2018,06/19/2023,Yes,3.2,25-11-2023,61997.0,4.2,0.3,9017
+10296,Engineering,Brand,Marketing Associate,2025-03-21,,No,2.5,,58249.0,3.1,6.0,9027
+10224,Engineering,Accounting,Finance Associate,21-02-2023,2025-11-11,Yes,2.4,2025-08-15,79315.0,3.9,0.3,9004
+10300,Engineering,Growth,Marketing Associate,08/07/2021,,No,2.4,04/04/2022,63596.0,4.5,11.6,9017
+10081,Engineering,Data Eng,Senior Engineering Specialist,15-01-2018,,No,5.0,,101906.0,2.8,11.5,9021
+10228,Engineering,Accounting,Senior Finance Specialist,28-01-2022,29-10-2022,Yes,4.6,,88352.0,1.9,13.2,9004
+10019,Engineering,Mid-Market,Senior Sales Specialist,11/11/2020,,No,5.0,2026-03-22,54483.0,3.7,5.2,9021
+10211,Engineering,Accounting,Finance Associate,2023-09-28,,No,3.7,21-03-2025,68045.0,2.5,0.6,9004
+10012,Engineering,Mid-Market,Sales Associate,02-05-2018,,No,2.2,,52758.0,2.5,3.0,9021
+10123,Engineering,Tier 2,Support Associate,21-01-2022,,No,2.4,04/09/2024,52936.0,4.7,3.7,9027
+10124,Engineering,Tier 1,Support Associate,2018-04-30,,No,,,,,4.4,9004
+10147,Engineering,Tier 1,Support Associate,29-12-2024,,No,3.0,05/29/2026,51915.0,2.7,0.3,9004
+10052,Engineering,Enterprise,Sales Associate,04-08-2019,,No,3.4,,62199.0,3.8,9.1,9014
+10185,Engineering,FP&A,Finance Associate,2021-11-03,01/04/2025,Yes,3.6,,73788.0,1.0,2.1,9033
+10257,Engineering,Brand,Marketing Associate,15-04-2023,,No,3.6,16-08-2024,76855.0,3.8,1.1,9027
+10133,Engineering,Tier 2,Senior Support Specialist,01/30/2024,,No,4.5,,56832.0,1.8,2.5,9027
+10013,Engineering,Mid-Market,Sales Associate,01-06-2022,,No,2.5,23-12-2022,61814.0,5.0,0.1,9021
+10243,Engineering,Growth,Marketing Associate,06/26/2021,,No,3.6,03/19/2023,63238.0,,3.0,9017
+10028,Engineering,Enterprise,Sales Associate,04-02-2018,,No,2.9,,50679.0,3.6,3.4,9014
+10229,Engineering,Accounting,Senior Finance Specialist,20-10-2021,,No,3.7,,95754.0,4.1,2.9,9004
+10030,Engineering,Enterprise,Sales Associate,29-03-2022,2025-08-14,Yes,3.6,,61397.0,2.5,0.6,9014
+10194,Engineering,FP&A,Finance Associate,02/03/2024,,No,2.6,,74756.0,4.2,2.0,9033
+10106,Engineering,Product Eng,Engineering Associate,2022-05-16,,No,2.1,2026-06-05,96704.0,3.9,5.3,9009
+10234,Engineering,Accounting,Finance Associate,08/11/2018,,No,3.7,,82354.0,3.1,0.4,9004
+10074,Engineering,Product Eng,Engineering Associate,03/19/2019,04-10-2025,Yes,,,114806.0,,0.1,9009
+10222,Engineering,FP&A,Senior Finance Specialist,2021-07-16,,No,4.3,,85284.0,4.2,0.0,9033
+10107,Engineering,Data Eng,Engineering Associate,15-08-2024,,No,,,,,8.5,9021
+10195,Engineering,FP&A,Finance Associate,12/05/2018,26-09-2019,Yes,3.5,2023-12-19,78640.0,3.5,0.1,9033
+10186,Engineering,FP&A,Finance Associate,03-10-2023,,No,,10-09-2025,,,2.3,9033
+10250,Engineering,Brand,Marketing Associate,2019-08-23,,No,2.8,06-05-2023,77713.0,4.3,17.2,9027
+10089,Engineering,Platform,Engineering Associate,03-11-2018,,No,2.6,,112515.0,4.7,4.7,9014
+10231,Engineering,Accounting,Finance Associate,09-11-2019,,No,3.2,,85179.0,5.0,2.3,9004
+10148,Engineering,Tier 1,Support Associate,2024-01-24,,No,2.3,,41705.0,,5.4,9004
+10101,Engineering,Platform,Engineering Associate,07/09/2018,2024-01-26,Yes,3.2,04/23/2023,102173.0,3.6,3.9,9014
+10202,Engineering,FP&A,Finance Associate,22-04-2022,,No,3.1,,81884.0,3.4,0.9,9033
+10005,Engineering,SMB,Sales Associate,07/24/2023,,No,2.9,,53803.0,4.1,4.0,9027
+10186,Engineering,FP&A,Finance Associate,03-10-2023,,No,,10-09-2025,,,2.3,9033
+10086,Engineering,Platform,Engineering Associate,2021-01-14,,No,3.2,,111854.0,3.3,16.3,9014
+10162,Engineering,Tier 2,Support Associate,18-05-2021,,No,3.2,,48571.0,3.1,8.4,9027
+10158,Engineering,Tier 1,Support Associate,01/12/2019,,No,3.3,2022-07-18,52597.0,3.3,2.4,9004
+10010,Engineering,SMB,Sales Associate,02/26/2024,,No,2.3,,50827.0,2.6,0.3,9027
+10091,Engineering,Product Eng,Senior Engineering Specialist,02-11-2024,,No,4.5,01/03/2026,107325.0,2.2,1.5,9009
+10017,Engineering,SMB,Sales Associate,01/01/2022,03/12/2025,Yes,2.5,,59879.0,3.2,0.8,9027
+10237,Engineering,Accounting,Senior Finance Specialist,05-08-2022,,No,3.7,,76136.0,4.0,0.0,9004
+10155,Engineering,Tier 2,Support Associate,2018-01-18,,No,1.7,,62184.0,3.5,4.6,9027
+10001,Engineering,Enterprise,Senior Sales Specialist,05/20/2024,,No,4.7,07-04-2026,57437.0,2.6,0.0,9014
+10252,Engineering,Growth,Marketing Associate,25-12-2018,,No,3.0,09/06/2022,74911.0,4.3,0.1,9017
+10079,Engineering,Data Eng,Engineering Associate,09/24/2023,,No,3.6,,102474.0,4.4,0.3,9021
+10261,Engineering,Growth,Marketing Associate,14-04-2025,,No,3.0,,66003.0,2.2,0.3,9017
+10063,Engineering,Data Eng,Engineering Associate,12/15/2018,,No,3.4,,108927.0,2.2,2.9,9021
+10112,Engineering,Platform,Engineering Associate,06/03/2019,,No,3.7,2024-05-05,106108.0,5.0,10.0,9014
+10299,Engineering,Brand,Marketing Associate,03-06-2022,,No,1.1,2025-12-02,64698.0,5.0,3.1,9027
+10160,Engineering,Tier 2,Senior Support Specialist,01/25/2021,,No,4.5,,59174.0,3.4,1.4,9027
+10118,Engineering,Platform,Engineering Associate,30-03-2020,,No,3.3,2024-08-10,116741.0,4.5,0.1,9014
+10168,Engineering,Tier 2,Senior Support Specialist,07-12-2022,,No,3.8,2025-01-29,44303.0,2.5,3.9,9027
+10174,Engineering,Tier 2,Support Associate,27-09-2022,,No,2.6,,45840.0,3.0,0.5,9027
+10198,Engineering,Accounting,Finance Associate,13-08-2019,,No,2.8,06/17/2023,97867.0,2.8,3.8,9004
+10176,Engineering,Tier 1,Support Associate,13-02-2025,,No,2.2,09-10-2025,41126.0,2.3,0.6,9004
+10040,Engineering,Enterprise,Sales Associate,02/09/2020,,No,2.0,,53258.0,4.0,7.4,9014
+10215,Engineering,FP&A,Senior Finance Specialist,2023-06-10,02/07/2026,Yes,4.2,03/15/2026,74519.0,2.7,1.0,9033
+10094,Engineering,Data Eng,Engineering Associate,22-12-2022,,No,3.0,2024-12-07,103381.0,3.2,0.0,9021
+10109,Engineering,Data Eng,Engineering Associate,10/15/2018,,No,2.0,,100486.0,3.7,2.1,9021
+10289,Engineering,Brand,Senior Marketing Specialist,12-12-2019,,No,4.6,,69931.0,4.0,2.8,9027
+10018,Engineering,Mid-Market,Senior Sales Specialist,2018-04-25,,No,4.0,,63925.0,4.9,8.4,9021
+10103,Engineering,Data Eng,Engineering Associate,2022-04-04,28-01-2026,Yes,1.6,,103343.0,3.3,7.3,9021
+10139,Engineering,Tier 2,Support Associate,2022-09-20,,No,3.0,,51119.0,3.7,10.6,9027
+10120,Engineering,Product Eng,Engineering Associate,11/01/2023,,No,3.0,13-05-2026,109027.0,4.4,19.6,9009
+10043,Engineering,Enterprise,Sales Associate,2021-04-25,,No,3.1,01/16/2024,55442.0,3.0,0.4,9014
+10259,Engineering,Brand,Marketing Associate,12/04/2019,,No,3.3,2022-02-21,73583.0,1.5,0.6,9027
+10225,Engineering,Accounting,Finance Associate,13-05-2018,,No,3.2,2021-06-08,74938.0,3.7,0.7,9004
+10111,Engineering,Data Eng,Engineering Associate,01/09/2019,,No,1.3,,89556.0,4.0,9.3,9021
+10006,Engineering,Enterprise,Sales Associate,01-09-2022,,No,3.5,,56463.0,2.5,5.6,9014
+10121,Engineering,Tier 1,Senior Support Specialist,2023-01-25,,No,3.9,,60337.0,5.0,0.8,9004
+10039,Engineering,SMB,Senior Sales Specialist,03/18/2019,,No,4.0,2019-11-12,62009.0,4.0,6.0,9027
+10108,Engineering,Platform,Engineering Associate,12/17/2021,,No,3.1,,104968.0,5.0,2.6,9014
+10107,Engineering,Data Eng,Engineering Associate,15-08-2024,,No,,,,,8.5,9021
+10068,Engineering,Product Eng,Senior Engineering Specialist,11/09/2022,,No,4.2,,108210.0,3.2,9.6,9009
+10140,Engineering,Tier 2,Support Associate,05-07-2022,2023-05-26,Yes,2.1,2023-11-03,45784.0,4.0,0.1,9027
+10189,Engineering,Accounting,Finance Associate,26-03-2023,,No,3.0,,77018.0,2.3,3.0,9004
+10035,Engineering,SMB,Senior Sales Specialist,09/22/2021,,No,4.7,2024-02-15,62035.0,3.2,2.8,9027
+10192,Engineering,FP&A,Finance Associate,01/16/2022,,No,3.0,29-06-2024,75724.0,1.9,1.1,9033
+10262,Engineering,Brand,Senior Marketing Specialist,2021-11-02,2024-02-08,Yes,4.8,11/06/2023,70809.0,1.1,11.8,9027
+10151,Engineering,Tier 2,Senior Support Specialist,06/06/2021,,No,4.4,2024-07-23,48935.0,1.5,0.6,9027
+10209,Engineering,FP&A,Finance Associate,02/21/2023,,No,3.2,,83324.0,3.3,7.8,9033
+10286,Engineering,Growth,Marketing Associate,2024-12-06,,No,2.5,,64380.0,3.7,0.2,9017
+10269,Engineering,Growth,Marketing Associate,03-08-2018,,No,3.5,07/21/2024,70316.0,1.7,1.2,9017
+10020,Engineering,SMB,Sales Associate,2020-10-19,,No,3.0,2022-12-02,57194.0,1.4,2.1,9027
+10015,Engineering,Mid-Market,Sales Associate,23-02-2024,,No,3.5,27-01-2026,55462.0,4.6,1.3,9021
+10092,Engineering,Data Eng,Engineering Associate,29-06-2020,,No,1.0,09/09/2024,91388.0,4.7,6.4,9021
+10212,Engineering,Accounting,Finance Associate,2018-03-13,,No,3.6,12-05-2020,77938.0,3.9,0.2,9004
+10295,Engineering,Brand,Marketing Associate,21-02-2021,,No,3.1,,80960.0,2.1,1.1,9027
+10045,Engineering,SMB,Sales Associate,06/03/2025,,No,3.4,2026-01-19,55590.0,3.5,1.1,9027
+10173,Engineering,Tier 1,Support Associate,2024-12-21,,No,3.2,08-09-2025,49924.0,4.6,7.0,9004
+10246,Engineering,Growth,Senior Marketing Specialist,06-02-2018,,No,4.2,,67729.0,3.8,11.9,9017
+10132,Engineering,Tier 2,Senior Support Specialist,01-10-2023,,No,3.7,,49098.0,4.1,2.6,9027
+10266,Engineering,Brand,Marketing Associate,2018-10-31,,No,3.2,08/28/2021,67152.0,3.0,2.2,9027
+10042,Engineering,SMB,Sales Associate,2024-03-03,,No,2.9,2026-06-28,57442.0,3.3,2.0,9027
+10080,Engineering,Data Eng,Engineering Associate,06/04/2021,,No,2.9,,96410.0,4.0,2.9,9021
+10290,Engineering,Growth,Senior Marketing Specialist,09/23/2018,,No,4.8,,79829.0,3.6,1.1,9017
+10175,Engineering,Tier 2,Senior Support Specialist,27-08-2022,,No,4.1,,57737.0,4.2,2.9,9027
+10292,Engineering,Growth,Senior Marketing Specialist,04-11-2019,,No,4.6,,76907.0,1.6,0.0,9017
+10172,Engineering,Tier 1,Support Associate,12/13/2023,,No,3.6,12-01-2026,47350.0,4.1,2.3,9004
+10128,Engineering,Tier 1,Support Associate,03/31/2020,,No,,,,,6.2,9004
+10100,Engineering,Data Eng,Engineering Associate,2024-07-03,,No,3.2,2026-05-22,111109.0,3.7,0.3,9021
+10268,Engineering,Brand,Senior Marketing Specialist,03/22/2025,,No,4.9,09/27/2025,62290.0,3.3,4.4,9027
+10009,Engineering,Mid-Market,Sales Associate,2018-05-22,,No,3.1,,51816.0,2.4,6.0,9021
+10241,Engineering,Brand,Marketing Associate,25-12-2022,,No,3.6,07/21/2025,70425.0,5.0,1.8,9027
+10193,Engineering,Accounting,Finance Associate,25-02-2018,,No,2.7,05-11-2020,62557.0,4.7,9.7,9004
+10258,Engineering,Growth,Marketing Associate,2019-11-15,,No,2.3,04/04/2021,69538.0,4.5,4.7,9017
+10032,Engineering,Mid-Market,Senior Sales Specialist,2022-07-06,10/20/2023,Yes,3.7,,63021.0,3.8,1.7,9021
+10181,Engineering,Accounting,Senior Finance Specialist,27-12-2020,,No,3.8,2022-02-03,78101.0,5.0,4.0,9004
+10056,Engineering,Enterprise,Sales Associate,09/13/2018,,No,2.4,,46923.0,2.5,1.3,9014
+10029,Engineering,SMB,Senior Sales Specialist,04-12-2019,,No,3.9,,53737.0,3.5,2.1,9027
+10126,Engineering,Tier 1,Support Associate,02-02-2025,,No,2.6,,48080.0,2.4,0.6,9004
+10251,Engineering,Growth,Marketing Associate,2022-12-18,,No,2.4,11-10-2023,67417.0,2.0,0.7,9017
+10178,Engineering,Tier 2,Senior Support Specialist,2025-01-31,,No,4.6,,53159.0,3.1,2.6,9027
+10049,Engineering,SMB,Senior Sales Specialist,03/07/2024,,No,3.8,09/13/2024,56539.0,3.9,2.2,9027
+10254,Engineering,Brand,Senior Marketing Specialist,05/03/2022,,No,4.0,,73855.0,2.0,8.7,9027
+10187,Engineering,FP&A,Senior Finance Specialist,10/12/2020,,No,3.9,,82331.0,3.1,0.2,9033
+10034,Engineering,SMB,Senior Sales Specialist,22-12-2023,,No,3.8,2024-12-09,49408.0,4.6,11.2,9027
+10036,Engineering,Mid-Market,Sales Associate,2023-06-26,,No,3.1,02/01/2024,50524.0,4.0,4.6,9021
+10288,Engineering,Growth,Marketing Associate,08/01/2024,,No,1.1,,71017.0,5.0,1.0,9017
+10064,Engineering,Platform,Engineering Associate,10/01/2019,,No,3.4,,97061.0,2.7,6.3,9014
+10230,Engineering,Accounting,Finance Associate,23-09-2024,,No,2.9,,80669.0,2.9,1.4,9004
+10239,Engineering,FP&A,Finance Associate,2022-07-28,,No,3.3,,79624.0,3.8,1.0,9033
+10067,Engineering,Platform,Engineering Associate,2024-12-01,,No,2.4,,107484.0,3.1,0.7,9014
+10291,Engineering,Brand,Marketing Associate,02/21/2019,,No,3.5,22-03-2024,71511.0,3.5,1.5,9027
+10159,Engineering,Tier 1,Support Associate,2019-07-24,,No,3.0,,54978.0,3.3,0.7,9004
+10245,Engineering,Growth,Senior Marketing Specialist,2018-10-07,,No,4.9,,72600.0,4.4,1.5,9017
+10208,Engineering,Accounting,Senior Finance Specialist,03/18/2020,,No,4.0,,67760.0,3.0,6.3,9004
+10048,Engineering,Mid-Market,Sales Associate,11/09/2024,,No,3.2,2025-05-18,62433.0,3.1,2.3,9021
+10233,Engineering,Accounting,Finance Associate,05/06/2020,,No,2.3,,76384.0,2.0,0.6,9004
+10218,Engineering,Accounting,Finance Associate,03/04/2024,,No,3.1,2025-02-21,73804.0,5.0,3.0,9004
+10041,Engineering,Enterprise,Sales Associate,15-09-2020,,No,3.4,,60008.0,5.0,1.2,9014
+10022,Engineering,Mid-Market,Sales Associate,2021-08-11,,No,3.2,01/11/2024,55348.0,3.2,6.6,9021
+10102,Engineering,Platform,Senior Engineering Specialist,31-03-2025,,No,4.2,2025-12-10,130335.0,2.6,11.7,9014
+10070,Engineering,Product Eng,Senior Engineering Specialist,10/13/2020,,No,5.0,,119468.0,2.8,10.6,9009
+10054,Engineering,SMB,Sales Associate,2022-10-28,,No,3.7,,61369.0,4.4,4.9,9027
+10138,Engineering,Tier 1,Support Associate,03/16/2018,,No,2.5,02/14/2020,45959.0,3.1,0.8,9004
+10025,Engineering,Enterprise,Sales Associate,01/27/2025,,No,3.3,23-06-2026,61739.0,4.0,2.0,9014
+10247,Engineering,Growth,Senior Marketing Specialist,2023-04-05,,No,3.9,,76714.0,2.8,5.9,9017
+10135,Engineering,Tier 1,Support Associate,04-10-2022,,No,2.8,03-07-2025,51810.0,2.9,1.3,9004
+10226,Engineering,FP&A,Finance Associate,12/04/2023,,No,3.3,11/01/2025,78094.0,4.3,1.1,9033
+10117,Engineering,Data Eng,Engineering Associate,01-11-2023,,No,2.8,,106693.0,4.8,0.2,9021
+10170,Engineering,Tier 2,Senior Support Specialist,2021-02-04,,No,4.0,,57969.0,3.4,2.0,9027
+10143,Engineering,Tier 2,Support Associate,01-05-2019,,No,3.4,10-05-2020,55904.0,4.2,1.3,9027
+10244,Engineering,Growth,Senior Marketing Specialist,08/11/2018,,No,3.8,,71980.0,2.6,13.9,9017
+10165,Engineering,Tier 2,Support Associate,10-02-2024,,No,2.2,,50430.0,3.1,1.0,9027
+10221,Engineering,Accounting,Senior Finance Specialist,23-10-2021,,No,5.0,2024-10-12,87484.0,3.2,1.4,9004
+10057,Engineering,SMB,Sales Associate,2022-06-18,,No,2.2,05-09-2025,61883.0,2.4,9.1,9027
+10062,Engineering,Data Eng,Engineering Associate,05/12/2021,,No,2.8,,98085.0,3.2,0.2,9021
+10182,Engineering,FP&A,Finance Associate,2023-02-23,,No,2.0,,62924.0,3.5,0.4,9033
+10235,Engineering,FP&A,Finance Associate,2021-06-09,,No,3.6,05-05-2026,80972.0,5.0,1.1,9033
+10085,Engineering,Data Eng,Senior Engineering Specialist,28-05-2021,,No,4.4,,106653.0,4.0,7.2,9021
+10188,Engineering,FP&A,Finance Associate,2024-04-12,,No,2.0,2026-03-23,71172.0,3.5,1.1,9033
+10115,Engineering,Data Eng,Engineering Associate,01-04-2024,,No,3.5,,89502.0,2.3,14.1,9021
+10278,Engineering,Brand,Marketing Associate,2022-06-17,,No,2.8,,75341.0,2.8,18.6,9027
+10260,Engineering,Growth,Marketing Associate,17-07-2021,,No,2.5,,60726.0,3.5,48.2,9017
+10119,Engineering,Platform,Senior Engineering Specialist,05/15/2021,,No,4.0,07/14/2023,109117.0,3.4,2.6,9014
+10213,Engineering,Accounting,Senior Finance Specialist,2022-08-28,,No,4.3,30-05-2026,70160.0,3.6,1.9,9004
+10171,Engineering,Tier 2,Senior Support Specialist,03-06-2018,,No,4.0,,53759.0,3.2,1.5,9027
+10146,Engineering,Tier 2,Senior Support Specialist,03-09-2022,,No,3.9,,59626.0,2.6,2.4,9027
+10190,Engineering,Accounting,Senior Finance Specialist,2023-08-17,,No,,,,,0.5,9004
+10267,Engineering,Brand,Marketing Associate,2020-01-24,,No,3.3,,70098.0,,20.6,9027
+10055,Engineering,SMB,Sales Associate,19-10-2021,,No,2.8,,58957.0,1.2,2.8,9027
+10177,Engineering,Tier 2,Support Associate,2021-10-28,,No,,,49125.0,,2.5,9027
+10274,Engineering,Brand,Senior Marketing Specialist,05/03/2025,,No,4.1,2026-01-03,76782.0,1.9,3.6,9027
+10190,Engineering,Accounting,Senior Finance Specialist,2023-08-17,,No,,,,,0.5,9004
+10205,Engineering,Accounting,Senior Finance Specialist,2025-06-03,,No,3.7,30-06-2026,76456.0,1.8,0.9,9004
+10183,Engineering,FP&A,Finance Associate,19-11-2023,,No,3.6,27-06-2025,85738.0,3.3,2.5,9033
+10203,Engineering,FP&A,Finance Associate,11-05-2019,,No,3.5,,75271.0,2.9,1.7,9033
+10099,Engineering,Product Eng,Engineering Associate,08/13/2020,,No,3.0,05/29/2022,111042.0,4.1,5.7,9009
+10281,Engineering,Brand,Marketing Associate,12/12/2019,,No,3.6,,72409.0,4.7,1.2,9027
+10131,Engineering,Tier 2,Support Associate,14-06-2018,,No,1.4,2022-04-20,41295.0,2.6,0.4,9027
+10098,Engineering,Product Eng,Engineering Associate,2025-06-08,,No,2.7,,87281.0,3.8,0.9,9009
+10294,Engineering,Brand,Marketing Associate,2025-04-14,,No,3.0,11/06/2025,76041.0,3.7,3.6,9027
+10083,Engineering,Data Eng,Engineering Associate,03/27/2018,,No,3.2,,100215.0,2.8,2.4,9021
+10207,Engineering,FP&A,Senior Finance Specialist,28-09-2022,,No,3.7,01/18/2026,68737.0,3.9,12.6,9033
+10061,Engineering,Platform,Senior Engineering Specialist,10/21/2018,,No,4.6,01/12/2025,114407.0,1.3,2.1,9014
+10095,Engineering,Platform,Engineering Associate,2019-07-20,,No,3.6,14-07-2024,98046.0,3.8,5.9,9014
+10141,Engineering,Tier 2,Senior Support Specialist,2019-09-30,,No,4.7,05/04/2022,55651.0,1.9,0.4,9027
+10297,Engineering,Brand,Marketing Associate,01/07/2020,,No,2.6,,74208.0,2.2,4.0,9027
+10149,Engineering,Tier 2,Support Associate,12-01-2021,,No,2.8,14-08-2022,47055.0,2.9,2.4,9027
+10153,Engineering,Tier 2,Support Associate,2024-12-24,,No,3.0,2025-09-01,56371.0,3.2,2.7,9027
+10276,Engineering,Brand,Marketing Associate,07-09-2019,,No,,2022-12-14,73667.0,,0.9,9027
+10136,Engineering,Tier 1,Support Associate,01/06/2019,,No,3.0,18-09-2024,52552.0,1.2,5.9,9004
+10082,Engineering,Data Eng,Engineering Associate,10/05/2018,,No,2.5,,100158.0,5.0,3.0,9021
+10125,Engineering,Tier 2,Senior Support Specialist,2024-12-13,11/17/2025,Yes,4.2,,49584.0,2.7,13.6,9027
+10248,Engineering,Growth,Marketing Associate,2020-05-13,2025-08-08,Yes,2.7,09-07-2024,74000.0,2.8,1.2,9017
+10249,Engineering,Growth,Senior Marketing Specialist,2023-09-02,,No,4.4,2024-08-27,78191.0,2.2,1.4,9017
+10014,Engineering,Enterprise,Sales Associate,07/15/2022,,No,3.6,,57992.0,4.0,1.8,9014
+10097,Engineering,Data Eng,Engineering Associate,06-04-2018,,No,3.3,09/05/2024,105163.0,4.2,0.4,9021
+10293,Engineering,Growth,Senior Marketing Specialist,2021-08-01,,No,4.4,,75972.0,3.8,2.6,9017
+10280,Engineering,Brand,Marketing Associate,10-03-2020,,No,3.6,,59114.0,4.0,0.3,9027
+10046,Engineering,SMB,Senior Sales Specialist,01/02/2019,,No,3.8,,68115.0,1.5,5.3,9027
+10219,Engineering,FP&A,Finance Associate,02-03-2021,,No,3.4,03/19/2022,89405.0,3.1,0.1,9033
+10104,Engineering,Platform,Senior Engineering Specialist,2023-11-21,2024-10-26,Yes,3.9,,115291.0,3.2,0.7,9014
+10037,Engineering,Enterprise,Senior Sales Specialist,2019-05-28,,No,3.9,,55398.0,3.8,0.5,9014
+10275,Engineering,Brand,Marketing Associate,01/23/2019,,No,1.5,,58160.0,3.2,0.3,9027
+10021,Engineering,SMB,Sales Associate,12/01/2023,,No,2.9,,59228.0,3.3,6.0,9027
+10271,Engineering,Growth,Marketing Associate,2025-05-20,,No,2.4,,70858.0,3.9,0.3,9017
+10223,Engineering,FP&A,Finance Associate,11-08-2020,,No,3.1,,74083.0,3.3,5.0,9033
+10076,Engineering,Data Eng,Engineering Associate,01/01/2022,,No,2.7,05-01-2025,96818.0,3.0,1.5,9021
+10201,Engineering,Accounting,Finance Associate,2025-02-07,,No,1.8,,69723.0,3.0,0.2,9004
+10232,Engineering,Accounting,Finance Associate,11/12/2020,,No,3.6,2023-12-04,84490.0,3.1,4.8,9004
+10284,Engineering,Brand,Marketing Associate,02-04-2023,,No,2.6,2025-06-20,72858.0,5.0,6.5,9027
+10124,Engineering,Tier 1,Support Associate,2018-04-30,,No,,,,,4.4,9004
+10150,Engineering,Tier 1,Support Associate,12/23/2023,,No,1.4,,45470.0,4.6,1.5,9004
+10220,Engineering,FP&A,Finance Associate,29-09-2023,,No,2.9,,78429.0,2.8,1.0,9033
+10270,Engineering,Brand,Marketing Associate,2024-10-14,,No,3.2,10/02/2025,61645.0,2.5,5.4,9027
+10003,Engineering,SMB,Senior Sales Specialist,26-07-2020,,No,4.0,08-03-2021,47719.0,2.4,1.4,9027
+10199,Engineering,FP&A,Finance Associate,04/04/2021,,No,2.9,03-11-2023,71160.0,3.2,0.4,9033
+10214,Engineering,FP&A,Finance Associate,18-02-2019,,No,,10/20/2025,,,1.0,9033
+10053,Engineering,Mid-Market,Senior Sales Specialist,2020-04-21,,No,4.9,27-07-2023,66527.0,4.9,0.8,9021
+10007,Engineering,Mid-Market,Sales Associate,29-04-2021,,No,3.2,,59054.0,4.5,11.8,9021
+10206,Engineering,FP&A,Finance Associate,2023-02-03,,No,1.9,2025-06-20,67425.0,5.0,2.7,9033
+10129,Engineering,Tier 2,Senior Support Specialist,02/09/2024,,No,4.0,,50768.0,3.6,1.4,9027
+10272,Engineering,Brand,Senior Marketing Specialist,2020-12-11,,No,3.8,03/03/2024,76204.0,2.0,2.2,9027
+10078,Engineering,Product Eng,Senior Engineering Specialist,15-04-2020,,No,5.0,,113776.0,3.3,0.4,9009
+10114,Engineering,Product Eng,Engineering Associate,06/17/2019,,No,3.1,2023-05-11,98869.0,4.5,0.1,9009
+10066,Engineering,Data Eng,Engineering Associate,16-06-2018,2021-06-25,Yes,3.5,,107827.0,2.0,1.2,9021
+10184,Engineering,Accounting,Finance Associate,22-01-2018,,No,2.2,,75951.0,3.9,10.8,9004
+10152,Engineering,Tier 1,Support Associate,05-07-2024,,No,2.9,2025-11-30,49588.0,4.4,2.5,9004
+10279,Engineering,Brand,Senior Marketing Specialist,2018-07-31,,No,4.4,09/25/2021,75573.0,4.8,1.7,9027
+10161,Engineering,Tier 1,Senior Support Specialist,18-10-2024,,No,4.8,02/05/2026,51503.0,2.0,1.3,9004
+10047,Engineering,Enterprise,Sales Associate,2022-05-19,08/04/2023,Yes,2.6,2026-02-12,58638.0,3.2,1.7,9014
+10191,Engineering,Accounting,Finance Associate,14-02-2021,,No,3.1,,87679.0,3.5,1.9,9004
+10075,Engineering,Data Eng,Engineering Associate,04/13/2025,,No,2.4,,94830.0,4.5,10.0,9021
+10093,Engineering,Product Eng,Engineering Associate,04-11-2022,,No,2.8,2023-09-28,106651.0,3.4,2.4,9009
+10200,Engineering,FP&A,Senior Finance Specialist,2018-08-02,,No,4.8,,85459.0,4.4,1.5,9033
+10264,Engineering,Growth,Marketing Associate,07/01/2020,,No,2.7,09-04-2022,71805.0,2.4,6.0,9017
+10088,Engineering,Product Eng,Engineering Associate,02/17/2025,,No,3.0,11/30/2025,110465.0,4.4,2.5,9009
+10240,Engineering,Accounting,Finance Associate,2022-04-03,,No,2.6,,78034.0,2.4,1.5,9004
+10144,Engineering,Tier 1,Senior Support Specialist,05/16/2022,,No,4.1,,53669.0,5.0,43.7,9004
+10024,Engineering,Enterprise,Senior Sales Specialist,06/16/2022,,No,3.9,14-10-2025,55225.0,3.8,25.6,9014
+10011,Engineering,Mid-Market,Sales Associate,09/14/2023,,No,2.6,,54577.0,3.7,8.5,9021
+10163,Engineering,Tier 1,Support Associate,19-12-2019,,No,3.7,09/05/2020,59234.0,4.9,4.0,9004
+10033,Engineering,SMB,Sales Associate,22-05-2020,21-10-2024,Yes,3.2,,52767.0,1.6,2.3,9027
+10137,Engineering,Tier 2,Support Associate,10/10/2021,,No,2.2,,48361.0,3.4,0.6,9027
+10167,Engineering,Tier 1,Support Associate,2023-06-06,,No,2.0,2026-05-30,53519.0,2.0,4.9,9004
+10084,Engineering,Platform,Senior Engineering Specialist,10/28/2018,,No,4.1,13-04-2022,120447.0,3.7,0.1,9014
+10058,Engineering,SMB,Senior Sales Specialist,14-08-2023,,No,3.7,,62997.0,2.8,1.4,9027
+10166,Engineering,Tier 2,Support Associate,30-12-2022,,No,2.1,,49582.0,3.3,0.7,9027
+10156,Engineering,Tier 1,Support Associate,2021-02-21,,No,2.6,2025-01-02,43801.0,3.5,7.2,9004
+10127,Engineering,Tier 1,Senior Support Specialist,27-09-2023,12/06/2024,Yes,4.1,,55911.0,2.7,0.2,9004
+10196,Engineering,FP&A,Senior Finance Specialist,01/15/2024,,No,3.8,,77674.0,3.4,1.2,9033
+10283,Engineering,Growth,Marketing Associate,2019-11-25,,No,2.3,,65589.0,2.3,1.5,9017
+10105,Engineering,Platform,Engineering Associate,09-08-2023,,No,3.1,,104021.0,3.8,0.9,9014
+10154,Engineering,Tier 1,Support Associate,04/25/2024,,No,2.2,,53923.0,3.9,24.0,9004
+10227,Engineering,FP&A,Finance Associate,10-03-2020,,No,2.8,,78388.0,4.2,5.1,9033
+10026,Engineering,Mid-Market,Sales Associate,2021-08-08,,No,1.7,,50836.0,3.4,8.7,9021
+10197,Engineering,FP&A,Finance Associate,2025-06-03,,No,2.1,,76003.0,5.0,2.5,9033
+10065,Engineering,Data Eng,Engineering Associate,01-06-2022,,No,1.7,,104616.0,3.2,6.2,9021
+10016,Engineering,Enterprise,Sales Associate,12-10-2022,,No,2.5,05/19/2026,55659.0,4.3,3.2,9014
+10110,Engineering,Platform,Engineering Associate,2019-01-31,,No,3.3,,102769.0,3.5,23.2,9014
+10027,Engineering,Enterprise,Sales Associate,08-06-2021,04/09/2023,Yes,2.6,,57819.0,4.4,16.5,9014
+10077,Engineering,Product Eng,Engineering Associate,10/22/2021,,No,3.3,,114351.0,4.9,9.2,9009
+10044,Engineering,Mid-Market,Sales Associate,11-02-2023,,No,3.2,,53999.0,2.4,29.6,9021
+10004,Engineering,Enterprise,Senior Sales Specialist,2022-04-11,,No,3.8,,64691.0,1.3,5.3,9014
+10050,Engineering,SMB,Sales Associate,2019-09-24,,No,2.7,2025-12-06,54364.0,2.8,9.5,9027
+10298,Engineering,Brand,Marketing Associate,04/08/2024,,No,2.2,,66976.0,3.8,6.6,9027
+10031,Engineering,SMB,Sales Associate,03/04/2019,,No,3.5,,51192.0,2.9,8.8,9027
+10122,Engineering,Tier 1,Senior Support Specialist,2019-07-06,,No,3.8,,51070.0,3.8,4.3,9004
+10116,Engineering,Product Eng,Engineering Associate,05-03-2019,,No,3.1,,122920.0,3.5,3.7,9009
+10285,Engineering,Brand,Marketing Associate,26-09-2019,,No,3.5,30-12-2024,80487.0,2.9,3.0,9027
+10217,Engineering,Accounting,Finance Associate,10/29/2024,,No,1.9,,72731.0,3.2,0.1,9004
+10265,Engineering,Brand,Marketing Associate,2022-12-05,,No,3.4,,70521.0,3.5,0.3,9027
+10210,Engineering,FP&A,Senior Finance Specialist,2024-07-17,,No,4.0,,76456.0,2.5,5.2,9033
+10002,Engineering,SMB,Sales Associate,09-05-2020,11/20/2024,Yes,2.8,,52859.0,2.3,1.0,9027
+10023,Engineering,Enterprise,Sales Associate,2020-11-04,,No,3.4,2024-09-24,58648.0,4.2,0.2,9014
+10008,Engineering,SMB,Sales Associate,11-09-2023,,No,2.2,10/31/2025,57337.0,2.7,4.5,9027
+10142,Engineering,Tier 1,Support Associate,01-03-2024,,No,3.4,26-06-2026,48207.0,4.0,3.6,9004
+10087,Engineering,Data Eng,Engineering Associate,2022-12-18,,No,2.5,,95497.0,2.5,0.8,9021
+10242,Engineering,Brand,Marketing Associate,07/24/2021,,No,2.1,,61498.0,1.9,0.8,9027
+10216,Engineering,FP&A,Senior Finance Specialist,08/22/2019,,No,4.2,09/09/2023,88054.0,4.2,5.5,9033
+10069,Engineering,Platform,Engineering Associate,05/04/2019,,No,1.0,,109147.0,4.2,1.7,9014
+10051,Engineering,Enterprise,Senior Sales Specialist,08/03/2019,,No,3.7,2025-11-05,58841.0,3.3,0.0,9014
+10157,Engineering,Tier 2,Support Associate,11/22/2021,,No,2.8,,52472.0,4.0,12.1,9027
+10253,Engineering,Growth,Senior Marketing Specialist,13-05-2018,,No,4.0,11-11-2022,70498.0,3.8,1.4,9017
+10255,Engineering,Growth,Marketing Associate,10/13/2024,,No,2.9,,72836.0,3.1,5.1,9017
+10277,Engineering,Growth,Marketing Associate,29-10-2023,,No,3.2,,81820.0,3.0,0.7,9017
+10179,Engineering,Tier 2,Senior Support Specialist,09/09/2021,,No,4.2,,53543.0,1.0,0.5,9027
+10282,Engineering,Growth,Marketing Associate,09/19/2023,,No,2.8,,77551.0,2.5,2.6,9017
+10238,Engineering,Accounting,Finance Associate,2021-05-24,,No,3.0,,79858.0,4.5,2.2,9004
+10072,Engineering,Platform,Engineering Associate,01/31/2024,,No,3.3,,109022.0,3.7,29.9,9014
+10130,Engineering,Tier 2,Support Associate,04/04/2020,,No,3.6,19-03-2026,50202.0,2.9,6.5,9027
+10145,Engineering,Tier 1,Senior Support Specialist,2024-10-18,,No,4.1,10-04-2026,56169.0,4.2,1.2,9004
+10134,Engineering,Tier 2,Senior Support Specialist,06/21/2019,,No,3.9,,52233.0,4.0,3.3,9027
+10204,Engineering,FP&A,Finance Associate,01/01/2021,,No,3.6,,88452.0,3.0,0.9,9033
+10256,Engineering,Brand,Senior Marketing Specialist,10/04/2021,,No,3.8,,71189.0,3.6,2.9,9027
+10073,Engineering,Platform,Engineering Associate,02/12/2024,,No,3.4,2025-03-11,101058.0,4.7,12.2,9014
+10236,Engineering,FP&A,Senior Finance Specialist,08-09-2021,,No,4.6,,84659.0,4.1,2.4,9033
+10038,Engineering,Mid-Market,Senior Sales Specialist,03-03-2024,2025-01-30,Yes,5.0,06/28/2025,60420.0,3.3,6.5,9021

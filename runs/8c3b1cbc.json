@@ -1,0 +1,177 @@
+{
+  "run_id": "8c3b1cbc",
+  "source_filename": "edge_case_heavy_duplicates.csv",
+  "status": "complete",
+  "bronze_rows": 694,
+  "silver_rows": 600,
+  "gold_rows": 5,
+  "dq_rules": [
+    {
+      "id": "dq-1",
+      "column": "employee_id",
+      "issue": "94 duplicate employee_id rows detected.",
+      "proposed_action": "Deduplicate: keep the last occurrence per employee_id.",
+      "rule_type": "dedupe",
+      "approved": true
+    },
+    {
+      "id": "dq-2",
+      "column": "exit_date",
+      "issue": "632 missing values in 'exit_date'.",
+      "proposed_action": "Flag rows with missing 'exit_date' as 'Unknown'.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-3",
+      "column": "performance_rating",
+      "issue": "35 missing values in 'performance_rating'.",
+      "proposed_action": "Impute missing 'performance_rating' with the department median.",
+      "rule_type": "impute_median",
+      "approved": true
+    },
+    {
+      "id": "dq-4",
+      "column": "last_promotion_date",
+      "issue": "416 missing values in 'last_promotion_date'.",
+      "proposed_action": "Flag rows with missing 'last_promotion_date' as 'Unknown'.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-5",
+      "column": "compensation",
+      "issue": "28 missing values in 'compensation'.",
+      "proposed_action": "Impute missing 'compensation' with the department median.",
+      "rule_type": "impute_median",
+      "approved": true
+    },
+    {
+      "id": "dq-6",
+      "column": "engagement_score",
+      "issue": "42 missing values in 'engagement_score'.",
+      "proposed_action": "Impute missing 'engagement_score' with the department median.",
+      "rule_type": "impute_median",
+      "approved": true
+    },
+    {
+      "id": "dq-7",
+      "column": "department",
+      "issue": "Inconsistent casing in 'department', e.g. ['Marketing  ', 'marketing  ', 'marketing', 'Marketing'].",
+      "proposed_action": "Standardize 'department' to Title Case and trim whitespace.",
+      "rule_type": "standardize_text",
+      "approved": true
+    },
+    {
+      "id": "dq-8",
+      "column": "hire_date",
+      "issue": "Mixed date formats in 'hire_date'.",
+      "proposed_action": "Parse 'hire_date' to ISO (YYYY-MM-DD) format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    },
+    {
+      "id": "dq-9",
+      "column": "exit_date",
+      "issue": "Mixed date formats in 'exit_date'.",
+      "proposed_action": "Parse 'exit_date' to ISO (YYYY-MM-DD) format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    },
+    {
+      "id": "dq-10",
+      "column": "last_promotion_date",
+      "issue": "Mixed date formats in 'last_promotion_date'.",
+      "proposed_action": "Parse 'last_promotion_date' to ISO (YYYY-MM-DD) format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    }
+  ],
+  "dq_rules_approved": true,
+  "business_rules": [
+    {
+      "id": "biz-1",
+      "name": "top_performer_definition",
+      "description": "Define 'top performer' as performance_rating >= 4.",
+      "param": {
+        "min_rating": 4
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-2",
+      "name": "tenure_calculation",
+      "description": "Compute tenure_years as (exit_date or today) minus hire_date, in years.",
+      "param": {},
+      "approved": true
+    },
+    {
+      "id": "biz-3",
+      "name": "high_overtime_threshold",
+      "description": "Flag employees with overtime_hours_per_month > 15 as 'high overtime' for risk-factor analysis.",
+      "param": {
+        "threshold_hours": 15
+      },
+      "approved": true
+    }
+  ],
+  "business_rules_approved": true,
+  "narrative": "**Marketing** has the highest top-performer attrition rate at 20.0% (4 of 20 top performers), driven primarily by low engagement score prior to exit.\n\nDepartments ranked by risk: Marketing (20.0%), Engineering (18.5%), Sales (9.5%), Support (7.4%), Finance (3.6%). Recommend prioritizing a retention review for the top-ranked department(s) before the next review cycle.",
+  "log": [
+    {
+      "agent": "IngestionAgent",
+      "action": "ingest",
+      "detail": "Ingested 'edge_case_heavy_duplicates.csv' -> 8c3b1cbc_bronze.csv. 694 rows, 13 columns, schema: ['employee_id', 'department', 'team', 'job_role', 'hire_date', 'exit_date', 'attrition_flag', 'performance_rating', 'last_promotion_date', 'compensation', 'engagement_score', 'overtime_hours_per_month', 'manager_id']. Ingested at 2026-07-21T05:28:24.834838Z.",
+      "timestamp": "2026-07-21T05:28:24.834854"
+    },
+    {
+      "agent": "DataQualityAgent",
+      "action": "propose_rules",
+      "detail": "Profiled 694 Bronze rows. Found 94 duplicate IDs, 5 columns with missing values, 1 casing issues, 3 date format issues. Proposing 10 cleaning rule(s) for review.",
+      "timestamp": "2026-07-21T05:28:25.758494"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_dq_rules",
+      "detail": "Applied 10 approved rule(s): ['dq-1 (dedupe on employee_id)', 'dq-2 (fill_unknown on exit_date)', 'dq-3 (impute_median on performance_rating)', 'dq-4 (fill_unknown on last_promotion_date)', 'dq-5 (impute_median on compensation)', 'dq-6 (impute_median on engagement_score)', 'dq-7 (standardize_text on department)', 'dq-8 (standardize_date on hire_date)', 'dq-9 (standardize_date on exit_date)', 'dq-10 (standardize_date on last_promotion_date)']. Silver now has 600 rows -> 8c3b1cbc_silver.csv.",
+      "timestamp": "2026-07-21T05:29:26.877989"
+    },
+    {
+      "agent": "QAAgent",
+      "action": "validate",
+      "detail": "All checks passed: 5 total, 5 passed.",
+      "timestamp": "2026-07-21T05:29:26.886183"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "propose_business_rules",
+      "detail": "Proposing 3 business rules based on the Silver dataset columns: employee_id, department, team, job_role, hire_date, exit_date, attrition_flag, performance_rating, last_promotion_date, compensation, engagement_score, overtime_hours_per_month, manager_id. These rules define how to identify top performers, calculate tenure, and flag risk factors.",
+      "timestamp": "2026-07-21T05:29:27.613578"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_business_rules",
+      "detail": "Applied 3 approved business rule(s). Enriched Silver saved -> 8c3b1cbc_silver_enriched.csv.",
+      "timestamp": "2026-07-21T05:29:33.189859"
+    },
+    {
+      "agent": "AnalyticsAgent",
+      "action": "build_gold",
+      "detail": "Aggregated 600 Silver rows into 5 department-level Gold rows -> 8c3b1cbc_gold.csv.",
+      "timestamp": "2026-07-21T05:29:33.226096"
+    },
+    {
+      "agent": "AnalyticsAgent",
+      "action": "build_team_gold",
+      "detail": "Aggregated into 12 team-level rows -> 8c3b1cbc_gold_team.csv.",
+      "timestamp": "2026-07-21T05:29:33.246595"
+    },
+    {
+      "agent": "AnalyticsAgent",
+      "action": "generate_narrative",
+      "detail": "Executive narrative generated.",
+      "timestamp": "2026-07-21T05:29:33.598959"
+    }
+  ],
+  "created_at": "2026-07-21T05:28:24.810249"
+}

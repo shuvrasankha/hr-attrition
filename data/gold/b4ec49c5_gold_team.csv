@@ -1,0 +1,19 @@
+department,team,headcount,attritions,attrition_rate,top_performers,top_performer_attritions,top_performer_attrition_rate,avg_compensation,avg_compensation_leavers_top,avg_compensation_stayers_top,comp_gap,avg_overtime_leavers_top,avg_overtime_stayers_top,overtime_gap,avg_engagement_leavers_top,likely_driver,risk_score,risk_label
+Engineering,Data Eng,92.0,14.0,15.2,15.0,5.0,33.3,103458.0,113046.0,106976.0,-6070.0,17.1,4.8,12.3,2.72,elevated overtime before exit; low engagement score prior to exit,7.0,CRITICAL
+Engineering,Accounting,28.0,2.0,7.1,4.0,1.0,25.0,78488.0,88352.0,75135.0,-13217.0,13.2,3.2,10.0,1.9,elevated overtime before exit; low engagement score prior to exit,5.2,HIGH
+Engineering,Mid-Market,16.0,2.0,12.5,4.0,1.0,25.0,57312.0,60420.0,61645.0,1225.0,6.5,4.8,1.7,3.3,no dominant single factor identified,5.0,HIGH
+Marketing,Brand,120.0,15.0,12.5,22.0,5.0,22.7,70157.0,73396.0,74327.0,931.0,2.9,3.5,-0.6,3.22,no dominant single factor identified,4.5,HIGH
+Support,Tier 2,113.0,15.0,13.3,22.0,5.0,22.7,52652.0,53609.0,55567.0,1958.0,5.0,4.1,0.9,3.44,no dominant single factor identified,4.5,HIGH
+Engineering,Tier 1,27.0,1.0,3.7,5.0,1.0,20.0,52424.0,55911.0,52634.0,-3277.0,0.2,11.8,-11.6,2.7,low engagement score prior to exit,4.1,HIGH
+Engineering,Product Eng,73.0,11.0,15.1,16.0,3.0,18.8,106585.0,115751.0,114649.0,-1102.0,3.8,7.2,-3.4,3.47,no dominant single factor identified,3.8,MEDIUM
+Engineering,FP&A,32.0,3.0,9.4,6.0,1.0,16.7,77946.0,74519.0,83982.0,9463.0,1.0,2.9,-1.9,2.7,"compensation gap (~$9,463 below staying top performers); low engagement score prior to exit",3.5,MEDIUM
+Engineering,Brand,32.0,1.0,3.1,7.0,1.0,14.3,70860.0,70809.0,72527.0,1718.0,11.8,3.8,8.0,1.1,elevated overtime before exit; low engagement score prior to exit,3.0,MEDIUM
+Finance,Accounting,111.0,11.0,9.9,26.0,3.0,11.5,80449.0,85315.0,84338.0,-977.0,0.9,2.7,-1.8,3.57,no dominant single factor identified,2.3,LOW
+Marketing,Growth,120.0,12.0,10.0,26.0,3.0,11.5,71557.0,71418.0,74903.0,3485.0,1.7,4.7,-3.0,3.43,"compensation gap (~$3,485 below staying top performers)",2.4,LOW
+Finance,FP&A,129.0,16.0,12.4,28.0,3.0,10.7,77942.0,83622.0,82812.0,-810.0,4.6,2.6,2.0,2.3,low engagement score prior to exit,2.2,LOW
+Engineering,Tier 2,33.0,2.0,6.1,11.0,1.0,9.1,51669.0,49584.0,54753.0,5169.0,13.6,1.6,12.0,2.7,"compensation gap (~$5,169 below staying top performers); elevated overtime before exit; low engagement score prior to exit",2.0,LOW
+Support,Tier 1,127.0,10.0,7.9,23.0,2.0,8.7,52181.0,58902.0,53799.0,-5103.0,0.6,4.9,-4.3,4.75,no dominant single factor identified,1.7,LOW
+Engineering,Platform,75.0,10.0,13.3,12.0,1.0,8.3,106893.0,119590.0,114414.0,-5176.0,9.0,3.0,6.0,4.4,elevated overtime before exit,1.7,LOW
+Engineering,Growth,28.0,2.0,7.1,7.0,0.0,0.0,71066.0,,74532.0,,,2.8,,,no dominant single factor identified,0.0,LOW
+Engineering,Enterprise,20.0,3.0,15.0,1.0,0.0,0.0,57270.0,,57437.0,,,0.0,,,no dominant single factor identified,0.0,LOW
+Engineering,SMB,24.0,3.0,12.5,4.0,0.0,0.0,57256.0,,59665.0,,,3.6,,,no dominant single factor identified,0.0,LOW
