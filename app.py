@@ -108,12 +108,27 @@ def _render_dq_approval(orch: Orchestrator):
     st.markdown("### Data Quality Agent")
     st.caption(f"Bronze layer: **{orch.state.bronze_rows} rows** ingested from `{orch.state.source_filename}`")
 
-    with st.expander(":material/preview: Preview Bronze data (first 20 rows)"):
-        st.dataframe(orch.bronze_df.head(20), use_container_width=True, hide_index=True)
+    if orch.bronze_df is not None and not orch.bronze_df.empty:
+        with st.expander(":material/preview: Preview Bronze data (first 20 rows)"):
+            st.dataframe(orch.bronze_df.head(20), use_container_width=True, hide_index=True)
+    else:
+        st.warning("Bronze data is empty. Cannot proceed.")
+        return
 
     if not orch.state.dq_rules:
         with st.spinner("Data Quality Agent profiling Bronze data..."):
-            orch.propose_dq_rules()
+            try:
+                orch.propose_dq_rules()
+            except Exception as e:
+                st.error(f"Error during DQ profiling: {e}")
+                return
+
+    if not orch.state.dq_rules:
+        st.info("No cleaning rules proposed — data looks clean.")
+        if st.button("Continue to Business Rules", type="primary", use_container_width=True):
+            st.session_state.step = 2
+            st.rerun()
+        return
 
     st.info(
         "The DQ Agent profiled the data and found issues with duplicates, missing values, "
@@ -139,7 +154,11 @@ def _render_dq_approval(orch: Orchestrator):
 
     st.markdown("")
     if st.button(":material/check_circle: Approve rules & build Silver layer", type="primary", use_container_width=True):
-        orch.apply_dq_rules(edited_rules)
+        try:
+            orch.apply_dq_rules(edited_rules)
+        except Exception as e:
+            st.error(f"Error building Silver layer: {e}")
+            return
         with st.spinner("Running QA validation..."):
             qa_report = orch.run_qa_validation()
         st.session_state.qa_report = qa_report
@@ -163,12 +182,27 @@ def _render_biz_approval(orch: Orchestrator):
                 icon = ":material/check_circle:" if c["passed"] else ":material/cancel:"
                 st.markdown(f"{icon} **{c['name']}**  \n{c['detail']}")
 
-    with st.expander(":material/preview: Preview Silver data (first 20 rows)"):
-        st.dataframe(orch.silver_df.head(20), use_container_width=True, hide_index=True)
+    if orch.silver_df is not None and not orch.silver_df.empty:
+        with st.expander(":material/preview: Preview Silver data (first 20 rows)"):
+            st.dataframe(orch.silver_df.head(20), use_container_width=True, hide_index=True)
+    else:
+        st.warning("Silver data is empty. Cannot proceed.")
+        return
 
     if not orch.state.business_rules:
         with st.spinner("Transformation Agent drafting business rule proposals..."):
-            orch.propose_business_rules()
+            try:
+                orch.propose_business_rules()
+            except Exception as e:
+                st.error(f"Error during business rule proposal: {e}")
+                return
+
+    if not orch.state.business_rules:
+        st.info("No business rules proposed.")
+        if st.button("Continue to Gold", type="primary", use_container_width=True):
+            st.session_state.step = 3
+            st.rerun()
+        return
 
     st.info(
         "The Transformation Agent proposes business definitions that determine "
@@ -208,10 +242,16 @@ def _render_gold_insights(orch: Orchestrator):
     gold = orch.gold_df
     team_gold = orch.team_gold_df
 
-    if gold is None or gold.empty:
-        st.error("Gold layer is empty.")
-        st.write(f"Silver enriched rows: {len(orch.silver_enriched_df) if orch.silver_enriched_df is not None else 'N/A'}")
+    if gold is None or (hasattr(gold, 'empty') and gold.empty):
+        st.error("Gold layer is empty or could not be generated.")
+        if orch.silver_enriched_df is not None:
+            st.write(f"Silver enriched rows: {len(orch.silver_enriched_df)}")
         st.write(f"State status: {orch.state.status}")
+        if orch.state.log:
+            st.markdown("**Last agent log:**")
+            last_log = orch.state.log[-1]
+            st.write(f"`{last_log['timestamp']}` **{last_log['agent']}** — {last_log['action']}")
+            st.write(last_log['detail'])
         return
 
     st.markdown('<span class="step-badge done">Complete</span>', unsafe_allow_html=True)
@@ -267,13 +307,16 @@ def _render_gold_insights(orch: Orchestrator):
     st.divider()
     st.markdown("#### Team-Level Drill-Down")
     st.caption("Top 10 teams by attrition risk (cross-department view)")
-    team_display = team_gold.head(10)
-    team_cols = [
-        "department", "team", "headcount", "top_performers", "top_performer_attritions",
-        "top_performer_attrition_rate", "comp_gap", "risk_score", "risk_label", "likely_driver",
-    ]
-    existing_team_cols = [c for c in team_cols if c in team_display.columns]
-    st.dataframe(team_display[existing_team_cols], use_container_width=True, hide_index=True)
+    if team_gold is not None and not team_gold.empty:
+        team_display = team_gold.head(10)
+        team_cols = [
+            "department", "team", "headcount", "top_performers", "top_performer_attritions",
+            "top_performer_attrition_rate", "comp_gap", "risk_score", "risk_label", "likely_driver",
+        ]
+        existing_team_cols = [c for c in team_cols if c in team_display.columns]
+        st.dataframe(team_display[existing_team_cols], use_container_width=True, hide_index=True)
+    else:
+        st.info("No team-level data available.")
 
     st.divider()
     st.markdown("#### Data Lineage")
@@ -283,28 +326,35 @@ def _render_gold_insights(orch: Orchestrator):
             dept_silver = orch.silver_enriched_df[orch.silver_enriched_df["department"] == selected_dept]
             m1, m2, m3, m4 = st.columns(4)
             m1.metric("Silver rows", len(dept_silver))
-            m2.metric("Top performers", int(dept_silver["is_top_performer"].sum()))
-            m3.metric("Total attritions", int(dept_silver["attrition_flag"].sum()))
-            m4.metric("TP attritions", int((dept_silver["is_top_performer"] & dept_silver["attrition_flag"]).sum()))
+            m2.metric("Top performers", int(dept_silver["is_top_performer"].sum()) if "is_top_performer" in dept_silver.columns else 0)
+            m3.metric("Total attritions", int(dept_silver["attrition_flag"].sum()) if "attrition_flag" in dept_silver.columns else 0)
+            tp_attritions = int((dept_silver["is_top_performer"] & dept_silver["attrition_flag"]).sum()) if "is_top_performer" in dept_silver.columns and "attrition_flag" in dept_silver.columns else 0
+            m4.metric("TP attritions", tp_attritions)
 
-            st.markdown("**Sample top-performer leavers:**")
-            trace_df = dept_silver[dept_silver["is_top_performer"] & dept_silver["attrition_flag"]][
-                ["employee_id", "team", "performance_rating", "compensation", "tenure_years", "high_overtime"]
-            ].head(10)
-            st.dataframe(trace_df, use_container_width=True, hide_index=True)
+            trace_cols = ["employee_id", "team", "performance_rating", "compensation", "tenure_years", "high_overtime"]
+            available_trace_cols = [c for c in trace_cols if c in dept_silver.columns]
+            if available_trace_cols:
+                st.markdown("**Sample top-performer leavers:**")
+                mask = dept_silver["is_top_performer"] & dept_silver["attrition_flag"] if "is_top_performer" in dept_silver.columns and "attrition_flag" in dept_silver.columns else pd.Series([False] * len(dept_silver), index=dept_silver.index)
+                trace_df = dept_silver[mask][available_trace_cols].head(10)
+                st.dataframe(trace_df, use_container_width=True, hide_index=True)
 
     with st.expander(":material/table_rows: Full Gold tables"):
         st.markdown("**Department-level**")
         st.dataframe(gold, use_container_width=True, hide_index=True)
-        st.markdown("**Team-level**")
-        st.dataframe(team_gold, use_container_width=True, hide_index=True)
+        if team_gold is not None and not team_gold.empty:
+            st.markdown("**Team-level**")
+            st.dataframe(team_gold, use_container_width=True, hide_index=True)
 
     with st.expander(":material/list_alt: Agent run log (audit trail)"):
-        for entry in orch.state.log:
-            st.markdown(
-                f"`{entry['timestamp']}` **{entry['agent']}** \u2014 {entry['action']}  \n"
-                f"{entry['detail']}"
-            )
+        if orch.state.log:
+            for entry in orch.state.log:
+                st.markdown(
+                    f"`{entry['timestamp']}` **{entry['agent']}** \u2014 {entry['action']}  \n"
+                    f"{entry['detail']}"
+                )
+        else:
+            st.info("No log entries yet.")
 
 
 def page_run():
@@ -335,11 +385,17 @@ def page_run():
             st.session_state.uploaded_dfs = []
             st.session_state.uploaded_names = []
             for f in uploaded:
-                df_preview = pd.read_csv(f)
-                st.session_state.uploaded_dfs.append(df_preview)
-                st.session_state.uploaded_names.append(f.name)
-                st.success(f"**{f.name}** \u2014 {len(df_preview)} rows, {len(df_preview.columns)} columns")
-                st.dataframe(df_preview.head(5), use_container_width=True, hide_index=True)
+                try:
+                    df_preview = pd.read_csv(f)
+                    if df_preview.empty:
+                        st.warning(f"**{f.name}** is empty — skipping.")
+                        continue
+                    st.session_state.uploaded_dfs.append(df_preview)
+                    st.session_state.uploaded_names.append(f.name)
+                    st.success(f"**{f.name}** \u2014 {len(df_preview)} rows, {len(df_preview.columns)} columns")
+                    st.dataframe(df_preview.head(5), use_container_width=True, hide_index=True)
+                except Exception as e:
+                    st.error(f"Error reading **{f.name}**: {e}")
 
             # Column validation
             combined = pd.concat(st.session_state.uploaded_dfs, ignore_index=True)
@@ -398,7 +454,10 @@ def page_history():
         return
 
     for path in runs:
-        state = PipelineState.load(path.stem)
+        try:
+            state = PipelineState.load(path.stem)
+        except Exception:
+            continue
         done = state.status == "complete"
         icon = ":material/check_circle:" if done else ":material/pending:"
         label = state.status.replace("_", " ").title()

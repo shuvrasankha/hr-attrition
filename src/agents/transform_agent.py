@@ -14,32 +14,48 @@ from src.state import PipelineState
 
 
 def apply_dq_rules(state: PipelineState, df: pd.DataFrame, rules: list) -> pd.DataFrame:
+    if df is None or df.empty:
+        raise ValueError("Cannot apply DQ rules: Bronze DataFrame is empty.")
+
     out = df.copy()
     applied = []
 
     for rule in rules:
         if not rule.get("approved"):
             continue
-        col = rule["column"]
-        rtype = rule["rule_type"]
+        col = rule.get("column", "")
+        rtype = rule.get("rule_type", "")
 
-        if rtype == "dedupe":
-            out = out.drop_duplicates(subset=["employee_id"], keep="last")
-        elif rtype == "impute_median" and col in out.columns:
-            median = pd.to_numeric(out[col], errors="coerce").median()
-            out[col] = pd.to_numeric(out[col], errors="coerce").fillna(median)
-        elif rtype == "fill_unknown" and col in out.columns:
-            out[col] = out[col].fillna("Unknown")
-        elif rtype == "standardize_text" and col in out.columns:
-            out[col] = out[col].astype(str).str.strip().str.title()
-        elif rtype == "standardize_date" and col in out.columns:
-            out[col] = pd.to_datetime(out[col], errors="coerce", format="mixed").dt.strftime("%Y-%m-%d")
+        try:
+            if rtype == "dedupe" and "employee_id" in out.columns:
+                before = len(out)
+                out = out.drop_duplicates(subset=["employee_id"], keep="last")
+                applied.append(f"{rule['id']} (dedupe: {before - len(out)} rows removed)")
+            elif rtype == "impute_median" and col in out.columns:
+                median = pd.to_numeric(out[col], errors="coerce").median()
+                if pd.notna(median):
+                    out[col] = pd.to_numeric(out[col], errors="coerce").fillna(median)
+                    applied.append(f"{rule['id']} (impute_median on {col}: filled with {median})")
+            elif rtype == "fill_unknown" and col in out.columns:
+                out[col] = out[col].fillna("Unknown")
+                applied.append(f"{rule['id']} (fill_unknown on {col})")
+            elif rtype == "standardize_text" and col in out.columns:
+                out[col] = out[col].astype(str).str.strip().str.title()
+                applied.append(f"{rule['id']} (standardize_text on {col})")
+            elif rtype == "standardize_date" and col in out.columns:
+                out[col] = pd.to_datetime(out[col], errors="coerce", format="mixed").dt.strftime("%Y-%m-%d")
+                applied.append(f"{rule['id']} (standardize_date on {col})")
+        except Exception:
+            continue
 
-        applied.append(f"{rule['id']} ({rtype} on {col})")
-
+    # Normalize attrition_flag to boolean
     if "attrition_flag" in out.columns:
-        out["attrition_flag"] = out["attrition_flag"].astype(str).str.strip().str.title()
-        out["attrition_flag"] = out["attrition_flag"].map({"Yes": True, "No": False}).fillna(False)
+        out["attrition_flag"] = (
+            out["attrition_flag"]
+            .astype(str).str.strip().str.lower()
+            .map({"yes": True, "no": False, "1": True, "0": False, "true": True, "false": False})
+            .fillna(False)
+        )
 
     silver_path = SILVER_DIR / f"{state.run_id}_silver.csv"
     out.to_csv(silver_path, index=False)
@@ -50,7 +66,7 @@ def apply_dq_rules(state: PipelineState, df: pd.DataFrame, rules: list) -> pd.Da
     state.add_log(
         agent="TransformationAgent",
         action="apply_dq_rules",
-        detail=f"Applied {len(applied)} approved rule(s): {applied}. Silver now has {len(out)} rows -> {silver_path.name}.",
+        detail=f"Applied {len(applied)} approved rule(s). Silver now has {len(out)} rows -> {silver_path.name}.",
     )
     return out
 
@@ -84,6 +100,9 @@ def _build_default_rules() -> list:
 
 def _ask_ai_for_rules(silver_df: pd.DataFrame, defaults: list) -> list:
     """Ask the AI to analyze the Silver data and suggest business rules."""
+    if silver_df is None or silver_df.empty:
+        return defaults
+
     columns = list(silver_df.columns)
     dtypes = {c: str(silver_df[c].dtype) for c in columns}
     sample = silver_df.head(3).to_dict(orient="records")
@@ -132,6 +151,8 @@ def _ask_ai_for_rules(silver_df: pd.DataFrame, defaults: list) -> list:
             for r in ai_rules:
                 r.setdefault("approved", True)
                 r.setdefault("param", {})
+                r.setdefault("name", "unnamed_rule")
+                r.setdefault("description", "")
             return ai_rules
     except (json.JSONDecodeError, IndexError, KeyError):
         pass
@@ -141,6 +162,14 @@ def _ask_ai_for_rules(silver_df: pd.DataFrame, defaults: list) -> list:
 
 def propose_business_rules(state: PipelineState, silver_df: pd.DataFrame) -> list:
     defaults = _build_default_rules()
+
+    if silver_df is None or silver_df.empty:
+        state.business_rules = defaults
+        state.status = "rules_proposed"
+        state.add_log(agent="TransformationAgent", action="propose_business_rules",
+                      detail="Silver empty, using default business rules.")
+        return defaults
+
     rules = _ask_ai_for_rules(silver_df, defaults)
 
     fallback = (
@@ -161,22 +190,49 @@ def propose_business_rules(state: PipelineState, silver_df: pd.DataFrame) -> lis
 
 
 def apply_business_rules(state: PipelineState, silver_df: pd.DataFrame, rules: list) -> pd.DataFrame:
+    if silver_df is None or silver_df.empty:
+        raise ValueError("Cannot apply business rules: Silver DataFrame is empty.")
+
     out = silver_df.copy()
-    rule_map = {r["name"]: r for r in rules if r.get("approved")}
+    rule_map = {r["name"]: r for r in rules if r.get("approved") and r.get("name")}
 
-    min_rating = rule_map.get("top_performer_definition", {}).get("param", {}).get("min_rating", DEFAULT_TOP_PERFORMER_MIN_RATING)
-    out["performance_rating"] = pd.to_numeric(out["performance_rating"], errors="coerce")
-    out["is_top_performer"] = out["performance_rating"] >= min_rating
+    # is_top_performer
+    min_rating = (
+        rule_map.get("top_performer_definition", {})
+        .get("param", {})
+        .get("min_rating", DEFAULT_TOP_PERFORMER_MIN_RATING)
+    )
+    if "performance_rating" in out.columns:
+        out["performance_rating"] = pd.to_numeric(out["performance_rating"], errors="coerce")
+        out["is_top_performer"] = out["performance_rating"] >= min_rating
+    else:
+        out["is_top_performer"] = False
 
-    if "tenure_calculation" in rule_map:
+    # tenure_years
+    if "hire_date" in out.columns:
         hire = pd.to_datetime(out["hire_date"], errors="coerce")
-        exit_ = pd.to_datetime(out["exit_date"], errors="coerce")
-        end = exit_.fillna(pd.Timestamp("2026-06-30"))
-        out["tenure_years"] = ((end - hire).dt.days / 365.25).round(2)
+        if "exit_date" in out.columns:
+            exit_ = pd.to_datetime(out["exit_date"], errors="coerce")
+        else:
+            exit_ = pd.Series([pd.NaT] * len(out), index=out.index)
+        end = exit_.fillna(pd.Timestamp.now())
+        days = (end - hire).dt.days
+        out["tenure_years"] = (days / 365.25).round(2)
+        out["tenure_years"] = out["tenure_years"].clip(lower=0).fillna(0)
+    else:
+        out["tenure_years"] = 0.0
 
-    thresh = rule_map.get("high_overtime_threshold", {}).get("param", {}).get("threshold_hours", 15)
-    out["overtime_hours_per_month"] = pd.to_numeric(out["overtime_hours_per_month"], errors="coerce")
-    out["high_overtime"] = out["overtime_hours_per_month"] > thresh
+    # high_overtime
+    thresh = (
+        rule_map.get("high_overtime_threshold", {})
+        .get("param", {})
+        .get("threshold_hours", 15)
+    )
+    if "overtime_hours_per_month" in out.columns:
+        out["overtime_hours_per_month"] = pd.to_numeric(out["overtime_hours_per_month"], errors="coerce").fillna(0)
+        out["high_overtime"] = out["overtime_hours_per_month"] > thresh
+    else:
+        out["high_overtime"] = False
 
     silver_path = SILVER_DIR / f"{state.run_id}_silver_enriched.csv"
     out.to_csv(silver_path, index=False)

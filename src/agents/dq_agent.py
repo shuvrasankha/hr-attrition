@@ -180,6 +180,13 @@ def _ask_ai_for_rules(findings: dict, hardcoded: list) -> list:
 
 
 def propose_rules(state: PipelineState, df: pd.DataFrame) -> list:
+    if df is None or df.empty:
+        state.dq_rules = []
+        state.status = "dq_proposed"
+        state.add_log(agent="DataQualityAgent", action="propose_rules",
+                      detail="Bronze is empty, no cleaning rules proposed.")
+        return []
+
     findings = profile(df)
     hardcoded = _build_hardcoded_rules(findings)
 

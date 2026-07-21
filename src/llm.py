@@ -5,6 +5,7 @@ structured findings into human-readable rule proposals / narratives.
 If HUGGINGFACE_TOKEN is not set, falls back to deterministic templated text
 so the whole pipeline still runs end-to-end without network access.
 """
+import time
 from src.config import HF_TOKEN, HF_MODEL
 
 _client = None
@@ -16,23 +17,36 @@ if HF_TOKEN:
         _client = None
 
 
-def llm_complete(system: str, prompt: str, max_tokens: int = 600, fallback: str = "") -> str:
+def llm_complete(system: str, prompt: str, max_tokens: int = 600,
+                 fallback: str = "", retries: int = 2, timeout: int = 30) -> str:
     """Call HuggingFace model if configured; otherwise return the provided fallback text."""
     if _client is None:
         return fallback
-    try:
-        resp = _client.chat_completion(
-            model=HF_MODEL,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": prompt},
-            ],
-            max_tokens=max_tokens,
-            temperature=0.3,
-        )
-        return resp.choices[0].message.content.strip() or fallback
-    except Exception:
-        return fallback
+
+    last_error = None
+    for attempt in range(retries + 1):
+        try:
+            resp = _client.chat_completion(
+                model=HF_MODEL,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": prompt},
+                ],
+                max_tokens=max_tokens,
+                temperature=0.3,
+            )
+            content = resp.choices[0].message.content
+            if content and content.strip():
+                return content.strip()
+            return fallback
+        except Exception as e:
+            last_error = e
+            if attempt < retries:
+                time.sleep(1 * (attempt + 1))  # linear backoff: 1s, 2s
+            continue
+
+    # All retries exhausted — return fallback silently
+    return fallback
 
 
 def is_llm_enabled() -> bool:

@@ -18,27 +18,45 @@ class Orchestrator:
         self.team_gold_df: pd.DataFrame | None = None
 
     def ingest(self, source_df: pd.DataFrame, filename: str):
+        if source_df is None or source_df.empty:
+            raise ValueError("Cannot ingest: uploaded data is empty.")
         self.bronze_df = ingestion_agent.run(self.state, source_df, filename)
         self.state.save()
         return self.bronze_df
 
     def propose_dq_rules(self):
+        if self.bronze_df is None or self.bronze_df.empty:
+            self.state.add_log(agent="Orchestrator", action="propose_dq_rules",
+                               detail="Bronze is empty, skipping DQ profiling.")
+            return []
         rules = dq_agent.propose_rules(self.state, self.bronze_df)
         self.state.save()
         return rules
 
     def apply_dq_rules(self, approved_rules: list):
+        if self.bronze_df is None or self.bronze_df.empty:
+            raise ValueError("Cannot apply DQ rules: Bronze DataFrame is empty.")
         self.state.dq_rules = approved_rules
         self.silver_df = transform_agent.apply_dq_rules(self.state, self.bronze_df, approved_rules)
         self.state.save()
         return self.silver_df
 
     def propose_business_rules(self):
+        if self.silver_df is None or self.silver_df.empty:
+            self.state.add_log(agent="Orchestrator", action="propose_business_rules",
+                               detail="Silver is empty, using default business rules.")
+            rules = transform_agent._build_default_rules()
+            self.state.business_rules = rules
+            self.state.status = "rules_proposed"
+            self.state.save()
+            return rules
         rules = transform_agent.propose_business_rules(self.state, self.silver_df)
         self.state.save()
         return rules
 
     def apply_business_rules(self, approved_rules: list):
+        if self.silver_df is None or self.silver_df.empty:
+            raise ValueError("Cannot apply business rules: Silver DataFrame is empty.")
         self.state.business_rules = approved_rules
         self.silver_enriched_df = transform_agent.apply_business_rules(self.state, self.silver_df, approved_rules)
         self.state.save()
@@ -46,7 +64,7 @@ class Orchestrator:
 
     def build_gold_and_narrative(self):
         if self.silver_enriched_df is None or self.silver_enriched_df.empty:
-            raise ValueError("Silver enriched DataFrame is empty. Cannot build Gold layer.")
+            raise ValueError("Cannot build Gold: Silver enriched DataFrame is empty.")
         required_cols = {"department", "is_top_performer", "attrition_flag", "compensation"}
         missing = required_cols - set(self.silver_enriched_df.columns)
         if missing:
