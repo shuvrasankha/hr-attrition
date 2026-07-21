@@ -6,7 +6,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pandas as pd
 import streamlit as st
 
-from src import data_gen
 from src.agents.orchestrator import Orchestrator
 from src.state import PipelineState
 
@@ -298,22 +297,7 @@ def page_run():
 
         has_files = bool(st.session_state.get("uploaded_dfs"))
 
-        c1, c2 = st.columns(2)
-        with c1:
-            use_sample = st.button("Use synthetic sample dataset", type="primary")
-        with c2:
-            process_upload = st.button("Process uploaded files", disabled=not has_files)
-
-        if use_sample:
-            df = data_gen.generate()
-            fname = "hr_attrition_synthetic.csv"
-            orch = Orchestrator()
-            orch.ingest(df, fname)
-            st.session_state.orch = orch
-            st.session_state.step = 1
-            st.rerun()
-
-        elif process_upload and has_files:
+        if st.button("Process uploaded files", type="primary", disabled=not has_files):
             try:
                 frames = st.session_state.uploaded_dfs
                 df = pd.concat(frames, ignore_index=True)
