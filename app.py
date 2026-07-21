@@ -151,19 +151,28 @@ def _render_biz_approval(orch: Orchestrator):
             edited_rules.append(r)
 
     if st.button("Approve rules & build Gold layer", type="primary"):
-        orch.apply_business_rules(edited_rules)
-        orch.build_gold_and_narrative()
-        st.session_state.step = 3
-        st.rerun()
+        try:
+            orch.apply_business_rules(edited_rules)
+            orch.build_gold_and_narrative()
+            st.session_state.step = 3
+            st.rerun()
+        except Exception as e:
+            st.error(f"Error building Gold layer: {e}")
 
 
 def _render_gold_insights(orch: Orchestrator):
     st.subheader("Step 4 · Analytics Agent — Gold layer insights")
 
-    st.success(orch.state.narrative)
-
     gold = orch.gold_df
     team_gold = orch.team_gold_df
+
+    if gold is None or gold.empty:
+        st.error("Gold layer is empty. Something went wrong during aggregation.")
+        st.write(f"Silver enriched rows: {len(orch.silver_enriched_df) if orch.silver_enriched_df is not None else 'N/A'}")
+        st.write(f"State status: {orch.state.status}")
+        return
+
+    st.success(orch.state.narrative)
 
     # --- Risk summary cards ---
     st.markdown("### Risk Overview")

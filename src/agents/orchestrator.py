@@ -45,6 +45,12 @@ class Orchestrator:
         return self.silver_enriched_df
 
     def build_gold_and_narrative(self):
+        if self.silver_enriched_df is None or self.silver_enriched_df.empty:
+            raise ValueError("Silver enriched DataFrame is empty. Cannot build Gold layer.")
+        required_cols = {"department", "is_top_performer", "attrition_flag", "compensation"}
+        missing = required_cols - set(self.silver_enriched_df.columns)
+        if missing:
+            raise ValueError(f"Silver enriched data is missing required columns: {missing}")
         self.gold_df = analytics_agent.build_gold(self.state, self.silver_enriched_df)
         self.team_gold_df = analytics_agent.build_team_gold(self.state, self.silver_enriched_df)
         narrative = analytics_agent.generate_narrative(self.state, self.gold_df, self.team_gold_df)

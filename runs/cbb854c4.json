@@ -1,0 +1,181 @@
+{
+  "run_id": "cbb854c4",
+  "source_filename": "hr_attrition_sample_data_3.csv",
+  "status": "rules_approved",
+  "bronze_rows": 1224,
+  "silver_rows": 1200,
+  "gold_rows": 0,
+  "dq_rules": [
+    {
+      "id": "dq-1",
+      "column": "employee_id",
+      "issue": "24 duplicate employee_id rows detected.",
+      "proposed_action": "Deduplicate: keep the last occurrence per employee_id.",
+      "rule_type": "dedupe",
+      "approved": true
+    },
+    {
+      "id": "dq-2",
+      "column": "exit_date",
+      "issue": "1089 missing values in 'exit_date'.",
+      "proposed_action": "Fill missing 'exit_date' with 'Unknown'.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-3",
+      "column": "exit_date",
+      "issue": "Mixed date formats in 'exit_date'.",
+      "proposed_action": "Standardize 'exit_date' to 'YYYY-MM-DD' format.",
+      "rule_type": "standardize_date",
+      "approved": true
+    },
+    {
+      "id": "dq-4",
+      "column": "performance_rating",
+      "issue": "60 missing values in 'performance_rating'.",
+      "proposed_action": "Impute missing 'performance_rating' with median.",
+      "rule_type": "impute_median",
+      "approved": true
+    },
+    {
+      "id": "dq-5",
+      "column": "last_promotion_date",
+      "issue": "729 missing values in 'last_promotion_date'.",
+      "proposed_action": "Flag rows with missing 'last_promotion_date' as 'Unknown'.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-6",
+      "column": "compensation",
+      "issue": "48 missing values in 'compensation'.",
+      "proposed_action": "Flag rows with missing 'compensation' as 'Unknown'.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-7",
+      "column": "engagement_score",
+      "issue": "72 missing values in 'engagement_score'.",
+      "proposed_action": "Flag rows with missing 'engagement_score' as 'Unknown'.",
+      "rule_type": "fill_unknown",
+      "approved": true
+    },
+    {
+      "id": "dq-8",
+      "column": "department",
+      "issue": "Casing issues in 'department'.",
+      "proposed_action": "Standardize 'department' to lowercase.",
+      "rule_type": "standardize_text",
+      "approved": true
+    }
+  ],
+  "dq_rules_approved": true,
+  "business_rules": [
+    {
+      "id": "biz-1",
+      "name": "top_performer_definition",
+      "description": "Define 'top performer' as performance_rating >= 4.",
+      "param": {
+        "min_rating": 4
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-2",
+      "name": "tenure_calculation",
+      "description": "Compute tenure_years as (exit_date or today) minus hire_date, in years.",
+      "param": {},
+      "approved": true
+    },
+    {
+      "id": "biz-3",
+      "name": "high_overtime_threshold",
+      "description": "Flag employees with overtime_hours_per_month > 15 as 'high overtime' for risk-factor analysis.",
+      "param": {
+        "threshold_hours": 15
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-4",
+      "name": "engagement_score_threshold",
+      "description": "Identify employees with engagement_score <= 2 as 'low engagement' for intervention.",
+      "param": {
+        "threshold_score": 2
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-5",
+      "name": "recent_promotion_definition",
+      "description": "Define 'recently promoted' as last_promotion_date within the last 2 years.",
+      "param": {
+        "promotion_window": 2
+      },
+      "approved": true
+    },
+    {
+      "id": "biz-6",
+      "name": "attrition_risk_flag",
+      "description": "Flag employees with attrition_flag as True for risk-factor analysis.",
+      "param": {},
+      "approved": true
+    },
+    {
+      "id": "biz-7",
+      "name": "compensation_quartile_calculation",
+      "description": "Compute compensation_quartile as the quartile of compensation values.",
+      "param": {},
+      "approved": true
+    }
+  ],
+  "business_rules_approved": true,
+  "narrative": "",
+  "log": [
+    {
+      "agent": "IngestionAgent",
+      "action": "ingest",
+      "detail": "Ingested 'hr_attrition_sample_data_3.csv' -> cbb854c4_bronze.csv. 1224 rows, 13 columns, schema: ['employee_id', 'department', 'team', 'job_role', 'hire_date', 'exit_date', 'attrition_flag', 'performance_rating', 'last_promotion_date', 'compensation', 'engagement_score', 'overtime_hours_per_month', 'manager_id']. Ingested at 2026-07-21T05:15:09.062250Z.",
+      "timestamp": "2026-07-21T05:15:09.062276"
+    },
+    {
+      "agent": "DataQualityAgent",
+      "action": "propose_rules",
+      "detail": "Here are the proposed cleaning rules explained in 2-3 plain-English sentences for an HR stakeholder:\n\n**Rule 1: Deduplicate employee IDs**\nWe've found 24 duplicate employee IDs in the data. To fix this, we'll keep only the last occurrence of each employee ID, so we don't lose any important information.\n\n**Rule 2: Fill missing exit dates**\nThere are 1,089 rows with missing exit dates. We'll fill these missing values with \"Unknown\" to ensure we have a complete picture of each employee's exit date.\n\n**Rule 3: Standardize exit date format**\nWe've found different date formats in the exit date column. To make the data easier to work with, we'll standardize the exit date format to \"YYYY-MM-DD\".\n\n**Rule 4: Impute missing performance ratings**\nThere are 60 rows with missing performance ratings. We'll impute these missing values with the median performance rating, so we can still get a sense of each employee's performance.\n\n**Rule 5: Flag missing last promotion dates**\nThere are 729 rows with missing last promotion dates. We'll flag these rows as \"Unknown\" to indicate that we don't have this information.\n\n**Rule 6: Flag missing compensation values**\nThere are 48 rows with missing compensation values. We'll flag these rows as \"Unknown\" to indicate that we don't have this information.\n\n**Rule 7: Flag missing engagement scores**\nThere are 72 rows with missing engagement scores. We'll flag these rows as \"Unknown\" to indicate that we don't have this information.\n\n**Rule 8: Standardize department names**\nWe've found different casing in the department names. To make the data easier to work with, we'll standardize the department names to lowercase.",
+      "timestamp": "2026-07-21T05:15:48.793807"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_dq_rules",
+      "detail": "Applied 8 approved rule(s): ['dq-1 (dedupe on employee_id)', 'dq-2 (fill_unknown on exit_date)', 'dq-3 (standardize_date on exit_date)', 'dq-4 (impute_median on performance_rating)', 'dq-5 (fill_unknown on last_promotion_date)', 'dq-6 (fill_unknown on compensation)', 'dq-7 (fill_unknown on engagement_score)', 'dq-8 (standardize_text on department)']. Silver now has 1200 rows -> cbb854c4_silver.csv.",
+      "timestamp": "2026-07-21T05:16:08.104257"
+    },
+    {
+      "agent": "QAAgent",
+      "action": "validate",
+      "detail": "Some checks passed: 5 total, 4 passed.",
+      "timestamp": "2026-07-21T05:16:08.110729"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "propose_business_rules",
+      "detail": "Here's an explanation of the proposed business definitions in 2-3 plain sentences:\n\nWe're proposing the following definitions to be applied to our employee data:\n\n* A \"top performer\" is defined as an employee with a performance rating of 4 or higher.\n* An employee's tenure is calculated as the number of years between their hire date and their exit date (or the current date if they're still employed).\n* Employees who work more than 15 hours of overtime per month will be flagged as \"high overtime\" for risk-factor analysis.\n* Employees with an engagement score of 2 or lower will be identified as \"low engagement\" for intervention.\n* An employee is considered \"recently promoted\" if they were promoted within the last 2 years.\n* Employees who have left the company will be flagged as \"at risk of attrition\" for analysis.\n* The compensation of employees will be categorized into quartiles based on their compensation values.\n\nThese definitions will help us analyze and identify trends and patterns in our employee data to inform HR decisions.",
+      "timestamp": "2026-07-21T05:16:40.044656"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_business_rules",
+      "detail": "Applied 7 approved business rule(s). Enriched Silver saved -> cbb854c4_silver_enriched.csv.",
+      "timestamp": "2026-07-21T05:16:52.935205"
+    },
+    {
+      "agent": "TransformationAgent",
+      "action": "apply_business_rules",
+      "detail": "Applied 7 approved business rule(s). Enriched Silver saved -> cbb854c4_silver_enriched.csv.",
+      "timestamp": "2026-07-21T05:17:01.330293"
+    }
+  ],
+  "created_at": "2026-07-21T05:15:09.029546"
+}
