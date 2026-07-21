@@ -1,0 +1,6 @@
+department,headcount,attritions,attrition_rate,top_performers,top_performer_attritions,top_performer_attrition_rate,avg_compensation,avg_compensation_leavers_top,avg_compensation_stayers_top,comp_gap,avg_overtime_leavers_top,avg_overtime_stayers_top,overtime_gap,avg_engagement_leavers_top,risk_rank,likely_driver,risk_score,risk_label
+Engineering,240.0,33.0,13.8,47.0,15.0,31.9,105343.0,115817.0,114786.0,-1031.0,13.6,4.9,8.7,2.93,1,elevated overtime before exit; low engagement score prior to exit,6.7,CRITICAL
+Sales,240.0,34.0,14.2,51.0,12.0,23.5,56437.0,56482.0,59217.0,2735.0,3.5,1.6,1.9,3.48,2,"compensation gap (~$2,735 below staying top performers)",4.9,HIGH
+Support,240.0,33.0,13.8,37.0,4.0,10.8,50871.0,53591.0,54021.0,430.0,2.6,3.6,-1.0,2.25,3,low engagement score prior to exit,2.2,LOW
+Marketing,240.0,23.0,9.6,52.0,5.0,9.6,69819.0,74178.0,73680.0,-498.0,2.2,4.1,-1.9,3.16,4,no dominant single factor identified,1.9,LOW
+Finance,240.0,28.0,11.7,42.0,3.0,7.1,79313.0,82611.0,85313.0,2702.0,6.7,3.0,3.7,2.47,5,"compensation gap (~$2,702 below staying top performers); elevated overtime before exit; low engagement score prior to exit",1.5,LOW
