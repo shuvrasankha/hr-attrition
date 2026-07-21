@@ -50,6 +50,11 @@ def sidebar():
             st.sidebar.write(f"Bronze: {state.bronze_rows}")
             st.sidebar.write(f"Silver: {state.silver_rows or '—'}")
             st.sidebar.write(f"Gold: {state.gold_rows or '—'}")
+
+        if st.sidebar.button("Start over", type="primary"):
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
     return page
 
 
