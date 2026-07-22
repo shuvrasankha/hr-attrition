@@ -112,29 +112,36 @@ Without a token, deterministic fallback rules are used — the pipeline always c
 
 ```
 hr-attrition/
-├── app.py                  # Streamlit UI (upload, approvals, Gold dashboard)
-├── run_cli.py              # CLI smoke test (headless, auto-approves)
-├── requirements.txt        # Python dependencies
-├── setup.sh                # Mac/Linux setup script
-├── setup.bat               # Windows setup script
-├── .env                    # HUGGINGFACE_TOKEN (not committed)
+├── app.py                      # Streamlit UI — upload, approval screens, Gold dashboard
+├── run_cli.py                  # CLI smoke test (headless, auto-approves all rules)
+├── requirements.txt            # Python dependencies
+├── setup.sh                    # Mac/Linux one-click setup
+├── setup.bat                   # Windows one-click setup
+├── .env                        # HUGGINGFACE_TOKEN (not committed)
+├── .gitignore                  # Ignores .env, __pycache__, generated data/runs
+│
 ├── src/
-│   ├── config.py           # Paths, LLM config, defaults
-│   ├── llm.py              # HuggingFace wrapper with retry + fallback
-│   ├── state.py            # PipelineState dataclass (persisted as JSON)
-│   ├── data_gen.py         # Synthetic HR dataset generator
+│   ├── __init__.py
+│   ├── config.py               # Paths, LLM config, business definition defaults
+│   ├── llm.py                  # HuggingFace wrapper with retry, backoff, fallback
+│   ├── state.py                # PipelineState dataclass — persisted as JSON per run
+│   ├── data_gen.py             # Synthetic HR dataset generator (1,200+ rows)
+│   │
 │   └── agents/
-│       ├── ingestion_agent.py
-│       ├── dq_agent.py
-│       ├── transform_agent.py
-│       ├── analytics_agent.py
-│       ├── qa_agent.py
-│       └── orchestrator.py
-├── data/                   # Generated layer CSVs (per run)
+│       ├── __init__.py
+│       ├── ingestion_agent.py  # CSV → Bronze, type coercion, column validation
+│       ├── dq_agent.py         # Profiles Bronze, AI proposes cleaning rules
+│       ├── transform_agent.py  # Applies DQ rules → Silver; AI proposes business rules → Silver Enriched
+│       ├── analytics_agent.py  # Aggregates Gold, risk scores, drivers, executive narrative
+│       ├── qa_agent.py         # Validates row counts and metrics across layers
+│       └── orchestrator.py     # Sequences agents, manages state, UI checkpoints
+│
+├── data/                       # Generated layer CSVs (per run, gitignored)
 │   ├── bronze/
 │   ├── silver/
 │   └── gold/
-└── runs/                   # Run history JSON (audit trail)
+│
+└── runs/                       # Run history JSON — audit trail (gitignored)
 ```
 
 ## Fail-Safe Design
